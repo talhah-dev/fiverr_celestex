@@ -554,13 +554,10 @@ export default function HomePage() {
                     {/* Heading */}
                     <div className="relative text-center">
                         <div className="text-center"> <h2 className="text-3xl sm:text-4xl md:text-5xl font-medium tracking-tight text-slate-900">Choose Your Package</h2> <p className="mt-2 text-slate-600 font-medium">Flexible solutions that scale with your business</p> </div>
-
-                        {/* halo ring */}
-                        <div aria-hidden="true" className="pointer-events-none mx-auto mt-8 h-10 w-[min(90%,40rem)] rounded-full bg-gradient-to-r from-orange-200/50 via-rose-200/50 to-sky-200/50 blur-2xl" />
                     </div>
 
                     {/* Cards */}
-                    <div className="relative md:mt-10 mt-8 grid grid-cols-1 gap-6 md:grid-cols-3 items-start">
+                    <div className="relative md:mt-24 mt-10 grid grid-cols-1 gap-6 md:grid-cols-3 items-start">
                         {/* Card 1 */}
                         <div className="group relative">
                             {/* gradient border & glow */}
