@@ -92,8 +92,8 @@ export default function SuccessStoriesCarousel() {
                         </div>
                       </div>
 
-                      <CarouselPrevious className="absolute md:block hidden left-4 top-1/2 -translate-y-1/2 h-10 w-10 rounded-full bg-white shadow ring-1 ring-slate-200 hover:bg-slate-50" />
-                      <CarouselNext className="absolute md:block hidden right-4 top-1/2 -translate-y-1/2 h-10 w-10 rounded-full bg-white shadow ring-1 ring-slate-200 hover:bg-slate-50" />
+                      <CarouselPrevious className="absolute md:flex hidden left-4 top-1/2 -translate-y-1/2 h-10 w-10 rounded-full bg-white shadow ring-1 ring-slate-200 hover:bg-slate-50" />
+                      <CarouselNext className="absolute md:flex hidden right-4 top-1/2 -translate-y-1/2 h-10 w-10 rounded-full bg-white shadow ring-1 ring-slate-200 hover:bg-slate-50" />
                     </CardContent>
                   </Card>
                 </CarouselItem>

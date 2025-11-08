@@ -16,6 +16,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Send } from "lucide-react";
 import Footer from '@/components/Footer';
 import { Cog } from "lucide-react";
+import InfiniteScroll from '@/components/InfiniteScroll';
 
 type NodeItem = { label: string; color: string };
 
@@ -67,7 +68,7 @@ export default function HomePage() {
                             <h1 className='font-bold md:text-[5.5rem] md:block hidden text-4xl md:text-nowrap text-image1'>BUSINESS WITH AI</h1>
                         </div>
                         <div className="flex items-center justify-center mt-5">
-                            <Button size={"lg"} className="bg-orange-500 py-5 hover:bg-orange-600 text-white font-semibold px-5 h-9 rounded-md">
+                            <Button size={"lg"} className="bg-[#FF7A00] py-5 hover:bg-orange-500 text-white font-semibold px-5 h-9 rounded-md">
                                 Schedule a Free Consult
                                 <ArrowRight />
                             </Button>
@@ -82,13 +83,13 @@ export default function HomePage() {
                     <div className="flex flex-col items-center text-center">
                         <Image src={"/microsoft.svg"} width={100} height={100} className="mx-auto mb-8 h-10 w-auto" alt="Microsoft" />
                         <h2 className="max-w-[890px] text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900">
-                            We transform businesses with intelligent <span className="text-orange-500">Microsoft and AI solutions</span>
+                            We transform businesses with intelligent <span className="text-[#FF7A00]">Microsoft and AI solutions</span>
                         </h2>
                     </div>
 
                     <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 md:gap-8">
                         <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-                            <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-orange-500 text-white">
+                            <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-[#FF7A00] text-white">
                                 <Bot className="h-6 w-6" />
                             </div>
                             <h3 className="text-xl font-bold text-slate-900">Intelligent Automation</h3>
@@ -96,7 +97,7 @@ export default function HomePage() {
                         </div>
 
                         <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-                            <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-orange-500 text-white">
+                            <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-[#FF7A00] text-white">
                                 <TrendingUp className="h-6 w-6" />
                             </div>
                             <h3 className="text-xl font-bold text-slate-900">Data-Driven Insights</h3>
@@ -104,7 +105,7 @@ export default function HomePage() {
                         </div>
 
                         <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-                            <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-orange-500 text-white">
+                            <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-[#FF7A00] text-white">
                                 <Zap className="h-6 w-6" />
                             </div>
                             <h3 className="text-xl font-bold text-slate-900">Enhanced Productivity</h3>
@@ -113,7 +114,7 @@ export default function HomePage() {
                     </div>
 
                     <div className="mt-10 flex justify-center">
-                        <Button size={"lg"} className="bg-orange-500 py-6 text-white shadow-md hover:bg-orange-600">
+                        <Button size={"lg"} className="bg-[#FF7A00] py-6 text-white shadow-md hover:bg-orange-500">
                             Schedule a Free Consult <ArrowRight />
                         </Button>
                     </div>
@@ -126,7 +127,7 @@ export default function HomePage() {
                     <div className="flex items-center justify-center text-center flex-col">
                         <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-slate-900">
                             <span className="block">Most Companies Know AI Is The Future</span>
-                            <span className="block text-orange-500">But Don't Know Where To Start</span>
+                            <span className="block text-[#FF7A00]">But Don't Know Where To Start</span>
                         </h2>
                         <p className="mt-4 text-[#2A2D2D] text-lg max-w-3xl">
                             At <span className="font-semibold  text-slate-900">Celeste iQ</span>, we help you uncover, design, and implement AI-powered automations built within the Microsoft ecosystem. From streamlining workflows to empowering data-driven decisions, we create intelligent systems that evolve with your business.
@@ -137,26 +138,26 @@ export default function HomePage() {
                         <div>
                             <ul className="mt-8 space-y-5">
                                 <li className="flex items-center md:gap-4 gap-3">
-                                    <CircleCheckBig className="md:h-9 h-6 md:w-9 w-6" />
+                                    <CircleCheckBig className="md:h-9 h-6 md:w-9 w-6 text-[#FF7A00]" />
                                     <span className="md:text-3xl text-2xl font-medium text-slate-900">Eliminate repetitive work</span>
                                 </li>
                                 <li className="flex items-center md:gap-4 gap-3">
-                                    <CircleCheckBig className="md:h-9 h-6 md:w-9 w-6" />
+                                    <CircleCheckBig className="md:h-9 h-6 md:w-9 w-6 text-[#FF7A00]" />
                                     <span className="md:text-3xl text-2xl font-medium text-slate-900">Reduce operational costs</span>
                                 </li>
                                 <li className="flex items-center md:gap-4 gap-3">
-                                    <CircleCheckBig className="md:h-9 h-6 md:w-9 w-6" />
+                                    <CircleCheckBig className="md:h-9 h-6 md:w-9 w-6 text-[#FF7A00]" />
                                     <span className="md:text-3xl text-2xl font-medium text-slate-900">Improve accuracy & speed</span>
                                 </li>
                                 <li className="flex items-center md:gap-4 gap-3">
-                                    <CircleCheckBig className="md:h-9 h-6 md:w-9 w-6" />
+                                    <CircleCheckBig className="md:h-9 h-6 md:w-9 w-6 text-[#FF7A00]" />
                                     <span className="md:text-3xl text-2xl font-medium text-slate-900">Empower your team</span>
                                 </li>
                             </ul>
 
                             <div className="mt-8">
                                 <Link href="#contact">
-                                    <Button size={"lg"} className="bg-orange-500 px-6 py-6 text-white shadow-md hover:bg-orange-600 w-full md:w-auto">
+                                    <Button size={"lg"} className="bg-[#FF7A00] px-6 py-6 text-white shadow-md hover:bg-orange-500 w-full md:w-auto">
                                         Discover <span className='md:inline hidden'>how AI can transform your business today</span>
                                         <ArrowRight />
                                     </Button>
@@ -205,7 +206,7 @@ export default function HomePage() {
 
                                 <div className="pointer-events-none absolute left-1/2 top-[54%] -translate-x-1/2 -translate-y-1/2">
                                     <div className="grid md:h-28 h-16 md:w-28 w-16 place-items-center rounded-full bg-white shadow-[0_10px_35px_rgba(15,23,42,0.12)] ring-1 ring-black/5">
-                                        <Cog className="md:h-14 h-8 md:w-14 w-8 text-orange-500" />
+                                        <Cog className="md:h-14 h-8 md:w-14 w-8 text-[#FF7A00]" />
                                     </div>
                                 </div>
 
@@ -258,7 +259,7 @@ export default function HomePage() {
 
             <section className="relative">
                 <Image src={"/line.png"} alt='line' width={1000} height={500} className='absolute w-full select-none -z-10 bottom-20' />
-                <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14 md:py-20">
+                <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-14 md:pb-20">
                     <div className="grid grid-cols-1 gap-10 md:grid-cols-2">
                         <div>
                             <h2 className="text-4xl sm:text-5xl md:text-6xl font-semibold uppercase leading-[0.95] text-slate-700">Our Plan /<br />How It Works</h2>
@@ -268,28 +269,28 @@ export default function HomePage() {
 
                         <div className="flex flex-col gap-6">
                             <div className="relative rounded-2xl border border-slate-200 bg-white p-6 md:pl-10 md:pr-24">
-                                <div className="md:absolute md:-left-8 top-0 inline-flex h-14 w-14 items-center justify-center rounded-full bg-orange-500 text-white font-bold text-2xl shadow-md">1</div>
+                                <div className="md:absolute md:-left-8 top-0 inline-flex h-14 w-14 items-center justify-center rounded-full bg-[#FF7A00] text-white font-bold text-2xl shadow-md">1</div>
                                 <h3 className="text-lg md:mt-0 mt-3 font-semibold text-slate-900">We Evaluate Your Business</h3>
                                 <p className="mt-2 text-slate-600">We analyze your processes, pain points, and opportunities where AI can generate real impact.</p>
-                                <div className="absolute right-6 md:inline-flex hidden top-1/2 -translate-y-1/2 h-14 w-14 items-center justify-center rounded-full bg-orange-500 text-white shadow-md">
+                                <div className="absolute right-6 md:inline-flex hidden top-1/2 -translate-y-1/2 h-14 w-14 items-center justify-center rounded-full bg-[#FF7A00] text-white shadow-md">
                                     <Search className="h-6 w-6" />
                                 </div>
                             </div>
 
                             <div className="relative rounded-2xl border border-slate-200 bg-white p-6 md:pl-10 md:pr-24">
-                                <div className="md:absolute md:-left-8 top-0 inline-flex h-14 w-14 items-center justify-center rounded-full bg-orange-500 text-white font-bold text-2xl shadow-md">2</div>
+                                <div className="md:absolute md:-left-8 top-0 inline-flex h-14 w-14 items-center justify-center rounded-full bg-[#FF7A00] text-white font-bold text-2xl shadow-md">2</div>
                                 <h3 className="text-lg md:mt-0 mt-3 font-semibold text-slate-900">We Implement Smart Solutions</h3>
                                 <p className="mt-2 text-slate-600">We design and integrate Microsoft tools Copilot, Dynamics 365, Power Automate, Azure AI, and Fabric — tailored to your workflow.</p>
-                                <div className="absolute right-6 md:inline-flex hidden top-1/2 -translate-y-1/2 h-14 w-14 items-center justify-center rounded-full bg-orange-500 text-white shadow-md">
+                                <div className="absolute right-6 md:inline-flex hidden top-1/2 -translate-y-1/2 h-14 w-14 items-center justify-center rounded-full bg-[#FF7A00] text-white shadow-md">
                                     <Zap className="h-6 w-6" />
                                 </div>
                             </div>
 
                             <div className="relative rounded-2xl border border-slate-200 bg-white p-6 md:pl-10 md:pr-24">
-                                <div className="md:absolute md:-left-8 top-0 inline-flex h-14 w-14 items-center justify-center rounded-full bg-orange-500 text-white font-bold text-2xl shadow-md">3</div>
+                                <div className="md:absolute md:-left-8 top-0 inline-flex h-14 w-14 items-center justify-center rounded-full bg-[#FF7A00] text-white font-bold text-2xl shadow-md">3</div>
                                 <h3 className="text-lg md:mt-0 mt-3 font-semibold text-slate-900">We Measure and Scale Results</h3>
                                 <p className="mt-2 text-slate-600">We monitor KPIs, optimize processes, and expand AI to other areas for sustainable value.</p>
-                                <div className="absolute right-6 md:inline-flex hidden top-1/2 -translate-y-1/2 h-14 w-14 items-center justify-center rounded-full bg-orange-500 text-white shadow-md">
+                                <div className="absolute right-6 md:inline-flex hidden top-1/2 -translate-y-1/2 h-14 w-14 items-center justify-center rounded-full bg-[#FF7A00] text-white shadow-md">
                                     <TrendingUp className="h-6 w-6" />
                                 </div>
                             </div>
@@ -303,51 +304,34 @@ export default function HomePage() {
                     <div className="text-center">
                         <h2 className="text-3xl sm:text-4xl max-w-3xl mx-auto md:text-5xl font-bold tracking-tight text-slate-900">
                             <span>You Focus On Your Business- </span>
-                            <span className="text-orange-500">We Handle The Automation</span>
+                            <span className="text-[#FF7A00]">We Handle The Automation</span>
                         </h2>
                         <p className="mx-auto mt-3 max-w-2xl md:text-2xl text-slate-600">
                             You don’t need an IT team to modernize your business—just the right partner
                         </p>
                     </div>
 
-                    <div className="mt-10 grid grid-cols-1 gap-4 sm:hidden">
-                        <div className="rounded-xl bg-gradient-to-b from-sky-300 to-sky-400 p-4 text-white shadow-lg">No Hardware Needed</div>
-                        <div className="rounded-xl bg-gradient-to-b from-sky-300 to-sky-400 p-4 text-white shadow-lg">Minimal IT Resources Needed</div>
-                        <div className="rounded-xl bg-gradient-to-b from-sky-300 to-sky-400 p-4 text-white shadow-lg">Human-in-the-Loop Ready</div>
-                        <div className="rounded-xl bg-gradient-to-b from-sky-300 to-sky-400 p-4 text-white shadow-lg">Peace of Mind, Zero Risk</div>
-                        <div className="rounded-xl bg-gradient-to-b from-sky-300 to-sky-400 p-4 text-white shadow-lg">Simple, Hassle-Free Setup</div>
-                        <div className="rounded-xl bg-gradient-to-b from-sky-300 to-sky-400 p-4 text-white shadow-lg">No In-House IT Team Required</div>
-                        <div className="rounded-xl bg-gradient-to-b from-sky-300 to-sky-400 p-4 text-white shadow-lg">ROI Within Weeks</div>
+                    <div className="mt-10 grid grid-cols-1 gap-2 mb-6 sm:hidden">
+                        <div className="rounded-xl bg-gradient-to-b from-[#0c8cf1] to-sky-400 p-4 text-white shadow-lg">No Hardware Needed</div>
+                        <div className="rounded-xl bg-gradient-to-b from-[#0c8cf1] to-sky-400 p-4 text-white shadow-lg">Minimal IT Resources Needed</div>
+                        <div className="rounded-xl bg-gradient-to-b from-[#0c8cf1] to-sky-400 p-4 text-white shadow-lg">Human-in-the-Loop Ready</div>
+                        <div className="rounded-xl bg-gradient-to-b from-[#0c8cf1] to-sky-400 p-4 text-white shadow-lg">Peace of Mind, Zero Risk</div>
+                        <div className="rounded-xl bg-gradient-to-b from-[#0c8cf1] to-sky-400 p-4 text-white shadow-lg">Simple, Hassle-Free Setup</div>
+                        <div className="rounded-xl bg-gradient-to-b from-[#0c8cf1] to-sky-400 p-4 text-white shadow-lg">No In-House IT Team Required</div>
+                        <div className="rounded-xl bg-gradient-to-b from-[#0c8cf1] to-sky-400 p-4 text-white shadow-lg">ROI Within Weeks</div>
                     </div>
 
                     <div className="relative mx-auto hidden aspect-square w-full max-w-[820px] sm:block [--r:235px] md:[--r:270px]">
-                        <div className="absolute left-1/2 top-1/2 z-10 h-56 w-56 -translate-x-1/2 -translate-y-1/2 rounded-full bg-sky-600 shadow-2xl ring-1 ring-black/10 flex items-center justify-center">
+                        <div className="absolute left-1/2 top-1/2 z-10 h-56 w-56 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#1784db] shadow-2xl ring-1 ring-black/10 flex items-center justify-center">
                             <Image src={"/weblogo.svg"} className='w-full max-w-[80%]' width={100} height={100} alt="Celeste iQ Logo" />
                         </div>
 
-                        {sources.map((src, i) => {
-                            const angle = -90 + i * step;
-                            return (
-                                <div
-                                    key={src}
-                                    className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none select-none"
-                                    style={{ transform: `rotate(${angle}deg) translate(var(--r)) rotate(${-angle}deg)` }}
-                                >
-                                    <Image
-                                        src={src}
-                                        alt={`focus ${i + 1}`}
-                                        width={260}
-                                        height={260}
-                                        className="w-[220px] md:w-[240px] lg:w-[260px] h-auto"
-                                    />
-                                </div>
-                            );
-                        })}
+                        <Image src={"/focus.png"} className='w-full' width={600} height={600} alt="Celeste iQ" />
                     </div>
 
-                    <div className="mt-10 flex justify-center">
+                    <div className=" flex justify-center">
                         <Link href="#contact">
-                            <Button size={"lg"} className="bg-orange-500 px-6 py-6 text-white shadow-md hover:bg-orange-600">
+                            <Button size={"lg"} className="bg-[#FF7A00] px-6 py-6 text-white shadow-md hover:bg-orange-500">
                                 Schedule a Free Consult <ArrowRight />
                             </Button>
                         </Link>
@@ -388,30 +372,55 @@ export default function HomePage() {
 
                     <div className="mt-6 grid grid-cols-1 mx-auto max-w-6xl gap-4 sm:grid-cols-2 lg:grid-cols-3">
                         <div className="flex items-center gap-3 rounded-xl bg-white/90 p-4 shadow-md ring-1 ring-black/5 backdrop-blur">
-                            <span className="inline-flex h-10 w-10 items-center justify-center rounded-md bg-orange-500 text-white"><MessageSquare className="h-5 w-5" /></span>
+                            <span className="inline-flex h-10 w-10 items-center justify-center rounded-md bg-[#FF7A00] text-white"><MessageSquare className="h-5 w-5" /></span>
                             <span className="text-slate-700 font-medium">Automatic responses to customers</span>
                         </div>
                         <div className="flex items-center gap-3 rounded-xl bg-white/90 p-4 shadow-md ring-1 ring-black/5 backdrop-blur">
-                            <span className="inline-flex h-10 w-10 items-center justify-center rounded-md bg-orange-500 text-white"><TrendingUp className="h-5 w-5" /></span>
+                            <span className="inline-flex h-10 w-10 items-center justify-center rounded-md bg-[#FF7A00] text-white"><TrendingUp className="h-5 w-5" /></span>
                             <span className="text-slate-700 font-medium">AI-assisted sales follow-ups</span>
                         </div>
                         <div className="flex items-center gap-3 rounded-xl bg-white/90 p-4 shadow-md ring-1 ring-black/5 backdrop-blur">
-                            <span className="inline-flex h-10 w-10 items-center justify-center rounded-md bg-orange-500 text-white"><Users className="h-5 w-5" /></span>
+                            <span className="inline-flex h-10 w-10 items-center justify-center rounded-md bg-[#FF7A00] text-white"><Users className="h-5 w-5" /></span>
                             <span className="text-slate-700 font-medium">HR processes automated</span>
                         </div>
                         <div className="flex items-center gap-3 rounded-xl bg-white/90 p-4 shadow-md ring-1 ring-black/5 backdrop-blur">
-                            <span className="inline-flex h-10 w-10 items-center justify-center rounded-md bg-orange-500 text-white"><Clock className="h-5 w-5" /></span>
+                            <span className="inline-flex h-10 w-10 items-center justify-center rounded-md bg-[#FF7A00] text-white"><Clock className="h-5 w-5" /></span>
                             <span className="text-slate-700 font-medium">More time for strategy</span>
                         </div>
                         <div className="flex items-center gap-3 rounded-xl bg-white/90 p-4 shadow-md ring-1 ring-black/5 backdrop-blur">
-                            <span className="inline-flex h-10 w-10 items-center justify-center rounded-md bg-orange-500 text-white"><Award className="h-5 w-5" /></span>
+                            <span className="inline-flex h-10 w-10 items-center justify-center rounded-md bg-[#FF7A00] text-white"><Award className="h-5 w-5" /></span>
                             <span className="text-slate-700 font-medium">Enhanced customer satisfaction</span>
                         </div>
                         <div className="flex items-center gap-3 rounded-xl bg-white/90 p-4 shadow-md ring-1 ring-black/5 backdrop-blur">
-                            <span className="inline-flex h-10 w-10 items-center justify-center rounded-md bg-orange-500 text-white"><CircleCheckBig className="h-5 w-5" /></span>
+                            <span className="inline-flex h-10 w-10 items-center justify-center rounded-md bg-[#FF7A00] text-white"><CircleCheckBig className="h-5 w-5" /></span>
                             <span className="text-slate-700 font-medium">Consistent quality across teams</span>
                         </div>
                     </div>
+                </div>
+            </section>
+
+            <section className="relative ">
+                <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-14 md:py-20">
+                    <div className="text-center">
+                        <h2 className="text-3xl sm:text-4xl max-w-6xl mx-auto md:text-5xl font-bold tracking-tight text-slate-900">
+                            <span>From Manual Workflows to  </span>
+                            <span className="text-[#FF7A00]">AI-Powered Efficiency</span>
+                        </h2>
+                        <p className="mx-auto mt-3 max-w-2xl md:text-xl text-slate-600">
+                            See how intelligent automation transforms your invoicing process.
+                        </p>
+                    </div>
+
+                    <div className="md:mt-16 mt-6">
+                        <Image src={"/robot.png"} width={1000} height={700} className='w-full md:block hidden select-none' alt='compare' />
+                        <div className="flex items-center flex-col gap-4">
+                        <Image src={"/robot1.png"} width={1000} height={700} className='w-full block md:hidden select-none' alt='compare' />
+                        <Image src={"/robotline.png"} width={1000} height={700} className='w-full block md:hidden select-none' alt='compare' />
+                        <Image src={"/robot2.png"} width={1000} height={700} className='w-full block md:hidden select-none' alt='compare' />
+
+                        </div>
+                    </div>
+
                 </div>
             </section>
 
@@ -421,7 +430,7 @@ export default function HomePage() {
                     <div className="text-center">
                         <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-slate-900">
                             <span>YOUR EXPERT PARTNER </span>
-                            <span className="bg-gradient-to-r from-orange-500 md:block via-orange-500 to-orange-400 bg-clip-text text-transparent"> IN AI TRANSFORMATION</span>
+                            <span className="bg-gradient-to-r from-[#FF7A00] md:block via-[#FF7A00] to-orange-400 bg-clip-text text-transparent"> IN AI TRANSFORMATION</span>
                         </h2>
                     </div>
 
@@ -436,7 +445,7 @@ export default function HomePage() {
                             />
                             <div className="rounded-2xl relative backdrop-blur-xl border p-6 md:py-10 text-center">
                                 <h3 className="text-2xl font-semibold text-slate-800">Automation</h3>
-                                <div className="mx-auto my-5 flex h-12 w-12 items-center justify-center rounded-md text-slate-700">
+                                <div className="mx-auto my-10 flex h-12 w-12 items-center justify-center rounded-md text-slate-700">
                                     <Bot className="h-12 w-12" />
                                 </div>
                                 <p className="text-slate-600">Control repetitive tasks easily with AI.</p>
@@ -444,7 +453,7 @@ export default function HomePage() {
 
                             <div className="rounded-2xl backdrop-blur-xl border p-6 md:py-10 text-center">
                                 <h3 className="text-2xl font-semibold text-slate-800">Intelligent Analysis</h3>
-                                <div className="mx-auto my-5 flex h-12 w-12 items-center justify-center rounded-md text-slate-700">
+                                <div className="mx-auto my-10 flex h-12 w-12 items-center justify-center rounded-md text-slate-700">
                                     <Puzzle className="h-12 w-12" />
                                 </div>
                                 <p className="text-slate-600">Apply AI to your data workflows.</p>
@@ -452,7 +461,7 @@ export default function HomePage() {
 
                             <div className="rounded-2xl backdrop-blur-xl border p-6 md:py-10 text-center">
                                 <h3 className="text-2xl font-semibold text-slate-800">Innovation</h3>
-                                <div className="mx-auto my-5 flex h-12 w-12 items-center justify-center rounded-md text-slate-700">
+                                <div className="mx-auto my-10 flex h-12 w-12 items-center justify-center rounded-md text-slate-700">
                                     <Lightbulb className="h-12 w-12" />
                                 </div>
                                 <p className="text-slate-600">Drive smarter processes through creativity.</p>
@@ -460,7 +469,7 @@ export default function HomePage() {
 
                             <div className="rounded-2xl backdrop-blur-xl border p-6 md:py-10 text-center">
                                 <h3 className="text-2xl font-semibold text-slate-800">Security</h3>
-                                <div className="mx-auto my-5 flex h-12 w-12 items-center justify-center rounded-md text-slate-700">
+                                <div className="mx-auto my-10 flex h-12 w-12 items-center justify-center rounded-md text-slate-700">
                                     <Lock className="h-12 w-12" />
                                 </div>
                                 <p className="text-slate-600">Ensure compliance with automated governance.</p>
@@ -470,7 +479,11 @@ export default function HomePage() {
                 </div>
             </section>
 
-            <div className="mx-auto w-full max-w-5xl md:mt-20 mt-10 p-4">
+            <div className="mt-10">
+                <InfiniteScroll />
+            </div>
+
+            <div className="mx-auto w-full max-w-5xl mt-10 p-4">
                 <div className="relative overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm">
                     <div className="relative aspect-[16/9] w-full overflow-hidden rounded-2xl">
                         <Image
@@ -499,25 +512,25 @@ export default function HomePage() {
                         <p className="mt-2 text-slate-600 font-medium">Flexible solutions that scale with your business</p>
                     </div>
 
-                    <div className="mt-20 items-start grid grid-cols-1 gap-6 md:grid-cols-3">
+                    <div className="md:mt-20 mt-9 items-start grid grid-cols-1 gap-6 md:grid-cols-3">
                         <div className="rounded-3xl border border-slate-200 bg-white p-5 shadow-sm">
                             <h3 className="text-xl font-bold text-slate-900">IT ADMINISTRATOR PACK</h3>
                             <p className="mt-4 text-slate-700">Comprehensive Microsoft 365 Management</p>
                             <ul className="mt-5 space-y-3 text-slate-700">
-                                <li className="flex items-start gap-3"><Check className="mt-0.5 shrink-0 h-5 w-5 text-orange-500" />Continuous monitoring of Microsoft 365, Azure, and Teams</li>
-                                <li className="flex items-start gap-3"><Check className="mt-0.5 shrink-0 h-5 w-5 text-orange-500" />Early alerts powered by predictive AI</li>
-                                <li className="flex items-start gap-3"><Check className="mt-0.5 shrink-0 h-5 w-5 text-orange-500" />Automated performance and availability reports</li>
-                                <li className="flex items-start gap-3"><Check className="mt-0.5 shrink-0 h-5 w-5 text-orange-500" />Remote technical support and advanced administration</li>
+                                <li className="flex items-start gap-3"><Check className="mt-0.5 shrink-0 h-5 w-5 text-[#FF7A00]" />Continuous monitoring of Microsoft 365, Azure, and Teams</li>
+                                <li className="flex items-start gap-3"><Check className="mt-0.5 shrink-0 h-5 w-5 text-[#FF7A00]" />Early alerts powered by predictive AI</li>
+                                <li className="flex items-start gap-3"><Check className="mt-0.5 shrink-0 h-5 w-5 text-[#FF7A00]" />Automated performance and availability reports</li>
+                                <li className="flex items-start gap-3"><Check className="mt-0.5 shrink-0 h-5 w-5 text-[#FF7A00]" />Remote technical support and advanced administration</li>
                             </ul>
-                            <p className="mt-5 text-sm"><span className="font-semibold text-orange-600">Ideal for:</span> Companies seeking operational stability and technological efficiency without expanding their IT team.</p>
+                            <p className="mt-5 text-sm"><span className="font-semibold text-orange-500">Ideal for:</span> Companies seeking operational stability and technological efficiency without expanding their IT team.</p>
                             <div className="mt-6">
-                                <Button className="w-full bg-orange-500 text-white hover:bg-orange-600">
+                                <Button className="w-full bg-[#FF7A00] text-white hover:bg-orange-500">
                                     Get Started <ArrowRight className="ml-2 h-4 w-4" />
                                 </Button>
                             </div>
                         </div>
 
-                        <div className="relative rounded-3xl md:-mt-10 bg-orange-500 p-5 md:p-8 text-white shadow-xl">
+                        <div className="relative rounded-3xl md:-mt-10 bg-[#FF7A00] p-5 md:p-8 text-white shadow-xl">
                             <span className="absolute z-30 left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 rounded-full bg-amber-400 px-3  py-1 text-xs font-semibold text-slate-900 shadow">Most Popular</span>
                             <h3 className="text-xl font-bold">POWER PLATFORM PACK</h3>
                             <p className="mt-1 text-lg text-white/80 font-semibold">Automate. Analyze. Improve.</p>
@@ -528,7 +541,7 @@ export default function HomePage() {
                             </ul>
                             <p className="mt-5 text-sm text-orange-50"><span className="font-semibold">Ideal for:</span> Turning your data into actions and your processes into opportunities.</p>
                             <div className="mt-6">
-                                <Button variant="secondary" className="w-full bg-white text-orange-600 hover:bg-orange-50">
+                                <Button variant="secondary" className="w-full bg-white text-orange-500 hover:bg-orange-50">
                                     Get Started <ArrowRight className="ml-2 h-4 w-4" />
                                 </Button>
                             </div>
@@ -539,14 +552,14 @@ export default function HomePage() {
                             <p className="mt-4 text-slate-700">Prevention, Protection, and Automated Response</p>
                             <p className="mt-3 text-slate-700">We combine the most powerful tools in the Microsoft ecosystem — Defender, Entra ID, and Azure Sentinel — with AI algorithms capable of detecting threats in real time.</p>
                             <ul className="mt-5 space-y-3 text-slate-700">
-                                <li className="flex items-start gap-3"><Check className="shrink-0 mt-0.5 h-5 w-5 text-orange-500" />AI-powered vulnerability analysis</li>
-                                <li className="flex items-start gap-3"><Check className="shrink-0 mt-0.5 h-5 w-5 text-orange-500" />24/7 incident monitoring</li>
-                                <li className="flex items-start gap-3"><Check className="shrink-0 mt-0.5 h-5 w-5 text-orange-500" />Predictive alerts and continuous learning</li>
-                                <li className="flex items-start gap-3"><Check className="shrink-0 mt-0.5 h-5 w-5 text-orange-500" />Configuration of adaptive security policies</li>
+                                <li className="flex items-start gap-3"><Check className="shrink-0 mt-0.5 h-5 w-5 text-[#FF7A00]" />AI-powered vulnerability analysis</li>
+                                <li className="flex items-start gap-3"><Check className="shrink-0 mt-0.5 h-5 w-5 text-[#FF7A00]" />24/7 incident monitoring</li>
+                                <li className="flex items-start gap-3"><Check className="shrink-0 mt-0.5 h-5 w-5 text-[#FF7A00]" />Predictive alerts and continuous learning</li>
+                                <li className="flex items-start gap-3"><Check className="shrink-0 mt-0.5 h-5 w-5 text-[#FF7A00]" />Configuration of adaptive security policies</li>
                             </ul>
                             <p className="mt-5 text-slate-700">Protect your data with intelligence, not reaction.</p>
                             <div className="mt-6">
-                                <Button className="w-full bg-orange-500 text-white hover:bg-orange-600">
+                                <Button className="w-full bg-[#FF7A00] text-white hover:bg-orange-500">
                                     Get Started <ArrowRight className="ml-2 h-4 w-4" />
                                 </Button>
                             </div>
@@ -560,10 +573,10 @@ export default function HomePage() {
                     <Image src="/alliances-bg.png" alt="Background" fill className="object-cover" />
                 </div>
 
-                <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-14 md:py-32 text-center text-white">
+                <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-24 md:py-32 text-center text-white">
                     <div className="inline-flex items-center gap-3 rounded-lg bg-white px-3 py-3 shadow-lg ring-1 ring-black/5">
                         <Image src={"/microsoft.svg"} width={100} height={100} className="h-10 w-auto" alt="Microsoft" />
-                        <Award className="h-7 w-7 text-orange-500" />
+                        <Award className="h-7 w-7 text-[#FF7A00]" />
                     </div>
 
                     <h2 className="mt-5 text-2xl sm:text-3xl md:text-4xl font-semibold tracking-tight">Certified Excellence Alliances</h2>
@@ -586,14 +599,14 @@ export default function HomePage() {
                         <div className="overflow-hidden rounded-3xl bg-white shadow-[0_24px_60px_rgba(2,6,23,0.08)] ring-1 ring-black/5">
                             <div className="relative h-64 w-full sm:h-96">
                                 <Image src="/blog1.png" alt="Featured post" fill className="object-cover" />
-                                <span className="absolute left-4 top-4 rounded-full bg-orange-500 px-3 py-1 text-xs font-semibold text-white">AI Insights</span>
+                                <span className="absolute left-4 top-4 rounded-full bg-[#FF7A00] px-3 py-1 text-xs font-semibold text-white">AI Insights</span>
                             </div>
                             <div className="p-6 sm:p-8">
                                 <div className="flex items-center gap-2 text-slate-500 text-sm"><Calendar className="h-4 w-4" /><span>Oct 25, 2025</span></div>
                                 <h3 className="mt-2 text-xl sm:text-2xl font-semibold text-slate-900">The Future of AI in Business: 5 Trends to Watch in 2025</h3>
                                 <p className="mt-3 text-slate-600">Discover how artificial intelligence is reshaping the business landscape and what it means for your organization.</p>
                                 <div className="mt-5">
-                                    <Button asChild className="rounded-full bg-orange-500 px-5 text-white hover:bg-orange-600">
+                                    <Button asChild className="rounded-full bg-[#FF7A00] px-5 text-white hover:bg-orange-500">
                                         <Link href="#">Read More →</Link>
                                     </Button>
                                 </div>
@@ -603,7 +616,7 @@ export default function HomePage() {
                         <div className="flex flex-col gap-4">
                             <div className="rounded-2xl p-5 bg-[#f9fafb] ring-1 ring-black/5">
                                 <div className="flex items-start justify-between">
-                                    <span className="rounded-full bg-orange-100 px-2.5 py-1 text-[11px] font-semibold text-orange-600">Strategy</span>
+                                    <span className="rounded-full bg-orange-100 px-2.5 py-1 text-[11px] font-semibold text-orange-500">Strategy</span>
                                 </div>
                                 <Link href="#" className="mt-3 block text-base font-medium text-slate-900 hover:underline">How to Measure ROI from AI Implementation</Link>
                                 <div className="mt-3 flex items-center gap-2 text-sm text-slate-500"><Calendar className="h-4 w-4" />Oct 20, 2025</div>
@@ -611,7 +624,7 @@ export default function HomePage() {
 
                             <div className="rounded-2xl p-5 bg-[#f9fafb] ring-1 ring-black/5">
                                 <div className="flex items-start justify-between">
-                                    <span className="rounded-full bg-orange-100 px-2.5 py-1 text-[11px] font-semibold text-orange-600">Technology</span>
+                                    <span className="rounded-full bg-orange-100 px-2.5 py-1 text-[11px] font-semibold text-orange-500">Technology</span>
                                 </div>
                                 <Link href="#" className="mt-3 block text-base font-medium text-slate-900 hover:underline">Microsoft Copilot: A Complete Guide</Link>
                                 <div className="mt-3 flex items-center gap-2 text-sm text-slate-500"><Calendar className="h-4 w-4" />Oct 15, 2025</div>
@@ -619,7 +632,7 @@ export default function HomePage() {
 
                             <div className="rounded-2xl p-5 bg-[#f9fafb] ring-1 ring-black/5">
                                 <div className="flex items-start justify-between">
-                                    <span className="rounded-full bg-orange-100 px-2.5 py-1 text-[11px] font-semibold text-orange-600">Case Studies</span>
+                                    <span className="rounded-full bg-orange-100 px-2.5 py-1 text-[11px] font-semibold text-orange-500">Case Studies</span>
                                 </div>
                                 <Link href="#" className="mt-3 block text-base font-medium text-slate-900 hover:underline">Automation Success Stories</Link>
                                 <div className="mt-3 flex items-center gap-2 text-sm text-slate-500"><Calendar className="h-4 w-4" />Oct 10, 2025</div>
@@ -631,7 +644,7 @@ export default function HomePage() {
 
             <section className="relative overflow-hidden">
                 <Image src={"/orangeBg.png"} alt="Background" fill className="absolute inset-0 -z-10 object-cover" />
-                
+
                 <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 py-20 sm:py-24 text-center text-white">
                     <div className="mx-auto inline-flex items-center gap-2 rounded-full bg-white/15 px-3.5 py-1.5 text-xs font-semibold backdrop-blur">
                         <Sparkles className="h-3.5 w-3.5" />
@@ -648,10 +661,10 @@ export default function HomePage() {
                     </p>
 
                     <div className="mt-7 flex flex-wrap items-center justify-center gap-3">
-                        <Button size={"lg"} className="rounded-lg md:w-auto w-full bg-white px-5 py-6 text-orange-600 hover:bg-orange-50">
+                        <Button size={"lg"} className="rounded-lg md:w-auto w-full bg-white px-5 py-6 text-orange-500 hover:bg-orange-50">
                             Schedule Free Consultation <ArrowRight className="ml-2 h-4 w-4" />
                         </Button>
-                        <Button size={"lg"} variant="outline" className="rounded-lg md:w-auto w-full py-6 bg-transparent hover:bg-white border-white text-white hover:text-orange-500">
+                        <Button size={"lg"} variant="outline" className="rounded-lg md:w-auto w-full py-6 bg-transparent hover:bg-white border-white text-white hover:text-[#FF7A00]">
                             View Pricing
                         </Button>
                     </div>
@@ -674,13 +687,13 @@ export default function HomePage() {
                             <div className="absolute -top-28 left-8 z-10 h-58 w-52 overflow-hidden rounded-full">
                                 <Image src="/assistant-avatar.png" alt="AI Assistant" fill className="object-cover" />
                             </div>
-                            <div className="rounded-3xl bg-[#1F3FB3] p-6 sm:p-8 text-white shadow-[0_24px_60px_rgba(2,6,23,0.12)]">
+                            <div className="rounded-3xl bg-[#1e3e9f] p-6 sm:p-8 text-white shadow-[0_24px_60px_rgba(2,6,23,0.12)]">
                                 <h3 className="mt-24 text-2xl font-semibold">24/7 AI Assistant</h3>
                                 <p className="mt-3 text-white/90">Imagine having a tireless digital assistant handling customer inquiries, processing data, and managing workflows while your team focuses on strategic growth.</p>
                                 <ul className="mt-6 space-y-3">
-                                    <li className="flex items-start gap-3"><span className="mt-2 h-2 w-2 rounded-full bg-orange-400" /><span>Instant response times</span></li>
-                                    <li className="flex items-start gap-3"><span className="mt-2 h-2 w-2 rounded-full bg-orange-400" /><span>Zero errors or delays</span></li>
-                                    <li className="flex items-start gap-3"><span className="mt-2 h-2 w-2 rounded-full bg-orange-400" /><span>Scales with your business</span></li>
+                                    <li className="flex items-start gap-3"><span className="mt-2 h-2 w-2 rounded-full bg-[#FF7A00]" /><span>Instant response times</span></li>
+                                    <li className="flex items-start gap-3"><span className="mt-2 h-2 w-2 rounded-full bg-[#FF7A00]" /><span>Zero errors or delays</span></li>
+                                    <li className="flex items-start gap-3"><span className="mt-2 h-2 w-2 rounded-full bg-[#FF7A00]" /><span>Scales with your business</span></li>
                                 </ul>
                             </div>
                         </div>
@@ -703,7 +716,7 @@ export default function HomePage() {
                                     <Label htmlFor="needs">Tell us about your needs</Label>
                                     <Textarea id="needs" placeholder="I'm interested in..." className="min-h-[120px]" />
                                 </div>
-                                <Button className="w-full rounded-lg bg-orange-500 text-white hover:bg-orange-600 py-6">
+                                <Button className="w-full rounded-lg bg-[#FF7A00] text-white hover:bg-orange-500 py-6">
                                     Send Message <Send className="ml-2 h-4 w-4" />
                                 </Button>
                             </div>

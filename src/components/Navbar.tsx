@@ -73,7 +73,7 @@ export default function Navbar() {
                             </DropdownMenu>
 
                             {/* CTA */}
-                            <Button size={"lg"} className="bg-orange-500 hover:bg-orange-600 text-white font-semibold px-5 h-9 rounded-md">
+                            <Button size={"lg"} className="bg-[#FF7A00] hover:bg-orange-500 text-white font-semibold px-5 h-9 rounded-md">
                                 Get a Demo
                             </Button>
                         </div>
@@ -90,7 +90,7 @@ export default function Navbar() {
                                     className="text-white/90 hover:text-white hover:bg-white/10 h-9 w-9"
                                     aria-label="Change language"
                                 >
-                                    <Globe className="h-4 w-4" />
+                                    <Globe className="scale-125" />
                                 </Button>
                             </DropdownMenuTrigger>
                             <DropdownMenuContent align="end" className="min-w-[160px]">
@@ -105,11 +105,11 @@ export default function Navbar() {
                             <SheetTrigger asChild>
                                 <Button
                                     variant="ghost"
-                                    size="icon"
+                                    size="icon-lg"
                                     aria-label="Open menu"
-                                    className="text-white/90 hover:text-white hover:bg-white/10 h-9 w-9"
+                                    className="text-white/90 hover:text-white hover:bg-white/10 h-10 w-10"
                                 >
-                                    <Menu className="h-5 w-5" />
+                                    <Menu  className="scale-125" />
                                 </Button>
                             </SheetTrigger>
                             <SheetContent side="right" className="w-[300px] sm:w-[360px]">
@@ -172,7 +172,7 @@ export default function Navbar() {
                                     </div> */}
 
                                     <Button
-                                        className="mt-2 bg-orange-500 hover:bg-orange-600 text-white font-semibold h-10"
+                                        className="mt-2 bg-[#FF7A00] hover:bg-orange-500 text-white font-semibold h-10"
                                         onClick={() => setOpen(false)}
                                     >
                                         Get a Demo
