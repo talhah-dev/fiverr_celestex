@@ -31,7 +31,7 @@ export default function Navbar() {
                 <div className="flex h-16 items-center justify-between">
                     {/* Brand */}
                     <Link href="/" className="flex items-center gap-3" aria-label="Home">
-                        <Image src={"/logo.svg"} width={100} height={100} className="w-auto h-8" alt="logo" />
+                        <Image src={"/weblogo.svg"} width={100} height={100} className="w-auto h-8" alt="logo" />
                     </Link>
 
                     {/* Desktop nav */}
@@ -115,10 +115,10 @@ export default function Navbar() {
                             <SheetContent side="right" className="w-[300px] sm:w-[360px]">
                                 <SheetHeader>
                                     <SheetTitle className="text-left">
-                                        <Image src={"/logo.svg"} width={100} height={100} className="w-auto h-8 invert" alt="logo"  />
+                                        <Image src={"/weblogo.svg"} width={100} height={100} className="w-auto h-8 invert" alt="logo"  />
                                     </SheetTitle>
                                 </SheetHeader>
-                                <div className="mt-6 p-5 flex flex-col gap-3">
+                                <div className="mt-6 p-3 flex flex-col gap-3">
                                     <Link
                                         href="#"
                                         onClick={() => setOpen(false)}
