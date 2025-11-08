@@ -524,7 +524,7 @@ export default function HomePage() {
                             </ul>
                             <p className="mt-5 text-sm"><span className="font-semibold text-orange-500">Ideal for:</span> Companies seeking operational stability and technological efficiency without expanding their IT team.</p>
                             <div className="mt-6">
-                                <Button className="w-full bg-[#FF7A00] text-white hover:bg-orange-500">
+                                <Button className="w-full bg-[#FF7A00] text-white py-6 hover:bg-orange-500">
                                     Get Started <ArrowRight className="ml-2 h-4 w-4" />
                                 </Button>
                             </div>
@@ -541,7 +541,7 @@ export default function HomePage() {
                             </ul>
                             <p className="mt-5 text-sm text-orange-50"><span className="font-semibold">Ideal for:</span> Turning your data into actions and your processes into opportunities.</p>
                             <div className="mt-6">
-                                <Button variant="secondary" className="w-full bg-white text-orange-500 hover:bg-orange-50">
+                                <Button variant="secondary" className="w-full bg-white py-6 text-orange-500 hover:bg-orange-50">
                                     Get Started <ArrowRight className="ml-2 h-4 w-4" />
                                 </Button>
                             </div>
@@ -559,7 +559,7 @@ export default function HomePage() {
                             </ul>
                             <p className="mt-5 text-slate-700">Protect your data with intelligence, not reaction.</p>
                             <div className="mt-6">
-                                <Button className="w-full bg-[#FF7A00] text-white hover:bg-orange-500">
+                                <Button className="w-full bg-[#FF7A00] text-white py-6 hover:bg-orange-500">
                                     Get Started <ArrowRight className="ml-2 h-4 w-4" />
                                 </Button>
                             </div>
@@ -682,7 +682,7 @@ export default function HomePage() {
                         <p className="mt-3 text-[#4B5563] font-medium text-lg">Let's discuss how AI can transform your business</p>
                     </div>
 
-                    <div className="mt-24 grid grid-cols-1 gap-8 md:grid-cols-2">
+                    <div className="md:mt-24 mt-28 grid grid-cols-1 gap-8 md:grid-cols-2">
                         <div className="relative">
                             <div className="absolute -top-28 left-8 z-10 h-58 w-52 overflow-hidden rounded-full">
                                 <Image src="/assistant-avatar.png" alt="AI Assistant" fill className="object-cover" />
