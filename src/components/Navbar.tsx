@@ -39,7 +39,7 @@ export default function Navbar() {
                         <Link href="#" className="text-white/90 hover:text-white font-medium">
                             Solutions
                         </Link>
-                        <Link href="#" className="text-white/90 hover:text-white font-medium">
+                        <Link href="/smartpackages" className="text-white/90 hover:text-white font-medium">
                             Services
                         </Link>
                         <Link href="#" className="text-white/90 hover:text-white font-medium">
@@ -127,7 +127,7 @@ export default function Navbar() {
                                         Solutions
                                     </Link>
                                     <Link
-                                        href="#"
+                                        href="/smartpackages"
                                         onClick={() => setOpen(false)}
                                         className="rounded-md px-2 py-2 text-base font-medium hover:bg-slate-100"
                                     >

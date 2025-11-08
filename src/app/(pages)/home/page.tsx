@@ -51,22 +51,48 @@ export default function HomePage() {
 
     return (
         <>
-            <Navbar />
-            <section className='w-full flex md:flex-row flex-col md:justify-center justify-end md:items-end items-center min-h-screen'>
-                <Image src="/heroBg.png" width={1000} height={700} className='w-full select-none top-0 left-0 -z-50 h-full object-cover absolute' alt='sd' />
+
+            <section className='relative w-full flex md:flex-row flex-col md:justify-center justify-end md:items-end items-center min-h-screen'>
+                <Navbar />
+                <div className="absolute inset-0 -z-50">
+                    <Image
+                        src="/heroBg.png"
+                        alt="Background"
+                        fill
+                        className="object-cover w-full h-full select-none"
+                        priority
+                    />
+                </div>
+
                 <div className="">
                     <div className="w-full max-w-6xl md:text-start text-center p-5 md:py-10">
-                        <div className="flex items-center md:flex-row md:mb-0 mb-3 flex-col-reverse justify-center md:gap-10 gap-4">
-                            <h1 className='font-bold md:text-[5.5rem] text-[2.6rem] leading-tight md:leading-none md:text-nowrap text-image1'>TRANSFORM YOUR <span className='md:hidden'>BUSINESS WITH AI</span></h1>
-                            <div className="relative md:block hidden">
-                                <p className='font-semibold md:max-w-[12rem] md:block hidden w-full'>With the Power of Artificial Intelligence and the Microsoft Ecosystem</p>
-                                <Image src={"/favicon.svg"} className='absolute w-10 -top-4 lg:block hidden right-0' width={100} height={100} alt="logo" />
+                        <div className="flex items-center md:flex-row md:mb-0 mb-3 flex-col justify-center md:gap-10 gap-4">
+                            <h1 className='font-bold mt-20 md:mt-0 md:text-[5.5rem] text-[2.6rem] leading-tight md:leading-none md:text-nowrap text-image1'>
+                                TRANSFORM YOUR <span className='md:hidden'>BUSINESS WITH AI</span>
+                            </h1>
+                            <div className="relative ">
+                                <p className='font-semibold md:max-w-[12rem]  w-full'>
+                                    With the Power of Artificial Intelligence and the Microsoft Ecosystem
+                                </p>
+                                <Image
+                                    src="/favicon.svg"
+                                    width={100}
+                                    height={100}
+                                    alt="logo"
+                                    className='absolute w-10 md:-top-4 right-0'
+                                />
                             </div>
                         </div>
+
                         <div className="flex items-center md:flex-row flex-col-reverse justify-center md:gap-10 gap-4 md:-mt-2">
-                            <p className='font-semibold md:max-w-[14rem] w-full'>Automate manual tasks, cut costs, and boost efficiency with intelligent solutions</p>
-                            <h1 className='font-bold md:text-[5.5rem] md:block hidden text-4xl md:text-nowrap text-image1'>BUSINESS WITH AI</h1>
+                            <p className='font-semibold md:block hidden md:max-w-[14rem] w-full'>
+                                Automate manual tasks, cut costs, and boost efficiency with intelligent solutions
+                            </p>
+                            <h1 className='font-bold md:text-[5.5rem] md:block hidden text-4xl md:text-nowrap text-image1'>
+                                BUSINESS WITH AI
+                            </h1>
                         </div>
+
                         <div className="flex items-center justify-center mt-5">
                             <Button size={"lg"} className="bg-[#FF7A00] py-5 hover:bg-orange-500 text-white font-semibold px-5 h-9 rounded-md">
                                 Schedule a Free Consult
@@ -75,8 +101,16 @@ export default function HomePage() {
                         </div>
                     </div>
                 </div>
-                <Image src="/lady.png" width={1000} height={700} className='w-full select-none max-w-[40rem] -z-40 md:absolute' alt='sd' />
-            </section >
+
+                <Image
+                    src="/lady.png"
+                    width={1000}
+                    height={700}
+                    alt="lady"
+                    className='w-full select-none max-w-[40rem] -z-40 md:absolute'
+                />
+            </section>
+
 
             <section className="bg-white">
                 <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
@@ -92,7 +126,7 @@ export default function HomePage() {
                             <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-[#FF7A00] text-white">
                                 <Bot className="h-6 w-6" />
                             </div>
-                            <h3 className="text-xl font-bold text-slate-900">Intelligent Automation</h3>
+                            <h3 className="text-xl font-bold text-slate-900">Automation Process</h3>
                             <p className="mt-3 text-slate-600">Simplify workflows and minimize errors with AI-powered automation that works seamlessly with your existing systems.</p>
                         </div>
 
@@ -100,7 +134,7 @@ export default function HomePage() {
                             <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-[#FF7A00] text-white">
                                 <TrendingUp className="h-6 w-6" />
                             </div>
-                            <h3 className="text-xl font-bold text-slate-900">Data-Driven Insights</h3>
+                            <h3 className="text-xl font-bold text-slate-900">Driven Decision with Data</h3>
                             <p className="mt-3 text-slate-600">Make faster, smarter decisions with real-time analytics and predictive intelligence built into your processes.</p>
                         </div>
 
@@ -108,7 +142,7 @@ export default function HomePage() {
                             <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-[#FF7A00] text-white">
                                 <Zap className="h-6 w-6" />
                             </div>
-                            <h3 className="text-xl font-bold text-slate-900">Enhanced Productivity</h3>
+                            <h3 className="text-xl font-bold text-slate-900">Boost Productivity</h3>
                             <p className="mt-3 text-slate-600">Equip teams with AI tools that scale growth and eliminate repetitive tasks, letting them focus on what matters.</p>
                         </div>
                     </div>
@@ -127,10 +161,12 @@ export default function HomePage() {
                     <div className="flex items-center justify-center text-center flex-col">
                         <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-slate-900">
                             <span className="block">Most Companies Know AI Is The Future</span>
-                            <span className="block text-[#FF7A00]">But Don't Know Where To Start</span>
+                            <span className="block mt-2 md:mt-4 text-[#FF7A00]">But Don't Know Where To Start</span>
                         </h2>
                         <p className="mt-4 text-[#2A2D2D] text-lg max-w-3xl">
-                            At <span className="font-semibold  text-slate-900">Celeste iQ</span>, we help you uncover, design, and implement AI-powered automations built within the Microsoft ecosystem. From streamlining workflows to empowering data-driven decisions, we create intelligent systems that evolve with your business.
+                            We turn confusion into clarity with
+                            Microsoft
+                            -powered automation.
                         </p>
                     </div>
 
@@ -220,8 +256,9 @@ export default function HomePage() {
             <section className="bg-gradient-to-b from-sky-50 to-white">
                 <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-14 sm:py-18">
                     <div className="text-center">
-                        <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-slate-900">Your Intelligent Ecosystem</h2>
-                        <p className="mt-4 text-lg md:text-3xl text-slate-600">Powered by Microsoft and AI</p>
+                        <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-slate-900">Transform Every Team with AI</h2>
+                        <p className="mt-4 text-lg text-slate-600">From Customer Service to Finance, unlock
+                            intelligent solutions powered by Microsoft.AI</p>
                     </div>
 
                     <div className="mt-10 grid grid-cols-2 gap-4 sm:hidden">
@@ -303,22 +340,22 @@ export default function HomePage() {
                 <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14 md:py-20">
                     <div className="text-center">
                         <h2 className="text-3xl sm:text-4xl max-w-3xl mx-auto md:text-5xl font-bold tracking-tight text-slate-900">
-                            <span>You Focus On Your Business- </span>
-                            <span className="text-[#FF7A00]">We Handle The Automation</span>
+                            <span>You Focus On Your Business</span>
+                            <span className="text-[#FF7A00] mt-2 md:mt-3 block">We Handle The Automation</span>
                         </h2>
                         <p className="mx-auto mt-3 max-w-2xl md:text-2xl text-slate-600">
                             You don’t need an IT team to modernize your business—just the right partner
                         </p>
                     </div>
 
-                    <div className="mt-10 grid grid-cols-1 gap-2 mb-6 sm:hidden">
+                    <div className="mt-10 text-center grid grid-cols-2 gap-2 mb-6 sm:hidden">
                         <div className="rounded-xl bg-gradient-to-b from-[#0c8cf1] to-sky-400 p-4 text-white shadow-lg">No Hardware Needed</div>
-                        <div className="rounded-xl bg-gradient-to-b from-[#0c8cf1] to-sky-400 p-4 text-white shadow-lg">Minimal IT Resources Needed</div>
                         <div className="rounded-xl bg-gradient-to-b from-[#0c8cf1] to-sky-400 p-4 text-white shadow-lg">Human-in-the-Loop Ready</div>
                         <div className="rounded-xl bg-gradient-to-b from-[#0c8cf1] to-sky-400 p-4 text-white shadow-lg">Peace of Mind, Zero Risk</div>
                         <div className="rounded-xl bg-gradient-to-b from-[#0c8cf1] to-sky-400 p-4 text-white shadow-lg">Simple, Hassle-Free Setup</div>
                         <div className="rounded-xl bg-gradient-to-b from-[#0c8cf1] to-sky-400 p-4 text-white shadow-lg">No In-House IT Team Required</div>
                         <div className="rounded-xl bg-gradient-to-b from-[#0c8cf1] to-sky-400 p-4 text-white shadow-lg">ROI Within Weeks</div>
+                        <div className="rounded-xl col-span-2  bg-gradient-to-b from-[#0c8cf1] to-sky-400 p-4 text-white shadow-lg">Minimal IT Resources Needed</div>
                     </div>
 
                     <div className="relative mx-auto hidden aspect-square w-full max-w-[820px] sm:block [--r:235px] md:[--r:270px]">
@@ -412,11 +449,17 @@ export default function HomePage() {
                     </div>
 
                     <div className="md:mt-16 mt-6">
+                        <div className="grid-cols-2 gap-5 md:grid text-center mb-10 hidden">
+                            <h2 className='text-3xl font-semibold'>Before</h2>
+                            <h2 className='text-3xl font-semibold'>After</h2>
+                        </div>
                         <Image src={"/robot.png"} width={1000} height={700} className='w-full md:block hidden select-none' alt='compare' />
-                        <div className="flex items-center flex-col gap-4">
-                        <Image src={"/robot1.png"} width={1000} height={700} className='w-full block md:hidden select-none' alt='compare' />
-                        <Image src={"/robotline.png"} width={1000} height={700} className='w-full block md:hidden select-none' alt='compare' />
-                        <Image src={"/robot2.png"} width={1000} height={700} className='w-full block md:hidden select-none' alt='compare' />
+                        <div className="flex block md:hidden items-center flex-col gap-4">
+                            <h2 className='text-3xl font-semibold mb-4'>Before</h2>
+                            <Image src={"/robot1.png"} width={1000} height={700} className='w-full select-none' alt='compare' />
+                            <Image src={"/robotline.png"} width={1000} height={700} className='w-full select-none' alt='compare' />
+                            <h2 className='text-3xl font-semibold mb-4'>After</h2>
+                            <Image src={"/robot2.png"} width={1000} height={700} className='w-full select-none' alt='compare' />
 
                         </div>
                     </div>
@@ -429,8 +472,8 @@ export default function HomePage() {
                 <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14 md:py-20">
                     <div className="text-center">
                         <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-slate-900">
-                            <span>YOUR EXPERT PARTNER </span>
-                            <span className="bg-gradient-to-r from-[#FF7A00] md:block via-[#FF7A00] to-orange-400 bg-clip-text text-transparent"> IN AI TRANSFORMATION</span>
+                            <span>YOUR TRUSTED PARTNER </span>
+                            <span className="bg-gradient-to-r mt-3 from-[#FF7A00] md:block via-[#FF7A00] to-orange-400 bg-clip-text text-transparent"> IN AI TRANSFORMATION</span>
                         </h2>
                     </div>
 
@@ -505,68 +548,194 @@ export default function HomePage() {
                 </div>
             </div>
 
-            <section className="bg-white">
-                <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 md:py-20">
-                    <div className="text-center">
-                        <h2 className="text-3xl sm:text-4xl md:text-5xl font-medium tracking-tight text-slate-900">Choose Your Package</h2>
-                        <p className="mt-2 text-slate-600 font-medium">Flexible solutions that scale with your business</p>
+            <section className="relative overflow-hidden bg-white">
+
+                <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+                    {/* Heading */}
+                    <div className="relative text-center">
+                        <div className="text-center"> <h2 className="text-3xl sm:text-4xl md:text-5xl font-medium tracking-tight text-slate-900">Choose Your Package</h2> <p className="mt-2 text-slate-600 font-medium">Flexible solutions that scale with your business</p> </div>
+
+                        {/* halo ring */}
+                        <div aria-hidden="true" className="pointer-events-none mx-auto mt-8 h-10 w-[min(90%,40rem)] rounded-full bg-gradient-to-r from-orange-200/50 via-rose-200/50 to-sky-200/50 blur-2xl" />
                     </div>
 
-                    <div className="md:mt-20 mt-9 items-start grid grid-cols-1 gap-6 md:grid-cols-3">
-                        <div className="rounded-3xl border border-slate-200 bg-white p-5 shadow-sm">
-                            <h3 className="text-xl font-bold text-slate-900">IT ADMINISTRATOR PACK</h3>
-                            <p className="mt-4 text-slate-700">Comprehensive Microsoft 365 Management</p>
-                            <ul className="mt-5 space-y-3 text-slate-700">
-                                <li className="flex items-start gap-3"><Check className="mt-0.5 shrink-0 h-5 w-5 text-[#FF7A00]" />Continuous monitoring of Microsoft 365, Azure, and Teams</li>
-                                <li className="flex items-start gap-3"><Check className="mt-0.5 shrink-0 h-5 w-5 text-[#FF7A00]" />Early alerts powered by predictive AI</li>
-                                <li className="flex items-start gap-3"><Check className="mt-0.5 shrink-0 h-5 w-5 text-[#FF7A00]" />Automated performance and availability reports</li>
-                                <li className="flex items-start gap-3"><Check className="mt-0.5 shrink-0 h-5 w-5 text-[#FF7A00]" />Remote technical support and advanced administration</li>
-                            </ul>
-                            <p className="mt-5 text-sm"><span className="font-semibold text-orange-500">Ideal for:</span> Companies seeking operational stability and technological efficiency without expanding their IT team.</p>
-                            <div className="mt-6">
-                                <Button className="w-full bg-[#FF7A00] text-white py-6 hover:bg-orange-500">
-                                    Get Started <ArrowRight className="ml-2 h-4 w-4" />
-                                </Button>
+                    {/* Cards */}
+                    <div className="relative md:mt-10 mt-8 grid grid-cols-1 gap-6 md:grid-cols-3 items-start">
+                        {/* Card 1 */}
+                        <div className="group relative">
+                            {/* gradient border & glow */}
+                            <div className="absolute -inset-[1px] rounded-3xl bg-[conic-gradient(at_0%_0%,#ffd6a5,transparent_30%,#fecaca_60%,transparent_70%,#bfdbfe_90%)] opacity-60 blur-[6px] transition-all duration-300 group-hover:opacity-100" />
+                            <div className="relative rounded-3xl bg-white/80 p-6 sm:p-7 ring-1 ring-black/5 shadow-lg backdrop-blur supports-[backdrop-filter]:backdrop-blur-md transition-all duration-300 group-hover:-translate-y-2 group-hover:shadow-2xl">
+                                <h3 className=" text-xl font-bold text-slate-900">IT ADMINISTRATOR PACK</h3>
+                                <p className="mt-2 text-slate-700">Comprehensive Microsoft 365 Management</p>
+
+                                <ul className="mt-6 space-y-3 text-slate-700">
+                                    <li className="flex items-start gap-3">
+                                        <span className="grid place-items-center shrink-0 h-6 w-6 rounded-full bg-orange-100 ring-1 ring-orange-200">
+                                            <Check className="h-4 w-4 shrink-0 text-[#FF7A00]" />
+                                        </span>
+                                        Continuous monitoring of Microsoft 365, Azure, and Teams
+                                    </li>
+                                    <li className="flex items-start gap-3">
+                                        <span className="grid place-items-center shrink-0 h-6 w-6 rounded-full bg-orange-100 ring-1 ring-orange-200">
+                                            <Check className="h-4 w-4 shrink-0 text-[#FF7A00]" />
+                                        </span>
+                                        Early alerts powered by predictive AI
+                                    </li>
+                                    <li className="flex items-start gap-3">
+                                        <span className="grid place-items-center shrink-0 h-6 w-6 rounded-full bg-orange-100 ring-1 ring-orange-200">
+                                            <Check className="h-4 w-4 shrink-0 text-[#FF7A00]" />
+                                        </span>
+                                        Automated performance and availability reports
+                                    </li>
+                                    <li className="flex items-start gap-3">
+                                        <span className="grid place-items-center shrink-0 h-6 w-6 rounded-full bg-orange-100 ring-1 ring-orange-200">
+                                            <Check className="h-4 w-4 shrink-0 text-[#FF7A00]" />
+                                        </span>
+                                        Remote technical support and advanced administration
+                                    </li>
+                                </ul>
+
+                                <p className="mt-6 text-sm">
+                                    <span className="font-semibold text-orange-600">Ideal for:</span>{' '}
+                                    Companies seeking operational stability and technological efficiency without expanding their IT team.
+                                </p>
+
+                                <div className="mt-7">
+                                    <Button className="group/btn relative w-full bg-[#FF7A00] text-white py-6 shadow-sm ring-1 ring-orange-500/30 transition-all hover:bg-orange-500 hover:shadow-md hover:ring-orange-500/50">
+                                        <span className="relative z-10 flex items-center justify-center">
+                                            Get Started <ArrowRight className="ml-2 h-4 w-4 shrink-0" />
+                                        </span>
+                                        {/* Shine sweep */}
+                                        <span className="pointer-events-none absolute inset-0 overflow-hidden rounded-[inherit]">
+                                            <span className="absolute -inset-y-8 -left-1/2 h-[200%] w-1/2 -rotate-12 bg-white/25 blur-md transition-transform duration-700 ease-out group-hover/btn:translate-x-[220%]" />
+                                        </span>
+                                    </Button>
+                                </div>
                             </div>
                         </div>
 
-                        <div className="relative rounded-3xl md:-mt-10 bg-[#FF7A00] p-5 md:p-8 text-white shadow-xl">
-                            <span className="absolute z-30 left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 rounded-full bg-amber-400 px-3  py-1 text-xs font-semibold text-slate-900 shadow">Most Popular</span>
-                            <h3 className="text-xl font-bold">POWER PLATFORM PACK</h3>
-                            <p className="mt-1 text-lg text-white/80 font-semibold">Automate. Analyze. Improve.</p>
-                            <ul className="mt-5 space-y-3">
-                                <li className="flex items-start gap-3"><Check className="shrink-0 mt-0.5 h-5 w-5 text-white" />Eliminate repetitive tasks and accelerate your processes with Power Automate, Power Apps, and Power BI — all powered by AI.</li>
-                                <li className="flex items-start gap-3"><Check className="shrink-0 mt-0.5 h-5 w-5 text-white" />Intelligent workflows with built-in AI</li>
-                                <li className="flex items-start gap-3"><Check className="shrink-0 mt-0.5 h-5 w-5 text-white" />Full integration with Microsoft Teams and Dynamics 365</li>
-                            </ul>
-                            <p className="mt-5 text-sm text-orange-50"><span className="font-semibold">Ideal for:</span> Turning your data into actions and your processes into opportunities.</p>
-                            <div className="mt-6">
-                                <Button variant="secondary" className="w-full bg-white py-6 text-orange-500 hover:bg-orange-50">
-                                    Get Started <ArrowRight className="ml-2 h-4 w-4" />
-                                </Button>
+                        {/* Featured (Most Popular) */}
+                        <div className="group relative md:-mt-12">
+                            <div className="absolute -inset-2 rounded-[2rem] bg-gradient-to-b from-orange-400/30 via-rose-400/30 to-sky-400/30 blur-2xl opacity-70 transition-all duration-300 group-hover:opacity-100" />
+                            <div className="relative rounded-[2rem] bg-gradient-to-br from-orange-500 via-orange-500 to-rose-500 p-0.5 shadow-2xl">
+                                <div className="relative rounded-[calc(2rem-2px)] bg-gradient-to-b from-orange-500 via-orange-500 to-rose-600 p-6 md:p-8 text-white ring-1 ring-white/15">
+                                    <div aria-hidden="true" className="pointer-events-none absolute -inset-1 rounded-[inherit] bg-[radial-gradient(80%_60%_at_50%_0%,rgba(255,255,255,0.35),transparent_60%)]" />
+                                    <span className="absolute z-20 left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 rounded-full bg-amber-300 px-3 py-1 text-xs font-semibold text-slate-900 shadow">
+                                        Most Popular
+                                    </span>
+
+                                    <h3 className="relative z-10 text-xl font-bold">POWER PLATFORM PACK</h3>
+                                    <p className="relative z-10 mt-2 text-white/90 font-semibold">
+                                        Automate. Analyze. Improve.
+                                    </p>
+
+                                    <ul className="relative z-10 mt-6 space-y-3">
+                                        <li className="flex items-start gap-3">
+                                            <span className="grid place-items-center shrink-0 h-6 w-6 rounded-full bg-white/15 ring-1 ring-white/30">
+                                                <Check className="h-4 w-4 shrink-0 text-white" />
+                                            </span>
+                                            Eliminate repetitive tasks and accelerate your processes with Power Automate, Power Apps, and Power BI — all powered by AI.
+                                        </li>
+                                        <li className="flex items-start gap-3">
+                                            <span className="grid place-items-center shrink-0 h-6 w-6 rounded-full bg-white/15 ring-1 ring-white/30">
+                                                <Check className="h-4 w-4 shrink-0 text-white" />
+                                            </span>
+                                            Intelligent workflows with built-in AI
+                                        </li>
+                                        <li className="flex items-start gap-3">
+                                            <span className="grid place-items-center shrink-0 h-6 w-6 rounded-full bg-white/15 ring-1 ring-white/30">
+                                                <Check className="h-4 w-4 shrink-0 text-white" />
+                                            </span>
+                                            Full integration with Microsoft Teams and Dynamics 365
+                                        </li>
+                                    </ul>
+
+                                    <p className="relative z-10 mt-6 text-sm text-orange-50">
+                                        <span className="font-semibold">Ideal for:</span> Turning your data into actions and your processes into opportunities.
+                                    </p>
+
+                                    <div className="relative z-10 mt-7">
+                                        <Button
+                                            variant="secondary"
+                                            className="group/btn relative w-full bg-white/95 py-6 text-orange-600 shadow-sm ring-1 ring-white/40 transition-all hover:bg-white hover:shadow-lg"
+                                        >
+                                            <span className="relative z-10 flex items-center justify-center">
+                                                Get Started <ArrowRight className="ml-2 h-4 w-4 shrink-0" />
+                                            </span>
+                                            {/* Shine sweep */}
+                                            <span className="pointer-events-none absolute inset-0 overflow-hidden rounded-[inherit]">
+                                                <span className="absolute -inset-y-8 -left-1/2 h-[200%] w-1/2 -rotate-12 bg-white/40 blur-md transition-transform duration-700 ease-out group-hover/btn:translate-x-[220%]" />
+                                            </span>
+                                        </Button>
+                                    </div>
+
+                                    {/* Floating decorative dots */}
+                                    <div aria-hidden="true" className="pointer-events-none absolute right-4 bottom-4 md:flex hidden gap-2 opacity-70">
+                                        <span className="h-2 w-2 rounded-full bg-white/60" />
+                                        <span className="h-2 w-2 rounded-full bg-white/60" />
+                                        <span className="h-2 w-2 rounded-full bg-white/60" />
+                                    </div>
+                                </div>
                             </div>
                         </div>
 
-                        <div className="rounded-3xl border border-slate-200 bg-white p-5 shadow-sm">
-                            <h3 className="text-xl font-bold text-slate-900">INTELLIGENT SECURITY PACK</h3>
-                            <p className="mt-4 text-slate-700">Prevention, Protection, and Automated Response</p>
-                            <p className="mt-3 text-slate-700">We combine the most powerful tools in the Microsoft ecosystem — Defender, Entra ID, and Azure Sentinel — with AI algorithms capable of detecting threats in real time.</p>
-                            <ul className="mt-5 space-y-3 text-slate-700">
-                                <li className="flex items-start gap-3"><Check className="shrink-0 mt-0.5 h-5 w-5 text-[#FF7A00]" />AI-powered vulnerability analysis</li>
-                                <li className="flex items-start gap-3"><Check className="shrink-0 mt-0.5 h-5 w-5 text-[#FF7A00]" />24/7 incident monitoring</li>
-                                <li className="flex items-start gap-3"><Check className="shrink-0 mt-0.5 h-5 w-5 text-[#FF7A00]" />Predictive alerts and continuous learning</li>
-                                <li className="flex items-start gap-3"><Check className="shrink-0 mt-0.5 h-5 w-5 text-[#FF7A00]" />Configuration of adaptive security policies</li>
-                            </ul>
-                            <p className="mt-5 text-slate-700">Protect your data with intelligence, not reaction.</p>
-                            <div className="mt-6">
-                                <Button className="w-full bg-[#FF7A00] text-white py-6 hover:bg-orange-500">
-                                    Get Started <ArrowRight className="ml-2 h-4 w-4" />
-                                </Button>
+                        {/* Card 3 */}
+                        <div className="group relative">
+                            {/* gradient border & glow */}
+                            <div className="absolute -inset-[1px] rounded-3xl bg-[conic-gradient(at_100%_0%,#bfdbfe,transparent_30%,#ffd6a5_60%,transparent_70%,#fecaca_90%)] opacity-60 blur-[6px] transition-all duration-300 group-hover:opacity-100" />
+                            <div className="relative rounded-3xl bg-white/80 p-6 sm:p-6 ring-1 ring-black/5 shadow-lg backdrop-blur supports-[backdrop-filter]:backdrop-blur-md transition-all duration-300 group-hover:-translate-y-2 group-hover:shadow-2xl">
+                                <h3 className="text-xl font-bold text-slate-900">INTELLIGENT SECURITY PACK</h3>
+                                <p className="mt-2 text-slate-700">Prevention, Protection, and Automated Response</p>
+                                <p className="mt-3 text-slate-700">
+                                    We combine the most powerful tools in the Microsoft ecosystem — Defender, Entra ID, and Azure Sentinel — with AI algorithms capable of detecting threats in real time.
+                                </p>
+
+                                <ul className="mt-6 space-y-3 text-slate-700">
+                                    <li className="flex items-start gap-3">
+                                        <span className="grid place-items-center shrink-0 h-6 w-6 rounded-full bg-orange-100 ring-1 ring-orange-200">
+                                            <Check className="h-4 w-4 shrink-0 text-[#FF7A00]" />
+                                        </span>
+                                        AI-powered vulnerability analysis
+                                    </li>
+                                    <li className="flex items-start gap-3">
+                                        <span className="grid place-items-center shrink-0 h-6 w-6 rounded-full bg-orange-100 ring-1 ring-orange-200">
+                                            <Check className="h-4 w-4 shrink-0 text-[#FF7A00]" />
+                                        </span>
+                                        24/7 incident monitoring
+                                    </li>
+                                    <li className="flex items-start gap-3">
+                                        <span className="grid place-items-center shrink-0 h-6 w-6 rounded-full bg-orange-100 ring-1 ring-orange-200">
+                                            <Check className="h-4 w-4 shrink-0 text-[#FF7A00]" />
+                                        </span>
+                                        Predictive alerts and continuous learning
+                                    </li>
+                                    <li className="flex items-start gap-3">
+                                        <span className="grid place-items-center shrink-0 h-6 w-6 rounded-full bg-orange-100 ring-1 ring-orange-200">
+                                            <Check className="h-4 w-4 shrink-0 text-[#FF7A00]" />
+                                        </span>
+                                        Configuration of adaptive security policies
+                                    </li>
+                                </ul>
+
+                                <p className="mt-6 text-slate-700">Protect your data with intelligence, not reaction.</p>
+
+                                <div className="mt-7">
+                                    <Button className="group/btn relative w-full bg-[#FF7A00] text-white py-6 shadow-sm ring-1 ring-orange-500/30 transition-all hover:bg-orange-500 hover:shadow-md hover:ring-orange-500/50">
+                                        <span className="relative z-10 flex items-center justify-center">
+                                            Get Started <ArrowRight className="ml-2 h-4 w-4" />
+                                        </span>
+                                        <span className="pointer-events-none absolute inset-0 overflow-hidden rounded-[inherit]">
+                                            <span className="absolute -inset-y-8 -left-1/2 h-[200%] w-1/2 -rotate-12 bg-white/25 blur-md transition-transform duration-700 ease-out group-hover/btn:translate-x-[220%]" />
+                                        </span>
+                                    </Button>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
+
 
             <section className="relative overflow-hidden">
                 <div className="absolute inset-0 -z-10">
