@@ -1,4 +1,5 @@
-import React from 'react'
+"use client"
+import React, { useState } from 'react'
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
@@ -42,6 +43,8 @@ const sources = [
 ];
 
 export default function HomePage() {
+
+    const [play, setPlay] = useState(false)
 
     const handlePlay = () => {
         console.log("Play button clicked");
@@ -94,10 +97,12 @@ export default function HomePage() {
                         </div>
 
                         <div className="flex items-center justify-center mt-5">
-                            <Button size={"lg"} className="bg-[#FF7A00] py-5 hover:bg-orange-500 text-white font-semibold px-5 h-9 rounded-md">
-                                Schedule a Free Consult
-                                <ArrowRight />
-                            </Button>
+                            <Link href="/contact">
+                                <Button size={"lg"} className="bg-[#FF7A00] py-5 hover:bg-[#FF7A00] text-white font-semibold px-5 h-9 rounded-md">
+                                    Schedule a Free Consult
+                                    <ArrowRight />
+                                </Button>
+                            </Link>
                         </div>
                     </div>
                 </div>
@@ -148,9 +153,11 @@ export default function HomePage() {
                     </div>
 
                     <div className="mt-10 flex justify-center">
-                        <Button size={"lg"} className="bg-[#FF7A00] py-6 text-white shadow-md hover:bg-orange-500">
-                            Schedule a Free Consult <ArrowRight />
-                        </Button>
+                        <Link href="/contact">
+                            <Button size={"lg"} className="bg-[#FF7A00] py-6 text-white shadow-md hover:bg-[#FF7A00]">
+                                Schedule a Free Consult <ArrowRight />
+                            </Button>
+                        </Link>
                     </div>
                 </div>
             </section>
@@ -192,8 +199,8 @@ export default function HomePage() {
                             </ul>
 
                             <div className="mt-8">
-                                <Link href="#contact">
-                                    <Button size={"lg"} className="bg-[#FF7A00] px-6 py-6 text-white shadow-md hover:bg-orange-500 w-full md:w-auto">
+                                <Link href="/contact">
+                                    <Button size={"lg"} className="bg-[#FF7A00] px-6 py-6 text-white shadow-md hover:bg-[#FF7A00] w-full md:w-auto">
                                         Discover <span className='md:inline hidden'>how AI can transform your business today</span>
                                         <ArrowRight />
                                     </Button>
@@ -382,8 +389,8 @@ export default function HomePage() {
                     </div>
 
                     <div className=" flex justify-center">
-                        <Link href="#contact">
-                            <Button size={"lg"} className="bg-[#FF7A00] px-6 py-6 text-white shadow-md hover:bg-orange-500">
+                        <Link href="/contact">
+                            <Button size={"lg"} className="bg-[#FF7A00] px-6 py-6 text-white shadow-md hover:bg-[#FF7A00]">
                                 Schedule a Free Consult <ArrowRight />
                             </Button>
                         </Link>
@@ -475,8 +482,22 @@ export default function HomePage() {
                             <Image src={"/robotline.png"} width={1000} height={700} className='w-full select-none' alt='compare' />
                             <h2 className='text-3xl font-semibold mb-4'>After</h2>
                             <Image src={"/robot2.png"} width={1000} height={700} className='w-full select-none' alt='compare' />
-
                         </div>
+
+                        <div className="mt-6 md:mt-10 rounded-2xl bg-gradient-to-r from-[#DCFCE7] to-[#DBEAFE] px-4 py-8 text-center shadow-sm ring-1 ring-emerald-100/60">
+                            <p className="flex flex-wrap items-center justify-center gap-1 font-semibold text-lg md:text-2xl text-slate-900">
+                                <span className="flex items-center gap-1">
+                                    <Zap className="h-5 w-5 text-yellow-400" />
+                                    <span className="font-semibold text-emerald-600">Result:</span>
+                                </span>
+                                <span>Faster processing, fewer errors, and</span>
+                                <span className="font-semibold text-[#FF7A00]">
+                                    70% less manual effort
+                                </span>
+                                <span>— freeing your team to focus on growth.</span>
+                            </p>
+                        </div>
+
                     </div>
 
                 </div>
@@ -544,21 +565,35 @@ export default function HomePage() {
             <div className="mx-auto w-full max-w-5xl mt-10 p-4">
                 <div className="relative overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm">
                     <div className="relative aspect-[16/9] w-full overflow-hidden rounded-2xl">
-                        <Image
-                            src="/videothumb.png"
-                            alt="Video preview"
-                            fill
-                            priority
-                            className="object-cover"
-                        />
-                        <Image
-                            src="/playBtn.png"
-                            alt="Video preview"
-                            width={200}
-                            height={200}
-                            className=" group absolute left-1/2 top-1/2 grid w-20 select-none hover:scale-105 transition-all duration-300 -translate-x-1/2 -translate-y-1/2 place-items-center"
-                        />
-
+                        {!play ? (
+                            <>
+                                <Image
+                                    src="/videothumb.png"
+                                    alt="Video preview"
+                                    fill
+                                    priority
+                                    className="object-cover"
+                                />
+                                <button
+                                    onClick={() => setPlay(true)}
+                                    className="group absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
+                                >
+                                    <Image
+                                        src="/playBtn.png"
+                                        alt="Play video"
+                                        width={200}
+                                        height={200}
+                                        className="w-20 select-none transition-transform duration-300 group-hover:scale-110"
+                                    />
+                                </button>
+                            </>
+                        ) : (
+                            <iframe
+                                src="https://streamable.com/e/947f9d?autoplay=1"
+                                allowFullScreen
+                                className="absolute left-0 top-0 h-full w-full rounded-2xl"
+                            />
+                        )}
                     </div>
                 </div>
             </div>
@@ -614,15 +649,17 @@ export default function HomePage() {
                                 </p>
 
                                 <div className="mt-7">
-                                    <Button className="group/btn relative w-full bg-[#FF7A00] text-white py-6 shadow-sm ring-1 ring-orange-500/30 transition-all hover:bg-orange-500 hover:shadow-md hover:ring-orange-500/50">
-                                        <span className="relative z-10 flex items-center justify-center">
-                                            Get Started <ArrowRight className="ml-2 h-4 w-4 shrink-0" />
-                                        </span>
-                                        {/* Shine sweep */}
-                                        <span className="pointer-events-none absolute inset-0 overflow-hidden rounded-[inherit]">
-                                            <span className="absolute -inset-y-8 -left-1/2 h-[200%] w-1/2 -rotate-12 bg-white/25 blur-md transition-transform duration-700 ease-out group-hover/btn:translate-x-[220%]" />
-                                        </span>
-                                    </Button>
+                                    <Link href="/contact">
+                                        <Button className="group/btn relative w-full bg-[#FF7A00] text-white py-6 shadow-sm ring-1 ring-[#FF7A00]/30 transition-all hover:bg-[#FF7A00] hover:shadow-md hover:ring-[#FF7A00]/50">
+                                            <span className="relative z-10 flex items-center justify-center">
+                                                Get Started <ArrowRight className="ml-2 h-4 w-4 shrink-0" />
+                                            </span>
+                                            {/* Shine sweep */}
+                                            <span className="pointer-events-none absolute inset-0 overflow-hidden rounded-[inherit]">
+                                                <span className="absolute -inset-y-8 -left-1/2 h-[200%] w-1/2 -rotate-12 bg-white/25 blur-md transition-transform duration-700 ease-out group-hover/btn:translate-x-[220%]" />
+                                            </span>
+                                        </Button>
+                                    </Link>
                                 </div>
                             </div>
                         </div>
@@ -630,8 +667,8 @@ export default function HomePage() {
                         {/* Featured (Most Popular) */}
                         <div className="group relative md:-mt-12">
                             <div className="absolute -inset-2 rounded-[2rem] bg-gradient-to-b from-orange-400/30 via-rose-400/30 to-sky-400/30 blur-2xl opacity-70 transition-all duration-300 group-hover:opacity-100" />
-                            <div className="relative rounded-[2rem] bg-gradient-to-br from-orange-500 via-orange-500 to-rose-500 p-0.5 shadow-2xl">
-                                <div className="relative rounded-[calc(2rem-2px)] bg-gradient-to-b from-orange-500 via-orange-500 to-rose-600 p-6 md:p-8 text-white ring-1 ring-white/15">
+                            <div className="relative rounded-[2rem] bg-gradient-to-br from-[#FF7A00] via-[#FF7A00] to-rose-500 p-0.5 shadow-2xl">
+                                <div className="relative rounded-[calc(2rem-2px)] bg-gradient-to-b from-[#FF7A00] via-[#FF7A00] to-rose-600 p-6 md:p-8 text-white ring-1 ring-white/15">
                                     <div aria-hidden="true" className="pointer-events-none absolute -inset-1 rounded-[inherit] bg-[radial-gradient(80%_60%_at_50%_0%,rgba(255,255,255,0.35),transparent_60%)]" />
                                     <span className="absolute z-20 left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 rounded-full bg-amber-300 px-3 py-1 text-xs font-semibold text-slate-900 shadow">
                                         Most Popular
@@ -668,18 +705,20 @@ export default function HomePage() {
                                     </p>
 
                                     <div className="relative z-10 mt-7">
-                                        <Button
-                                            variant="secondary"
-                                            className="group/btn relative w-full bg-white/95 py-6 text-orange-600 shadow-sm ring-1 ring-white/40 transition-all hover:bg-white hover:shadow-lg"
-                                        >
-                                            <span className="relative z-10 flex items-center justify-center">
-                                                Get Started <ArrowRight className="ml-2 h-4 w-4 shrink-0" />
-                                            </span>
-                                            {/* Shine sweep */}
-                                            <span className="pointer-events-none absolute inset-0 overflow-hidden rounded-[inherit]">
-                                                <span className="absolute -inset-y-8 -left-1/2 h-[200%] w-1/2 -rotate-12 bg-white/40 blur-md transition-transform duration-700 ease-out group-hover/btn:translate-x-[220%]" />
-                                            </span>
-                                        </Button>
+                                        <Link href="/contact">
+                                            <Button
+                                                variant="secondary"
+                                                className="group/btn relative w-full bg-white/95 py-6 text-orange-600 shadow-sm ring-1 ring-white/40 transition-all hover:bg-white hover:shadow-lg"
+                                            >
+                                                <span className="relative z-10 flex items-center justify-center">
+                                                    Get Started <ArrowRight className="ml-2 h-4 w-4 shrink-0" />
+                                                </span>
+                                                {/* Shine sweep */}
+                                                <span className="pointer-events-none absolute inset-0 overflow-hidden rounded-[inherit]">
+                                                    <span className="absolute -inset-y-8 -left-1/2 h-[200%] w-1/2 -rotate-12 bg-white/40 blur-md transition-transform duration-700 ease-out group-hover/btn:translate-x-[220%]" />
+                                                </span>
+                                            </Button>
+                                        </Link>
                                     </div>
 
                                     {/* Floating decorative dots */}
@@ -733,14 +772,16 @@ export default function HomePage() {
                                 <p className="mt-6 text-slate-700">Protect your data with intelligence, not reaction.</p>
 
                                 <div className="mt-7">
-                                    <Button className="group/btn relative w-full bg-[#FF7A00] text-white py-6 shadow-sm ring-1 ring-orange-500/30 transition-all hover:bg-orange-500 hover:shadow-md hover:ring-orange-500/50">
-                                        <span className="relative z-10 flex items-center justify-center">
-                                            Get Started <ArrowRight className="ml-2 h-4 w-4" />
-                                        </span>
-                                        <span className="pointer-events-none absolute inset-0 overflow-hidden rounded-[inherit]">
-                                            <span className="absolute -inset-y-8 -left-1/2 h-[200%] w-1/2 -rotate-12 bg-white/25 blur-md transition-transform duration-700 ease-out group-hover/btn:translate-x-[220%]" />
-                                        </span>
-                                    </Button>
+                                    <Link href="/contact">
+                                        <Button className="group/btn relative w-full bg-[#FF7A00] text-white py-6 shadow-sm ring-1 ring-[#FF7A00]/30 transition-all hover:bg-[#FF7A00] hover:shadow-md hover:ring-[#FF7A00]/50">
+                                            <span className="relative z-10 flex items-center justify-center">
+                                                Get Started <ArrowRight className="ml-2 h-4 w-4" />
+                                            </span>
+                                            <span className="pointer-events-none absolute inset-0 overflow-hidden rounded-[inherit]">
+                                                <span className="absolute -inset-y-8 -left-1/2 h-[200%] w-1/2 -rotate-12 bg-white/25 blur-md transition-transform duration-700 ease-out group-hover/btn:translate-x-[220%]" />
+                                            </span>
+                                        </Button>
+                                    </Link>
                                 </div>
                             </div>
                         </div>
@@ -787,8 +828,8 @@ export default function HomePage() {
                                 <h3 className="mt-2 text-xl sm:text-2xl font-semibold text-slate-900">The Future of AI in Business: 5 Trends to Watch in 2025</h3>
                                 <p className="mt-3 text-slate-600">Discover how artificial intelligence is reshaping the business landscape and what it means for your organization.</p>
                                 <div className="mt-5">
-                                    <Button asChild className="rounded-full bg-[#FF7A00] px-5 text-white hover:bg-orange-500">
-                                        <Link href="#">Read More →</Link>
+                                    <Button asChild className="bg-[#FF7A00] px-5 text-white hover:bg-[#FF7A00]">
+                                        <Link href="/blog">Read More <ArrowRight className="ml-2 h-4 w-4" /></Link>
                                     </Button>
                                 </div>
                             </div>
@@ -797,25 +838,25 @@ export default function HomePage() {
                         <div className="flex flex-col gap-4">
                             <div className="rounded-2xl p-5 bg-[#f9fafb] ring-1 ring-black/5">
                                 <div className="flex items-start justify-between">
-                                    <span className="rounded-full bg-orange-100 px-2.5 py-1 text-[11px] font-semibold text-orange-500">Strategy</span>
+                                    <span className="rounded-full bg-orange-100 px-2.5 py-1 text-[11px] font-semibold text-[#FF7A00]">Strategy</span>
                                 </div>
-                                <Link href="#" className="mt-3 block text-base font-medium text-slate-900 hover:underline">How to Measure ROI from AI Implementation</Link>
+                                <Link href="/blog" className="mt-3 block text-base font-medium text-slate-900 hover:underline">How to Measure ROI from AI Implementation</Link>
                                 <div className="mt-3 flex items-center gap-2 text-sm text-slate-500"><Calendar className="h-4 w-4" />Oct 20, 2025</div>
                             </div>
 
                             <div className="rounded-2xl p-5 bg-[#f9fafb] ring-1 ring-black/5">
                                 <div className="flex items-start justify-between">
-                                    <span className="rounded-full bg-orange-100 px-2.5 py-1 text-[11px] font-semibold text-orange-500">Technology</span>
+                                    <span className="rounded-full bg-orange-100 px-2.5 py-1 text-[11px] font-semibold text-[#FF7A00]">Technology</span>
                                 </div>
-                                <Link href="#" className="mt-3 block text-base font-medium text-slate-900 hover:underline">Microsoft Copilot: A Complete Guide</Link>
+                                <Link href="/blog" className="mt-3 block text-base font-medium text-slate-900 hover:underline">Microsoft Copilot: A Complete Guide</Link>
                                 <div className="mt-3 flex items-center gap-2 text-sm text-slate-500"><Calendar className="h-4 w-4" />Oct 15, 2025</div>
                             </div>
 
                             <div className="rounded-2xl p-5 bg-[#f9fafb] ring-1 ring-black/5">
                                 <div className="flex items-start justify-between">
-                                    <span className="rounded-full bg-orange-100 px-2.5 py-1 text-[11px] font-semibold text-orange-500">Case Studies</span>
+                                    <span className="rounded-full bg-orange-100 px-2.5 py-1 text-[11px] font-semibold text-[#FF7A00]">Case Studies</span>
                                 </div>
-                                <Link href="#" className="mt-3 block text-base font-medium text-slate-900 hover:underline">Automation Success Stories</Link>
+                                <Link href="/blog" className="mt-3 block text-base font-medium text-slate-900 hover:underline">Automation Success Stories</Link>
                                 <div className="mt-3 flex items-center gap-2 text-sm text-slate-500"><Calendar className="h-4 w-4" />Oct 10, 2025</div>
                             </div>
                         </div>
@@ -842,12 +883,16 @@ export default function HomePage() {
                     </p>
 
                     <div className="mt-7 flex flex-wrap items-center justify-center gap-3">
-                        <Button size={"lg"} className="rounded-lg md:w-auto w-full bg-white px-5 py-6 text-orange-500 hover:bg-orange-50">
-                            Schedule Free Consultation <ArrowRight className="ml-2 h-4 w-4" />
-                        </Button>
-                        <Button size={"lg"} variant="outline" className="rounded-lg md:w-auto w-full py-6 bg-transparent hover:bg-white border-white text-white hover:text-[#FF7A00]">
-                            View Pricing
-                        </Button>
+                        <Link href="/contact">
+                            <Button size={"lg"} className="rounded-lg md:w-auto w-full bg-white px-5 py-6 text-[#FF7A00] hover:bg-orange-50">
+                                Schedule Free Consultation <ArrowRight className="ml-2 h-4 w-4" />
+                            </Button>
+                        </Link>
+                        <Link href="/contact">
+                            <Button size={"lg"} variant="outline" className="rounded-lg md:w-auto w-full py-6 bg-transparent hover:bg-white border-white text-white hover:text-[#FF7A00]">
+                                View Pricing
+                            </Button>
+                        </Link>
                     </div>
 
                     <p className="mt-5 text-xs text-white/80">
@@ -897,7 +942,7 @@ export default function HomePage() {
                                     <Label htmlFor="needs">Tell us about your needs</Label>
                                     <Textarea id="needs" placeholder="I'm interested in..." className="min-h-[120px]" />
                                 </div>
-                                <Button className="w-full rounded-lg bg-[#FF7A00] text-white hover:bg-orange-500 py-6">
+                                <Button className="w-full rounded-lg bg-[#FF7A00] text-white hover:bg-[#FF7A00] py-6">
                                     Send Message <Send className="ml-2 h-4 w-4" />
                                 </Button>
                             </div>

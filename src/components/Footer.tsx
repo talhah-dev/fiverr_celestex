@@ -30,8 +30,8 @@ export default function Footer() {
                     <div className="xl:pl-10">
                         <h4 className="text-white font-semibold">Company</h4>
                         <ul className="mt-4 space-y-3 text-[#9CA3AF]">
-                            <li><Link href="#" className="hover:text-white">About Us</Link></li>
-                            <li><Link href="#" className="hover:text-white">Contact</Link></li>
+                            <li><Link href="/about" className="hover:text-white">About Us</Link></li>
+                            <li><Link href="/contact" className="hover:text-white">Contact</Link></li>
                             <li><Link href="#" className="hover:text-white">Support</Link></li>
                         </ul>
                     </div>
@@ -39,17 +39,34 @@ export default function Footer() {
                     <div>
                         <h4 className="text-white font-semibold">Resources</h4>
                         <ul className="mt-4 space-y-3 text-[#9CA3AF]">
-                            <li><Link href="#" className="hover:text-white">FAQ</Link></li>
+                            <li><Link href="/faq" className="hover:text-white">FAQ</Link></li>
                             <li><Link href="#" className="hover:text-white">Privacy</Link></li>
-                            <li><Link href="#" className="hover:text-white">Terms</Link></li>
+                            <li><Link href="/legalnotices" className="hover:text-white">Terms</Link></li>
                         </ul>
                     </div>
 
                     <div>
                         <h4 className="text-white font-semibold">Contact Info</h4>
                         <ul className="mt-4 space-y-3 text-[#9CA3AF]">
-                            <li className="flex items-start gap-3"><Phone className="mt-0.5 h-4 w-4 text-[#FF7A00]" /><span>+33 1 42 38 98 11</span></li>
-                            <li className="flex items-start gap-3"><Mail className="mt-0.5 h-4 w-4 text-[#FF7A00]" /><span>support@celesteiq.com</span></li>
+                            <li className="flex items-start gap-3">
+                                <Phone className="mt-0.5 h-4 w-4 text-[#FF7A00]" />
+                                <Link
+                                    href="tel:+33142389811"
+                                    className="hover:text-white transition-colors"
+                                >
+                                    +33 1 42 38 98 11
+                                </Link>
+                            </li>
+
+                            <li className="flex items-start gap-3">
+                                <Mail className="mt-0.5 h-4 w-4 text-[#FF7A00]" />
+                                <Link
+                                    href="mailto:support@celesteiq.com"
+                                    className="hover:text-white transition-colors"
+                                >
+                                    support@celesteiq.com
+                                </Link>
+                            </li>
                             <li className="flex items-start gap-3"><MapPin className="mt-0.5 h-4 w-4 text-[#FF7A00]" /><span>60 Avenue Victor Hugo<br />75116, Paris France</span></li>
                         </ul>
                     </div>
@@ -61,7 +78,7 @@ export default function Footer() {
                         <p>© 2025 CELESTE IQ. All Rights Reserved.</p>
                         <div className="flex items-center md:justify-start justify-center text-[#9CA3AF] gap-6">
                             <Link href="#" className="hover:text-white">Privacy Policy</Link>
-                            <Link href="#" className="hover:text-white">Terms</Link>
+                            <Link href="/legalnotices" className="hover:text-white">Terms</Link>
                             <Link href="#" className="hover:text-white">Cookie Policy</Link>
                         </div>
                     </div>

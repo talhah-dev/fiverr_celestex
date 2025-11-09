@@ -36,16 +36,16 @@ export default function Navbar() {
 
                     {/* Desktop nav */}
                     <nav className="hidden md:flex items-center gap-8">
-                        <Link href="#" className="text-white/90 hover:text-white font-medium">
+                        <Link href="/solutions" className="text-white/90 hover:text-white font-medium">
                             Solutions
                         </Link>
                         <Link href="/smartpackages" className="text-white/90 hover:text-white font-medium">
                             Services
                         </Link>
-                        <Link href="#" className="text-white/90 hover:text-white font-medium">
+                        <Link href="/resources" className="text-white/90 hover:text-white font-medium">
                             Resources
                         </Link>
-                        <Link href="#" className="text-white/90 hover:text-white font-medium">
+                        <Link href="/contact" className="text-white/90 hover:text-white font-medium">
                             Contact
                         </Link>
                         <Link href="#" className="text-white/90 hover:text-white font-medium">
@@ -120,7 +120,7 @@ export default function Navbar() {
                                 </SheetHeader>
                                 <div className="mt-6 p-3 flex flex-col gap-3">
                                     <Link
-                                        href="#"
+                                        href="/solutions"
                                         onClick={() => setOpen(false)}
                                         className="rounded-md px-2 py-2 text-base font-medium hover:bg-slate-100"
                                     >
@@ -134,14 +134,14 @@ export default function Navbar() {
                                         Services
                                     </Link>
                                     <Link
-                                        href="#"
+                                        href="/resources"
                                         onClick={() => setOpen(false)}
                                         className="rounded-md px-2 py-2 text-base font-medium hover:bg-slate-100"
                                     >
                                         Resources
                                     </Link>
                                     <Link
-                                        href="#"
+                                        href="/contact"
                                         onClick={() => setOpen(false)}
                                         className="rounded-md px-2 py-2 text-base font-medium hover:bg-slate-100"
                                     >

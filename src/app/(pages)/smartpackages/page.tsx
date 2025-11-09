@@ -20,7 +20,7 @@ export default function SmartPackages() {
                     <div className="relative rounded-b-[56px] px-4 py-12 sm:py-16 md:py-20">
                         <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight tracking-tight text-white">
                             <span className="block">Intelligent Solutions to</span>
-                            <span className="block text-orange-500">Boost Your Business</span>
+                            <span className="block text-[#FF7A00]">Boost Your Business</span>
                             <span className="block">with AI and Microsoft</span>
                         </h1>
                         <p className="mx-auto mt-4 max-w-2xl font-semibold text-xl text-white">
@@ -48,11 +48,11 @@ export default function SmartPackages() {
                     </p>
 
                     <div className="mt-5 flex flex-wrap items-center justify-center gap-3">
-                        <Button asChild size={"lg"} className="py-6 bg-orange-500 md:w-auto w-full px-5 text-white hover:bg-orange-600">
-                            <Link href="#packages">Explore Packages</Link>
+                        <Button asChild size={"lg"} className="py-6 bg-[#FF7A00] md:w-auto w-full px-5 text-white hover:bg-[#ea580c]">
+                            <Link href="/contact">Explore Packages</Link>
                         </Button>
-                        <Button variant="outline" asChild size={"lg"} className="py-6 border-orange-500 md:w-auto w-full text-orange-600 hover:bg-orange-50">
-                            <Link href="#contact" className="inline-flex items-center gap-2">
+                        <Button variant="outline" asChild size={"lg"} className="py-6 border-[#FF7A00] md:w-auto w-full text-[#ea580c] hover:bg-orange-50">
+                            <Link href="/contact" className="inline-flex items-center gap-2">
                                 <MessageSquare className="h-4 w-4" />
                                 <span>Contact an Expert</span>
                             </Link>
@@ -97,28 +97,28 @@ export default function SmartPackages() {
                             <h2 className="text-3xl sm:text-5xl font-medium leading-[1.05] tracking-tight text-slate-900">
                                 <span className="block">Implement. Automate.</span>
                                 <span className="block">Evolve.</span>
-                                <span className="block text-orange-500">with Microsoft + AI</span>
+                                <span className="block text-[#FF7A00]">with Microsoft + AI</span>
                             </h2>
                             <p className="mt-4 text-slate-600">At CelesteIQ, we understand that every company has a different starting point in its digital transformation journey. That's why we've designed intelligent packages that integrate the tools of the Microsoft ecosystem with applied Artificial Intelligence capabilities — helping you move forward with speed, security, and clarity.</p>
                             <p className="mt-5 font-medium text-lg text-slate-900">Our goal: to make technology work for you — not the other way around.</p>
 
                             <div className="mt-6 space-y-4">
                                 <div className="flex items-center gap-3">
-                                    <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-md bg-[#FFD8B4] text-[#E97132]"><Zap className="h-5 w-5" /></span>
+                                    <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-md bg-[#FFD8B4] text-[#ea580c]"><Zap className="h-5 w-5" /></span>
                                     <div>
                                         <p className="font-medium text-slate-900">Speed & Agility</p>
                                         <p className="text-sm text-slate-500">Rapid implementation with measurable results</p>
                                     </div>
                                 </div>
                                 <div className="flex items-center gap-3">
-                                    <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-md bg-[#FFD8B4] text-[#E97132]"><Brain className="h-5 w-5" /></span>
+                                    <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-md bg-[#FFD8B4] text-[#ea580c]"><Brain className="h-5 w-5" /></span>
                                     <div>
                                         <p className="font-medium text-slate-900">AI‑Powered Intelligence</p>
                                         <p className="text-sm text-slate-500">Smart automation and predictive insights</p>
                                     </div>
                                 </div>
                                 <div className="flex items-center gap-3">
-                                    <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-md bg-[#FFD8B4] text-[#E97132]"><Layers className="h-5 w-5" /></span>
+                                    <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-md bg-[#FFD8B4] text-[#ea580c]"><Layers className="h-5 w-5" /></span>
                                     <div>
                                         <p className="font-medium text-slate-900">Continuous Evolution</p>
                                         <p className="text-sm text-slate-500">Scalable solutions that grow with you</p>
@@ -192,9 +192,9 @@ export default function SmartPackages() {
                             </div>
 
                             <div className="order-1 md:order-2">
-                                <div className="inline-flex items-center rounded-full bg-orange-100 px-3 py-1 text-[11px] font-semibold text-orange-600">PACK 1</div>
+                                <div className="inline-flex items-center rounded-full bg-orange-100 px-3 py-1 text-[11px] font-semibold text-[#ea580c]">PACK 1</div>
                                 <h2 className="mt-3 text-3xl sm:text-4xl font-semibold tracking-tight text-slate-900">IT Administrator Pack</h2>
-                                <p className="text-3xl sm:text-4xl font-semibold leading-snug text-orange-500">Comprehensive Management<br className="hidden sm:block" /> with Predictive Vision</p>
+                                <p className="text-3xl sm:text-4xl font-semibold leading-snug text-[#FF7A00]">Comprehensive Management<br className="hidden sm:block" /> with Predictive Vision</p>
                                 <p className="mt-3 max-w-xl text-slate-600">Keep your Microsoft 365 environment always optimized, secure, and under control. With the Intelligent IT Administrator Pack, we combine human supervision and AI‑powered automation to detect issues before they affect productivity.</p>
 
                                 <ul className="mt-5 space-y-3 text-slate-700">
@@ -221,7 +221,7 @@ export default function SmartPackages() {
                                 </ul>
 
                                 <div className="mt-6">
-                                    <Button className="h-11 w-full rounded-lg bg-orange-500 text-white sm:px-6">Request your free IT environment <span className='md:inline hidden'>evaluation</span></Button>
+                                    <Button className="h-11 w-full rounded-lg bg-[#FF7A00] text-white sm:px-6">Request your free IT environment <span className='md:inline hidden'>evaluation</span></Button>
                                 </div>
 
                                 <div className="mt-4 rounded-xl bg-[#eff6ff] p-4 text-[#1E3A8A] ring-1 ring-sky-100">
@@ -260,9 +260,9 @@ export default function SmartPackages() {
                         </div>
 
                         <div className="order-1 md:order-2">
-                            <div className="inline-flex items-center rounded-full bg-orange-100 px-3 py-1 text-[11px] font-semibold text-orange-600">PACK 2</div>
+                            <div className="inline-flex items-center rounded-full bg-orange-100 px-3 py-1 text-[11px] font-semibold text-[#ea580c]">PACK 2</div>
                             <h2 className="mt-3 text-3xl sm:text-4xl font-semibold tracking-tight text-slate-900">Power Platform Pack</h2>
-                            <p className="mt-1 text-2xl sm:text-4xl font-semibold leading-snug text-orange-500">Automate. Analyze. Improve.</p>
+                            <p className="mt-1 text-2xl sm:text-4xl font-semibold leading-snug text-[#FF7A00]">Automate. Analyze. Improve.</p>
                             <p className="mt-3 max-w-xl text-slate-600">Eliminate repetitive tasks and accelerate your processes with Power Automate, Power Apps, and Power BI — enhanced with AI. We help you connect your applications, visualize key data, and make faster, data‑driven decisions.</p>
 
                             <ul className="mt-5 space-y-3 text-slate-700">
@@ -297,7 +297,9 @@ export default function SmartPackages() {
                             </div>
 
                             <div className="mt-5">
-                                <Button size={"lg"} className="py-6 md:w-auto w-full rounded-lg bg-orange-500 px-6 text-white hover:bg-orange-600">Schedule a personalized demonstration</Button>
+                                <Link href="/contact">
+                                    <Button size={"lg"} className="py-6 md:w-auto w-full rounded-lg bg-[#FF7A00] px-6 text-white hover:bg-[#ea580c]">Schedule a personalized demonstration</Button>
+                                </Link>
                             </div>
                         </div>
                     </div>
@@ -309,9 +311,9 @@ export default function SmartPackages() {
                     <div className="overflow-hidden rounded-[28px] bg-white shadow-[0_24px_60px_rgba(2,6,23,0.08)] ring-1 ring-black/5">
                         <div className="grid grid-cols-1 md:grid-cols-2">
                             <div className="p-6 sm:p-8 md:p-10">
-                                <span className="inline-flex items-center rounded-full bg-orange-100 px-3 py-1 text-[11px] font-semibold text-orange-600">PACK 3</span>
+                                <span className="inline-flex items-center rounded-full bg-orange-100 px-3 py-1 text-[11px] font-semibold text-[#ea580c]">PACK 3</span>
                                 <h2 className="mt-3 text-3xl sm:text-4xl font-semibold tracking-tight text-slate-900">Modern Workplace Pack</h2>
-                                <p className="mt-1 text-2xl sm:text-4xl font-semibold leading-snug text-orange-500">Enhanced Productivity with<br className="hidden sm:block" /> Copilot</p>
+                                <p className="mt-1 text-2xl sm:text-4xl font-semibold leading-snug text-[#FF7A00]">Enhanced Productivity with<br className="hidden sm:block" /> Copilot</p>
                                 <p className="mt-3 max-w-xl text-slate-600">Reinvent collaboration in your company with Microsoft 365, Teams, SharePoint, and Copilot. We create digital environments where your teams can communicate, create, and make better decisions thanks to integrated AI support.</p>
 
                                 <ul className="mt-6 space-y-3 text-slate-700">
@@ -341,7 +343,7 @@ export default function SmartPackages() {
                                 </div>
 
                                 <div className="mt-5">
-                                    <Button size={"lg"} className="py-6 w-full rounded-lg  bg-orange-500 text-white hover:bg-orange-600 sm:px-6">Speak with a Modern Workplace specialist</Button>
+                                    <Button size={"lg"} className="py-6 w-full rounded-lg  bg-[#FF7A00] text-white hover:bg-[#ea580c] sm:px-6">Speak with a Modern Workplace specialist</Button>
                                 </div>
                             </div>
 
@@ -386,9 +388,9 @@ export default function SmartPackages() {
                                         <div className="mt-3 rounded-lg border border-white/20 bg-white/5 p-3 text-sm">
                                             <p className="text-white/90">How can I help you today?</p>
                                             <ul className="mt-2 space-y-2 text-white/80">
-                                                <li className="flex items-center gap-2"><span className="h-1.5 w-1.5 rounded-full bg-[#E97132]" />Summarize this document</li>
-                                                <li className="flex items-center gap-2"><span className="h-1.5 w-1.5 rounded-full bg-[#E97132]" />Draft email response</li>
-                                                <li className="flex items-center gap-2"><span className="h-1.5 w-1.5 rounded-full bg-[#E97132]" />Create presentation</li>
+                                                <li className="flex items-center gap-2"><span className="h-1.5 w-1.5 rounded-full bg-[#ea580c]" />Summarize this document</li>
+                                                <li className="flex items-center gap-2"><span className="h-1.5 w-1.5 rounded-full bg-[#ea580c]" />Draft email response</li>
+                                                <li className="flex items-center gap-2"><span className="h-1.5 w-1.5 rounded-full bg-[#ea580c]" />Create presentation</li>
                                             </ul>
                                         </div>
                                         <div className="mt-3 flex items-center gap-2 text-xs text-white/80"><span className="h-2 w-2 rounded-full bg-emerald-400" />AI Assistant Active</div>
@@ -422,7 +424,7 @@ export default function SmartPackages() {
                 <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14 md:py-32 text-white">
                     <div className="grid grid-cols-1 items-start md:gap-10 gap-20 md:grid-cols-2">
                         <div>
-                            <span className="inline-flex items-center rounded-full bg-[#ffedd5] px-3 py-1 text-[11px] font-semibold text-[#E97132] ring-1 ring-orange-300/30">PACK 4</span>
+                            <span className="inline-flex items-center rounded-full bg-[#ffedd5] px-3 py-1 text-[11px] font-semibold text-[#ea580c] ring-1 ring-orange-300/30">PACK 4</span>
                             <h2 className="mt-4 text-3xl sm:text-4xl leading-tight">Intelligent Security Pack</h2>
                             <p className="mt-1 text-2xl sm:text-4xl leading-snug text-orange-400">Prevention, Protection, and<br className="hidden sm:block" /> Automated Response</p>
                             <p className="mt-3 max-w-xl text-white/85">Your security should never depend on luck. With this package, we combine the most powerful tools of the Microsoft ecosystem — Defender, Entra ID, Azure Sentinel — with AI algorithms capable of detecting threats in real time.</p>
@@ -455,7 +457,9 @@ export default function SmartPackages() {
                             </div>
 
                             <div className="mt-5">
-                                <Button className="h-11 w-full md:w-auto rounded-lg bg-orange-500 px-6 py-6 text-white hover:bg-orange-600">Request your AI security diagnosis</Button>
+                                <Link href="/contact">
+                                    <Button className="h-11 w-full md:w-auto rounded-lg bg-[#FF7A00] px-6 py-6 text-white hover:bg-[#ea580c]">Request your AI security diagnosis</Button>
+                                </Link>
                             </div>
                         </div>
 
@@ -514,7 +518,7 @@ export default function SmartPackages() {
                         <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight text-slate-900">
                             Why Choose
                             <br className="block sm:hidden" />
-                            <span className="ml-2 text-orange-500 block mt-2 md:mt-3">CelesteIQ Packages</span>
+                            <span className="ml-2 text-[#FF7A00] block mt-2 md:mt-3">CelesteIQ Packages</span>
                         </h2>
                         <p className="mt-3 font-semibold text-slate-600">We deliver intelligent solutions that transform how you work</p>
                     </div>
@@ -561,13 +565,13 @@ export default function SmartPackages() {
                         </div>
                     </div>
 
-                    <div className="mx-auto mt-8 max-w-4xl rounded-2xl border-2 border-[#e97132] bg-[#ffedd5] p-6 md:py-8 text-center">
+                    <div className="mx-auto mt-8 max-w-4xl rounded-2xl border-2 border-[#ea580c] bg-[#ffedd5] p-6 md:py-8 text-center">
                         <p className="text-xl font-medium text-slate-900">Innovation is not improvised.</p>
-                        <p className="mt-1 text-orange-600">It is designed, trained, and measured.</p>
+                        <p className="mt-1 text-[#ea580c]">It is designed, trained, and measured.</p>
                     </div>
 
                     <div className="mt-6 flex items-center justify-center">
-                        <Button size={"lg"} className="py-6 rounded-lg bg-gradient-to-r from-orange-500 to-orange-600 px-6 text-white hover:from-orange-500 hover:to-orange-500 text-wrap">
+                        <Button size={"lg"} className="py-6 rounded-lg bg-gradient-to-r from-[#FF7A00] to-[#ea580c] px-6 text-white hover:from-[#FF7A00] hover:to-[#FF7A00] text-wrap">
                             Talk to us <span className='md:inline hidden'>and discover which package best fits your company</span>
                             <ArrowRight />
                         </Button>
