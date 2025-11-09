@@ -1,0 +1,12 @@
+{
+    "nav": {
+        "solutions": "Solutions",
+        "services": "Services",
+        "resources": "Ressources",
+        "contact": "Contact",
+        "portal": "Espace client"
+    },
+    "cta": {
+        "demo": "Demander une démo"
+    }
+}

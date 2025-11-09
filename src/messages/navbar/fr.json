@@ -1,0 +1,18 @@
+{
+    "nav": {
+        "solutions": "Solutions",
+        "services": "Services",
+        "resources": "Ressources",
+        "contact": "Contact",
+        "portal": "Portail client"
+    },
+    "cta": {
+        "demo": "Demander une démo"
+    },
+    "language": {
+        "label": "Langue",
+        "english": "Anglais",
+        "spanish": "Espagnol",
+        "french": "Français"
+    }
+}

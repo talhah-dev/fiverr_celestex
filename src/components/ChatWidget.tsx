@@ -15,6 +15,7 @@ import {
   User,
   Minus,
 } from "lucide-react";
+import Image from "next/image";
 
 type Message = {
   id: string;
@@ -172,15 +173,14 @@ export default function ChatWidget() {
           aria-expanded={open}
           aria-label="Open chat"
           className="
-            relative grid h-14 w-14 place-items-center rounded-full
-            bg-[#FF7A00] text-white shadow-[0_18px_40px_rgba(2,6,23,0.22)]
-            ring-1 ring-white/20 transition hover:scale-105 hover:bg-[#ea580c]
-            focus:outline-none focus:ring-4 focus:ring-orange-200
+            relative grid h-14 w-14 place-items-center 
+            transition hover:scale-105 
           "
         >
-          <Bot className="h-6 w-6" />
+          {/* <Bot className="h-6 w-6" /> */}
+          <Image src={"/bot.png"} width={100} height={100} alt="bot" className="z-10" />
           {/* animate-ping */}
-          <span className="pointer-events-none absolute -z-10 h-full w-full  rounded-full bg-[#FF7A00]/40" />
+          {/* <span className="pointer-events-none absolute -z-10 h-full w-full  rounded-full bg-[#FF7A00]/40" /> */}
         </button>
       )}
     </div>
@@ -192,9 +192,8 @@ function MessageBubble({ message }: { message: Message }) {
 
   return (
     <div
-      className={`flex items-start gap-2 ${
-        isBot ? "" : "justify-end text-right"
-      }`}
+      className={`flex items-start gap-2 ${isBot ? "" : "justify-end text-right"
+        }`}
     >
       {/* Avatar */}
       {isBot ? (
@@ -209,11 +208,10 @@ function MessageBubble({ message }: { message: Message }) {
 
       {/* Bubble */}
       <div
-        className={`max-w-[80%] rounded-2xl px-3.5 py-2.5 leading-relaxed ${
-          isBot
+        className={`max-w-[80%] rounded-2xl px-3.5 py-2.5 leading-relaxed ${isBot
             ? "bg-orange-50 text-slate-800 ring-1 ring-orange-200"
             : "bg-white text-slate-900 ring-1 ring-slate-200"
-        }`}
+          }`}
       >
         <p className="text-[13.5px]">{message.content}</p>
         {message.time && (

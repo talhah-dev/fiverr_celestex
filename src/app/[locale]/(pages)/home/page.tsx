@@ -71,14 +71,14 @@ export default function HomePage() {
                 <div className="">
                     <div className="w-full max-w-6xl md:text-start text-center p-5 md:py-10">
                         <div className="flex items-center md:flex-row md:mb-0 mb-3 flex-col justify-center md:gap-10 gap-4">
-                            <h1 data-aos="fade-up" className='font-bold mt-20 md:mt-0 md:text-[5.5rem] text-[2.6rem] leading-tight md:leading-none md:text-nowrap text-image1'>
-                                TRANSFORM YOUR
-                                <span className='md:hidden'>BUSINESS WITH AI</span>
+                            <h1 data-aos="fade-up" className='font-extrabold mt-20 md:mt-0 md:text-8xl text-[2.6rem] leading-tight md:leading-none md:text-nowrap text-image1'>
+                                TRANSFORM YOUR  
+                                <span className='md:hidden'> BUSINESS WITH AI</span>
                                 <span className='md:hidden'>+ MICROSOFT</span>
                             </h1>
                             <div data-aos-delay="200" className="relative " data-aos="fade" >
                                 <p className='font-semibold md:max-w-[12rem]  w-full'>
-                                    <span className='md:inline hidden'>With the</span> <span className='md:hidden'>The</span> Power of Artificial Intelligence and the Microsoft Ecosystem
+                                  Automate your Workflows, and Scale with Intelligence
                                 </p>
                                 <Image
                                     src="/favicon.svg"
@@ -92,13 +92,13 @@ export default function HomePage() {
 
                         <div className="flex items-center md:flex-row flex-col-reverse justify-center md:gap-10 gap-4 md:-mt-2">
                             <p data-aos-delay="200" data-aos="fade" className='font-semibold md:block hidden md:max-w-[14rem] w-full'>
-                                Automate your Workflows, and Scale with Intelligence
+                                Automate manual tasks, cut costs, and boost efficiency with intelligent solutions
                             </p>
-                            <h1 data-aos="fade-up" data-aos-delay="100" className='font-bold md:text-[5.5rem] md:block hidden text-4xl md:text-nowrap text-image1'>
+                            <h1 data-aos="fade-up" data-aos-delay="100" className='font-extrabold md:text-8xl md:block hidden text-4xl md:text-nowrap text-image1'>
                                 BUSINESS WITH AI
                             </h1>
                         </div>
-                        <h1 data-aos="fade-up" data-aos-delay="100" className='font-bold flex items-end justify-end text-end md:text-[5.5rem] md:block hidden text-4xl md:text-nowrap text-image1'>
+                        <h1 data-aos="fade-up" data-aos-delay="100" className='font-extrabold flex items-end justify-end text-end md:text-8xl md:block hidden text-4xl md:text-nowrap text-image1'>
                             + MICROSOFT
                         </h1>
 
