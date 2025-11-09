@@ -47,51 +47,110 @@ const features = [
 export default function Specialized() {
     return (
         <Wrapper>
-            <section className="relative overflow-hidden  bg-[#99d9f1]">
-                <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16 md:py-20 text-center">
+
+
+            <section
+                className="relative overflow-hidden bg-[#99d9f1]"
+            >
+                <div
+                    className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16 md:py-20 text-center"
+                    data-aos="fade-up"
+                    data-aos-delay="80"
+                >
                     <Navbar />
-                    <div className="relative rounded-b-[56px] px-4 py-12 sm:py-16 md:py-20 max-w-3xl mx-auto">
-                        <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold leading-tight tracking-tight text-white">
+
+                    <div
+                        className="relative rounded-b-[56px] px-4 py-12 sm:py-16 md:py-20 max-w-3xl mx-auto"
+                        data-aos="fade-up"
+                        data-aos-delay="140"
+                    >
+                        <h1
+                            className="text-3xl sm:text-4xl md:text-6xl font-bold leading-tight tracking-tight text-white"
+                            data-aos="fade-up"
+                            data-aos-delay="200"
+                        >
                             Specialized Intelligent Services
                         </h1>
                     </div>
                 </div>
-                <div className="pointer-events-none absolute inset-x-0 bottom-[-1px]">
-                    <svg viewBox="0 0 1440 180" className="h-[90px] w-full sm:h-[110px] md:h-[140px]" preserveAspectRatio="none">
-                        <path d="M0,45 C300,180 1140,180 1440,45 L1440,180 L0,180 Z" fill="#ffffff" />
-                    </svg>
 
+                <div
+                    className="pointer-events-none absolute inset-x-0 bottom-[-1px]"
+                    data-aos="fade-up"
+                    data-aos-delay="260"
+                >
+                    <svg
+                        viewBox="0 0 1440 180"
+                        className="h-[90px] w-full sm:h-[110px] md:h-[140px]"
+                        preserveAspectRatio="none"
+                    >
+                        <path
+                            d="M0,45 C300,180 1140,180 1440,45 L1440,180 L0,180 Z"
+                            fill="#ffffff"
+                        />
+                    </svg>
                 </div>
             </section>
 
-            <section className=" py-12 sm:py-16">
-                <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-                    <div className="text-center">
+
+
+
+            <section
+                className="py-12 sm:py-16"
+                data-aos="fade-up"
+            >
+                <div
+                    className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8"
+                    data-aos="fade-up"
+                    data-aos-delay="60"
+                >
+                    <div
+                        className="text-center"
+                        data-aos="fade-up"
+                        data-aos-delay="120"
+                    >
                         <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-[#ea580c]">
                             SPECIALIZED SERVICES
                         </h2>
                         <p className="mx-auto mt-2 md:mt-3 md:text-xl font-medium max-w-2xl text-[#374151]">
                             Empower your business with secure, intelligent, and scalable Microsoft solutions — designed, deployed, and managed by CelesteIQ experts
                         </p>
-                        <div className="flex items-center justify-center mt-10">
+                        <div
+                            className="flex items-center justify-center mt-10"
+                            data-aos="zoom-in"
+                            data-aos-delay="180"
+                        >
                             <Link href="/smartpackages">
-                                <Button className='py-6 bg-[#FF7A00] rounded-full text-white hover:bg-orange-600' size={"lg"}>Explore Our Audit Services
+                                <Button
+                                    className="py-6 bg-[#FF7A00] rounded-full text-white hover:bg-orange-600"
+                                    size={"lg"}
+                                >
+                                    Explore Our Audit Services
                                     <ArrowRight className="ml-2 h-4 w-4" />
                                 </Button>
                             </Link>
                         </div>
                     </div>
 
-                    <div className="grid md:mt-16 mt-8 md:grid-cols-2 md:gap-8 gap-4 grid-cols-1">
-
+                    <div
+                        className="grid md:mt-16 mt-8 md:grid-cols-2 md:gap-8 gap-4 grid-cols-1"
+                        data-aos="fade-up"
+                        data-aos-delay="200"
+                    >
                         {/* 1. Training Programs */}
-                        <Card className="overflow-hidden rounded-2xl py-0 border bg-white shadow-[0_6px_20px_rgba(0,0,0,0.06)]">
+                        <Card
+                            className="overflow-hidden rounded-2xl py-0 border bg-white shadow-[0_6px_20px_rgba(0,0,0,0.06)]"
+                            data-aos="fade-up"
+                            data-aos-delay="220"
+                        >
                             <div className="rounded-t-2xl p-5 bg-[#EEF4FF]">
                                 <div className="border inline-flex p-2.5 rounded-lg text-[#2563EB] border-[#2563EB]/20">
                                     <GraduationCap className="h-7 w-7" />
                                 </div>
                                 <h2 className="text-xl font-bold mt-6">1. TRAINING PROGRAMS</h2>
-                                <h3 className="mt-1 text-lg text-[#2563EB] font-semibold">Empower Your Team. Master Microsoft 365.</h3>
+                                <h3 className="mt-1 text-lg text-[#2563EB] font-semibold">
+                                    Empower Your Team. Master Microsoft 365.
+                                </h3>
                             </div>
                             <CardContent className="p-6">
                                 <p className="mt-4 text-sm text-muted-foreground">
@@ -120,7 +179,6 @@ export default function Specialized() {
                                     </li>
                                 </ul>
 
-
                                 <Separator className="my-5" />
 
                                 <div>
@@ -130,12 +188,16 @@ export default function Specialized() {
                                     </p>
                                 </div>
 
-                                <div className="mt-5">
+                                <div
+                                    className="mt-5"
+                                    data-aos="zoom-in"
+                                    data-aos-delay="260"
+                                >
                                     <Button
                                         className="px-6 md:w-auto w-full"
                                         style={{ backgroundColor: "#1E63E9", color: "#fff" }}
                                     >
-                                        <span className="inline md:hidden">Learn & Transform</span>
+                                        <span className="inline md:hidden">Learn &amp; Transform</span>
 
                                         <span className="hidden md:inline">
                                             Learn. Apply. Transform the way your team works.
@@ -143,18 +205,30 @@ export default function Specialized() {
 
                                         <ArrowRight className="ml-2 h-4 w-4" />
                                     </Button>
-
                                 </div>
                             </CardContent>
                         </Card>
 
-                        <Card className="overflow-hidden rounded-2xl py-0 border bg-white shadow-[0_6px_20px_rgba(0,0,0,0.06)]">
-                            <div className="rounded-t-2xl p-5" style={{ backgroundColor: "#E8F6ED" }}>
+                        {/* 2. Document Migration */}
+                        <Card
+                            className="overflow-hidden rounded-2xl py-0 border bg-white shadow-[0_6px_20px_rgba(0,0,0,0.06)]"
+                            data-aos="fade-up"
+                            data-aos-delay="240"
+                        >
+                            <div
+                                className="rounded-t-2xl p-5"
+                                style={{ backgroundColor: "#E8F6ED" }}
+                            >
                                 <div className="border inline-flex p-2.5 rounded-lg text-[#0EA873] border-[#0EA873]/20">
                                     <FolderCog className="h-7 w-7" />
                                 </div>
-                                <h2 className="text-xl font-bold mt-6">2. DOCUMENT MIGRATION TO MICROSOFT 365</h2>
-                                <h3 className="mt-1 text-lg font-semibold" style={{ color: "#0EA873" }}>
+                                <h2 className="text-xl font-bold mt-6">
+                                    2. DOCUMENT MIGRATION TO MICROSOFT 365
+                                </h2>
+                                <h3
+                                    className="mt-1 text-lg font-semibold"
+                                    style={{ color: "#0EA873" }}
+                                >
                                     Secure. Centralized. Future-Ready.
                                 </h3>
                             </div>
@@ -197,7 +271,11 @@ export default function Specialized() {
                                     </p>
                                 </div>
 
-                                <div className="mt-5">
+                                <div
+                                    className="mt-5"
+                                    data-aos="zoom-in"
+                                    data-aos-delay="280"
+                                >
                                     <Button
                                         className="px-6 md:w-auto w-full"
                                         style={{ backgroundColor: "#0EA873", color: "#fff" }}
@@ -208,19 +286,28 @@ export default function Specialized() {
                                         </span>
                                         <ArrowRight className="ml-2 h-4 w-4" />
                                     </Button>
-
                                 </div>
                             </CardContent>
                         </Card>
 
-
-                        <Card className="overflow-hidden rounded-2xl py-0 border bg-white shadow-[0_6px_20px_rgba(0,0,0,0.06)]">
-                            <div className="rounded-t-2xl p-5" style={{ backgroundColor: "#E8F6F9" }}>
+                        {/* 3. Email Migration */}
+                        <Card
+                            className="overflow-hidden rounded-2xl py-0 border bg-white shadow-[0_6px_20px_rgba(0,0,0,0.06)]"
+                            data-aos="fade-up"
+                            data-aos-delay="260"
+                        >
+                            <div
+                                className="rounded-t-2xl p-5"
+                                style={{ backgroundColor: "#E8F6F9" }}
+                            >
                                 <div className="border inline-flex p-2.5 rounded-lg text-[#0891B2] border-[#0891B2]/20">
                                     <Mail className="h-7 w-7" />
                                 </div>
                                 <h2 className="text-xl font-bold mt-6">3. EMAIL MIGRATION SERVICES</h2>
-                                <h3 className="mt-1 text-lg font-semibold" style={{ color: "#0891B2" }}>
+                                <h3
+                                    className="mt-1 text-lg font-semibold"
+                                    style={{ color: "#0891B2" }}
+                                >
                                     Stay Connected. Stay Protected.
                                 </h3>
                             </div>
@@ -233,7 +320,7 @@ export default function Specialized() {
                                 <ul className="mt-4 space-y-3 text-sm">
                                     <li className="flex gap-3 leading-relaxed">
                                         <Check className="mt-1 h-4 w-4 shrink-0 text-[#0891B2]" />
-                                        <span>Configure users, licenses & shared mailboxes</span>
+                                        <span>Configure users, licenses &amp; shared mailboxes</span>
                                     </li>
 
                                     <li className="flex gap-3 leading-relaxed">
@@ -243,7 +330,7 @@ export default function Specialized() {
 
                                     <li className="flex gap-3 leading-relaxed">
                                         <Check className="mt-1 h-4 w-4 shrink-0 text-[#0891B2]" />
-                                        <span>Set up DNS, DKIM, DMARC, SPF & AutoDiscover</span>
+                                        <span>Set up DNS, DKIM, DMARC, SPF &amp; AutoDiscover</span>
                                     </li>
 
                                     <li className="flex gap-3 leading-relaxed">
@@ -253,7 +340,7 @@ export default function Specialized() {
 
                                     <li className="flex gap-3 leading-relaxed">
                                         <Check className="mt-1 h-4 w-4 shrink-0 text-[#0891B2]" />
-                                        <span>Train your team on Outlook & best practices</span>
+                                        <span>Train your team on Outlook &amp; best practices</span>
                                     </li>
                                 </ul>
 
@@ -266,7 +353,11 @@ export default function Specialized() {
                                     </p>
                                 </div>
 
-                                <div className="mt-5">
+                                <div
+                                    className="mt-5"
+                                    data-aos="zoom-in"
+                                    data-aos-delay="300"
+                                >
                                     <Button
                                         className="px-6 md:w-auto w-full"
                                         style={{ backgroundColor: "#0891B2", color: "#fff" }}
@@ -277,19 +368,30 @@ export default function Specialized() {
                                         </span>
                                         <ArrowRight className="ml-2 h-4 w-4" />
                                     </Button>
-
                                 </div>
                             </CardContent>
                         </Card>
 
-
-                        <Card className="overflow-hidden rounded-2xl py-0 border bg-white shadow-[0_6px_20px_rgba(0,0,0,0.06)]">
-                            <div className="rounded-t-2xl p-5" style={{ backgroundColor: "#FFF3EA" }}>
+                        {/* 4. Managed IT & Cloud */}
+                        <Card
+                            className="overflow-hidden rounded-2xl py-0 border bg-white shadow-[0_6px_20px_rgba(0,0,0,0.06)]"
+                            data-aos="fade-up"
+                            data-aos-delay="280"
+                        >
+                            <div
+                                className="rounded-t-2xl p-5"
+                                style={{ backgroundColor: "#FFF3EA" }}
+                            >
                                 <div className="border inline-flex p-2.5 rounded-lg text-[#EA580C] border-[#EA580C]/20">
                                     <Settings className="h-7 w-7" />
                                 </div>
-                                <h2 className="text-xl font-bold mt-6">4. MANAGED IT & CLOUD SERVICES</h2>
-                                <h3 className="mt-1 text-lg font-semibold" style={{ color: "#EA580C" }}>
+                                <h2 className="text-xl font-bold mt-6">
+                                    4. MANAGED IT &amp; CLOUD SERVICES
+                                </h2>
+                                <h3
+                                    className="mt-1 text-lg font-semibold"
+                                    style={{ color: "#EA580C" }}
+                                >
                                     Your Trusted Microsoft Ecosystem Partner.
                                 </h3>
                             </div>
@@ -303,17 +405,17 @@ export default function Specialized() {
                                 <ul className="mt-4 space-y-3 text-sm">
                                     <li className="flex gap-3 leading-relaxed">
                                         <Check className="mt-1 h-4 w-4 shrink-0 text-[#EA580C]" />
-                                        <span>Full infrastructure assessment & optimization</span>
+                                        <span>Full infrastructure assessment &amp; optimization</span>
                                     </li>
 
                                     <li className="flex gap-3 leading-relaxed">
                                         <Check className="mt-1 h-4 w-4 shrink-0 text-[#EA580C]" />
-                                        <span>Microsoft 365, Azure, Dynamics 365 & Power BI management</span>
+                                        <span>Microsoft 365, Azure, Dynamics 365 &amp; Power BI management</span>
                                     </li>
 
                                     <li className="flex gap-3 leading-relaxed">
                                         <Check className="mt-1 h-4 w-4 shrink-0 text-[#EA580C]" />
-                                        <span>Real-time monitoring & predictive maintenance</span>
+                                        <span>Real-time monitoring &amp; predictive maintenance</span>
                                     </li>
 
                                     <li className="flex gap-3 leading-relaxed">
@@ -337,7 +439,11 @@ export default function Specialized() {
                                     </p>
                                 </div>
 
-                                <div className="mt-5">
+                                <div
+                                    className="mt-5"
+                                    data-aos="zoom-in"
+                                    data-aos-delay="320"
+                                >
                                     <Button
                                         className="px-6 md:w-auto w-full"
                                         style={{ backgroundColor: "#EA580C", color: "#fff" }}
@@ -348,43 +454,64 @@ export default function Specialized() {
                                         </span>
                                         <ArrowRight className="ml-2 h-4 w-4" />
                                     </Button>
-
                                 </div>
                             </CardContent>
                         </Card>
-
                     </div>
-
-
-
                 </div>
             </section>
-
-
 
             <section
                 className="relative overflow-hidden mb-5"
                 aria-labelledby="why-celesteiq-heading"
+                data-aos="fade-up"
             >
                 {/* Background gradient */}
-                <div className="absolute inset-0 -z-10 bg-gradient-to-br from-[#FF7A18] via-[#FF6A00] to-[#FF3E00]" />
+                <div
+                    className="absolute inset-0 -z-10 bg-gradient-to-br from-[#FF7A18] via-[#FF6A00] to-[#FF3E00]"
+                    data-aos="fade-up"
+                    data-aos-delay="60"
+                />
                 {/* Subtle radial glow */}
-                <div className="pointer-events-none absolute inset-0 -z-10 opacity-40 [background:radial-gradient(60%_50%_at_50%_20%,_#ffffff66_0%,_transparent_60%)]" />
+                <div
+                    className="pointer-events-none absolute inset-0 -z-10 opacity-40 [background:radial-gradient(60%_50%_at_50%_20%,_#ffffff66_0%,_transparent_60%)]"
+                    data-aos="fade-up"
+                    data-aos-delay="100"
+                />
 
-                <div className="mx-auto max-w-6xl px-4 py-16 md:py-20 lg:py-24 text-white">
-                    <h2 id="why-celesteiq-heading" className="text-center text-3xl font-bold tracking-tight md:text-4xl">
+                <div
+                    className="mx-auto max-w-6xl px-4 py-16 md:py-20 lg:py-24 text-white"
+                    data-aos="fade-up"
+                    data-aos-delay="140"
+                >
+                    <h2
+                        id="why-celesteiq-heading"
+                        className="text-center text-3xl font-bold tracking-tight md:text-4xl"
+                        data-aos="fade-up"
+                        data-aos-delay="180"
+                    >
                         Why CelesteIQ
                     </h2>
-                    <p className="mt-2 text-center md:text-lg md:mt-3 font-medium ">
+                    <p
+                        className="mt-2 text-center md:text-lg md:mt-3 font-medium"
+                        data-aos="fade-up"
+                        data-aos-delay="210"
+                    >
                         The Human + AI Advantage
                     </p>
 
                     {/* Feature cards */}
-                    <div className="mt-10 grid gap-4 md:grid-cols-2 lg:mt-12 lg:grid-cols-4">
-                        {features.map(({ icon: Icon, title, desc }) => (
+                    <div
+                        className="mt-10 grid gap-4 md:grid-cols-2 lg:mt-12 lg:grid-cols-4"
+                        data-aos="fade-up"
+                        data-aos-delay="240"
+                    >
+                        {features.map(({ icon: Icon, title, desc }, idx) => (
                             <Card
                                 key={title}
                                 className="rounded-2xl border-white/20 bg-white/10 text-white shadow-[0_8px_30px_rgba(0,0,0,0.12)] BG-[#f5792a] transition-transform hover:-translate-y-0.5"
+                                data-aos="fade-up"
+                                data-aos-delay={260 + idx * 40}
                             >
                                 <CardContent className="p-6">
                                     <div className="flex items-start flex-col gap-4">
@@ -400,12 +527,20 @@ export default function Specialized() {
                     </div>
 
                     {/* Quote */}
-                    <p className="mx-auto mt-10 max-w-4xl text-center italic font-light  md:mt-12 md:text-2xl">
+                    <p
+                        className="mx-auto mt-10 max-w-4xl text-center italic font-light md:mt-12 md:text-2xl"
+                        data-aos="fade-up"
+                        data-aos-delay="320"
+                    >
                         "Simplifying digital transformation, one intelligent solution at a time."
                     </p>
 
                     {/* CTA */}
-                    <div className="mt-6 flex justify-center md:mt-8">
+                    <div
+                        className="mt-6 flex justify-center md:mt-8"
+                        data-aos="zoom-in"
+                        data-aos-delay="360"
+                    >
                         <Link href="/contact">
                             <Button
                                 className="p-6 rounded-lg bg-white px-5 text-black font-semibold hover:bg-white/90"

@@ -60,10 +60,19 @@ export default function SuccessStoriesCarousel() {
     <section className="bg-gradient-to-b from-[#3B82F61A] to-[#A855F71A] py-16 md:py-20">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="text-center">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-slate-900">
+          <h2
+            className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-slate-900 opacity-0 animate-fade-up"
+            data-aos="fade-up"
+            data-aos-duration="800"
+          >
             Our Success Stories
           </h2>
-          <p className="mt-2 text-lg text-slate-500">
+          <p
+            className="mt-2 text-lg text-slate-500 opacity-0 animate-fade-up"
+            data-aos="fade-up"
+            data-aos-duration="800"
+            data-aos-delay="100"
+          >
             Hear from businesses we've transformed with AI
           </p>
         </div>
@@ -73,7 +82,12 @@ export default function SuccessStoriesCarousel() {
             <CarouselContent>
               {TESTIMONIALS.map((t, idx) => (
                 <CarouselItem key={idx} className="basis-full">
-                  <Card className="rounded-2xl">
+                  <Card
+                    className="rounded-2xl opacity-0 transform scale-95 animate-fade-up"
+                    data-aos="fade-up"
+                    data-aos-duration="800"
+                    data-aos-delay={idx * 100} // stagger effect
+                  >
                     <CardContent className="relative p-6 sm:p-8 md:p-10">
                       <Quote className="h-8 w-8 text-orange-500" />
                       <blockquote className="mx-auto mt-6 max-w-4xl text-lg md:text-xl italic leading-relaxed text-slate-700">
@@ -85,15 +99,13 @@ export default function SuccessStoriesCarousel() {
                           {t.initials}
                         </div>
                         <div>
-                          <div className="font-semibold text-slate-900">
-                            {t.name}
-                          </div>
+                          <div className="font-semibold text-slate-900">{t.name}</div>
                           <div className="text-sm text-slate-500">{t.role}</div>
                         </div>
                       </div>
 
-                      <CarouselPrevious className="absolute md:flex hidden left-4 top-1/2 -translate-y-1/2 h-10 w-10 rounded-full bg-white shadow ring-1 ring-slate-200 hover:bg-slate-50" />
-                      <CarouselNext className="absolute md:flex hidden right-4 top-1/2 -translate-y-1/2 h-10 w-10 rounded-full bg-white shadow ring-1 ring-slate-200 hover:bg-slate-50" />
+                      <CarouselPrevious className="absolute md:flex hidden left-4 top-1/2 -translate-y-1/2 h-10 w-10 rounded-full bg-white shadow ring-1 ring-slate-200 hover:bg-slate-50 transition" />
+                      <CarouselNext className="absolute md:flex hidden right-4 top-1/2 -translate-y-1/2 h-10 w-10 rounded-full bg-white shadow ring-1 ring-slate-200 hover:bg-slate-50 transition" />
                     </CardContent>
                   </Card>
                 </CarouselItem>
@@ -111,8 +123,8 @@ export default function SuccessStoriesCarousel() {
                   onClick={() => api?.scrollTo(i)}
                   className={
                     i === current
-                      ? "h-2 w-8 rounded-full bg-orange-500"
-                      : "h-2 w-2 rounded-full bg-slate-300"
+                      ? "h-2 w-8 rounded-full bg-orange-500 transition-all"
+                      : "h-2 w-2 rounded-full bg-slate-300 transition-all"
                   }
                 />
               ))}
