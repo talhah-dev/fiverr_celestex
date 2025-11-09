@@ -72,7 +72,7 @@ export default function HomePage() {
                             </h1>
                             <div className="relative ">
                                 <p className='font-semibold md:max-w-[12rem]  w-full'>
-                                    With the Power of Artificial Intelligence and the Microsoft Ecosystem
+                                    <span className='md:inline hidden'>With the</span> <span className='md:hidden'>The</span> Power of Artificial Intelligence and the Microsoft Ecosystem
                                 </p>
                                 <Image
                                     src="/favicon.svg"
@@ -126,7 +126,7 @@ export default function HomePage() {
                             <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-[#FF7A00] text-white">
                                 <Bot className="h-6 w-6" />
                             </div>
-                            <h3 className="text-xl font-bold text-slate-900">Automation Process</h3>
+                            <h3 className="text-xl font-bold text-slate-900">Automate Processes</h3>
                             <p className="mt-3 text-slate-600">Simplify workflows and minimize errors with AI-powered automation that works seamlessly with your existing systems.</p>
                         </div>
 
@@ -134,7 +134,7 @@ export default function HomePage() {
                             <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-[#FF7A00] text-white">
                                 <TrendingUp className="h-6 w-6" />
                             </div>
-                            <h3 className="text-xl font-bold text-slate-900">Driven Decision with Data</h3>
+                            <h3 className="text-xl font-bold text-slate-900">Drive Decisions with Data</h3>
                             <p className="mt-3 text-slate-600">Make faster, smarter decisions with real-time analytics and predictive intelligence built into your processes.</p>
                         </div>
 
@@ -348,15 +348,30 @@ export default function HomePage() {
                         </p>
                     </div>
 
-                    <div className="mt-10 text-center grid grid-cols-2 gap-2 mb-6 sm:hidden">
-                        <div className="rounded-xl bg-gradient-to-b from-[#0c8cf1] to-sky-400 p-4 text-white shadow-lg">No Hardware Needed</div>
-                        <div className="rounded-xl bg-gradient-to-b from-[#0c8cf1] to-sky-400 p-4 text-white shadow-lg">Human-in-the-Loop Ready</div>
-                        <div className="rounded-xl bg-gradient-to-b from-[#0c8cf1] to-sky-400 p-4 text-white shadow-lg">Peace of Mind, Zero Risk</div>
-                        <div className="rounded-xl bg-gradient-to-b from-[#0c8cf1] to-sky-400 p-4 text-white shadow-lg">Simple, Hassle-Free Setup</div>
-                        <div className="rounded-xl bg-gradient-to-b from-[#0c8cf1] to-sky-400 p-4 text-white shadow-lg">No In-House IT Team Required</div>
-                        <div className="rounded-xl bg-gradient-to-b from-[#0c8cf1] to-sky-400 p-4 text-white shadow-lg">ROI Within Weeks</div>
-                        <div className="rounded-xl col-span-2  bg-gradient-to-b from-[#0c8cf1] to-sky-400 p-4 text-white shadow-lg">Minimal IT Resources Needed</div>
+                    <div className="mt-10 mb-6 grid grid-cols-2 gap-2 text-center sm:hidden">
+                        <div className="rounded-xl bg-gradient-to-b from-[#FCE6CF] to-[#F7D5AF] p-4 text-slate-800 shadow-md">
+                            No Hardware Needed
+                        </div>
+                        <div className="rounded-xl bg-gradient-to-b from-[#E3F2D3] to-[#D1E6BE] p-4 text-slate-800 shadow-md">
+                            Human-in-the-Loop Ready
+                        </div>
+                        <div className="rounded-xl bg-gradient-to-b from-[#E5EEF9] to-[#CFDBF3] p-4 text-slate-800 shadow-md">
+                            Peace of Mind, Zero Risk
+                        </div>
+                        <div className="rounded-xl bg-gradient-to-b from-[#FBE7EC] to-[#F3D2DD] p-4 text-slate-800 shadow-md">
+                            Simple, Hassle-Free Setup
+                        </div>
+                        <div className="rounded-xl bg-gradient-to-b from-[#FFF1D9] to-[#F7E0B8] p-4 text-slate-800 shadow-md">
+                            No In-House IT Team Required
+                        </div>
+                        <div className="rounded-xl bg-gradient-to-b from-[#E3F3F3] to-[#CDE4E3] p-4 text-slate-800 shadow-md">
+                            ROI Within Weeks
+                        </div>
+                        <div className="col-span-2 rounded-xl bg-gradient-to-b from-[#F2E9FB] to-[#E1D4F5] p-4 text-slate-800 shadow-md">
+                            Minimal IT Resources Needed
+                        </div>
                     </div>
+
 
                     <div className="relative mx-auto hidden aspect-square w-full max-w-[820px] sm:block [--r:235px] md:[--r:270px]">
                         <div className="absolute left-1/2 top-1/2 z-10 h-56 w-56 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#1784db] shadow-2xl ring-1 ring-black/10 flex items-center justify-center">
