@@ -72,7 +72,9 @@ export default function HomePage() {
                     <div className="w-full max-w-6xl md:text-start text-center p-5 md:py-10">
                         <div className="flex items-center md:flex-row md:mb-0 mb-3 flex-col justify-center md:gap-10 gap-4">
                             <h1 data-aos="fade-up" className='font-bold mt-20 md:mt-0 md:text-[5.5rem] text-[2.6rem] leading-tight md:leading-none md:text-nowrap text-image1'>
-                                TRANSFORM YOUR <span className='md:hidden'>BUSINESS WITH AI</span>
+                                TRANSFORM YOUR
+                                <span className='md:hidden'>BUSINESS WITH AI</span>
+                                <span className='md:hidden'>+ MICROSOFT</span>
                             </h1>
                             <div data-aos-delay="200" className="relative " data-aos="fade" >
                                 <p className='font-semibold md:max-w-[12rem]  w-full'>
@@ -90,12 +92,15 @@ export default function HomePage() {
 
                         <div className="flex items-center md:flex-row flex-col-reverse justify-center md:gap-10 gap-4 md:-mt-2">
                             <p data-aos-delay="200" data-aos="fade" className='font-semibold md:block hidden md:max-w-[14rem] w-full'>
-                                Automate manual tasks, cut costs, and boost efficiency with intelligent solutions
+                                Automate your Workflows, and Scale with Intelligence
                             </p>
                             <h1 data-aos="fade-up" data-aos-delay="100" className='font-bold md:text-[5.5rem] md:block hidden text-4xl md:text-nowrap text-image1'>
                                 BUSINESS WITH AI
                             </h1>
                         </div>
+                        <h1 data-aos="fade-up" data-aos-delay="100" className='font-bold flex items-end justify-end text-end md:text-[5.5rem] md:block hidden text-4xl md:text-nowrap text-image1'>
+                            + MICROSOFT
+                        </h1>
 
                         <div data-aos="fade-up" data-aos-delay="200" className="flex items-center justify-center mt-5">
                             <Link href="/contact">
@@ -1210,7 +1215,7 @@ export default function HomePage() {
                 <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-24 md:py-32 text-center text-white">
                     <div
                         className="inline-flex items-center gap-3 rounded-lg bg-white px-3 py-3 shadow-lg ring-1 ring-black/5"
-                        data-aos="fade-down"
+                        data-aos="fade-up"
                         data-aos-delay="100"
                         data-aos-duration="800"
                     >
@@ -1242,7 +1247,7 @@ export default function HomePage() {
 
             <section className="">
                 <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
-                    <div className="text-center" data-aos="fade-down" data-aos-duration="800">
+                    <div className="text-center" data-aos="fade-up" data-aos-duration="800">
                         <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight text-slate-900">
                             Our Blog And Resources
                         </h2>
@@ -1283,7 +1288,7 @@ export default function HomePage() {
                         </div>
 
                         <div className="flex flex-col gap-4">
-                            <div className="rounded-2xl p-5 bg-[#f9fafb] ring-1 ring-black/5" data-aos="fade-left" data-aos-delay="150" data-aos-duration="700">
+                            <div className="rounded-2xl p-5 bg-[#f9fafb] ring-1 ring-black/5" data-aos="fade-up" data-aos-delay="150" data-aos-duration="700">
                                 <div className="flex items-start justify-between">
                                     <span className="rounded-full bg-orange-100 px-2.5 py-1 text-[11px] font-semibold text-[#FF7A00]">Strategy</span>
                                 </div>
@@ -1291,7 +1296,7 @@ export default function HomePage() {
                                 <div className="mt-3 flex items-center gap-2 text-sm text-slate-500"><Calendar className="h-4 w-4" />Oct 20, 2025</div>
                             </div>
 
-                            <div className="rounded-2xl p-5 bg-[#f9fafb] ring-1 ring-black/5" data-aos="fade-left" data-aos-delay="250" data-aos-duration="700">
+                            <div className="rounded-2xl p-5 bg-[#f9fafb] ring-1 ring-black/5" data-aos="fade-up" data-aos-delay="250" data-aos-duration="700">
                                 <div className="flex items-start justify-between">
                                     <span className="rounded-full bg-orange-100 px-2.5 py-1 text-[11px] font-semibold text-[#FF7A00]">Technology</span>
                                 </div>
@@ -1299,7 +1304,7 @@ export default function HomePage() {
                                 <div className="mt-3 flex items-center gap-2 text-sm text-slate-500"><Calendar className="h-4 w-4" />Oct 15, 2025</div>
                             </div>
 
-                            <div className="rounded-2xl p-5 bg-[#f9fafb] ring-1 ring-black/5" data-aos="fade-left" data-aos-delay="350" data-aos-duration="700">
+                            <div className="rounded-2xl p-5 bg-[#f9fafb] ring-1 ring-black/5" data-aos="fade-up" data-aos-delay="350" data-aos-duration="700">
                                 <div className="flex items-start justify-between">
                                     <span className="rounded-full bg-orange-100 px-2.5 py-1 text-[11px] font-semibold text-[#FF7A00]">Case Studies</span>
                                 </div>
@@ -1323,7 +1328,7 @@ export default function HomePage() {
                 <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 py-20 sm:py-24 text-center text-white">
                     <div
                         className="mx-auto inline-flex items-center gap-2 rounded-full bg-white/15 px-3.5 py-1.5 text-xs font-semibold backdrop-blur animate-pulse"
-                        data-aos="fade-down"
+                        data-aos="fade-up"
                         data-aos-duration="1000"
                     >
                         <Sparkles className="h-3.5 w-3.5" />
@@ -1402,7 +1407,7 @@ export default function HomePage() {
 
                     <div className="md:mt-24 mt-28 grid grid-cols-1 gap-8 md:grid-cols-2">
                         {/* AI Assistant Card */}
-                        <div className="relative opacity-0 translate-y-6 animate-fade-in-up" data-aos="fade-right" data-aos-duration="1000">
+                        <div className="relative opacity-0 translate-y-6 animate-fade-in-up" data-aos="fade-up" data-aos-duration="1000">
                             <div className="absolute -top-28 left-8 z-10 h-58 w-52 overflow-hidden rounded-full transition-transform duration-700 ease-out hover:scale-105">
                                 <Image src="/assistant-avatar.png" alt="AI Assistant" fill className="object-cover" />
                             </div>
@@ -1420,7 +1425,7 @@ export default function HomePage() {
                         </div>
 
                         {/* Contact Form */}
-                        <div className="rounded-3xl bg-white p-6 sm:p-8 shadow-[0_24px_60px_rgba(2,6,23,0.08)] ring-1 ring-black/5 opacity-0 translate-y-6 animate-fade-in-up" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
+                        <div className="rounded-3xl bg-white p-6 sm:p-8 shadow-[0_24px_60px_rgba(2,6,23,0.08)] ring-1 ring-black/5 opacity-0 translate-y-6 animate-fade-in-up" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
                             <div className="space-y-5">
                                 <div className="space-y-2">
                                     <Label htmlFor="name">Full Name</Label>

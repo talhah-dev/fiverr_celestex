@@ -1,16 +1,10 @@
+"use client"
 import Navbar from '@/components/Navbar'
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import Wrapper from '../Wrapper';
-import { Sparkles, ArrowRight, Calendar } from "lucide-react";
+import { ArrowRight, Calendar } from "lucide-react";
 import Image from 'next/image';
-import {
-    Accordion,
-    AccordionContent,
-    AccordionItem,
-    AccordionTrigger,
-} from "@/components/ui/accordion";
-import { Plus, Minus } from "lucide-react";
 
 type QA = {
     id: string;
