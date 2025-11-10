@@ -27,7 +27,7 @@ export default function Navbar() {
 
   // Translations
   const tNav = useTranslations("nav");
-  const tCta = useTranslations("cta");
+  const ctaNavbar = useTranslations("cta");
   const tLang = useTranslations("language");
 
   // Locale + router
@@ -122,7 +122,7 @@ export default function Navbar() {
                 size="lg"
                 className="bg-[#FF7A00] hover:bg-orange-500 text-white font-semibold px-5 h-9 rounded-md"
               >
-                {tCta("demo")}
+                {ctaNavbar("consultant")}
               </Button>
             </div>
           </nav>
@@ -220,7 +220,7 @@ export default function Navbar() {
                     className="mt-2 bg-[#FF7A00] hover:bg-orange-500 text-white font-semibold h-10"
                     onClick={() => setOpen(false)}
                   >
-                    {tCta("demo")}
+                    {ctaNavbar("consultant")}
                   </Button>
                 </div>
               </SheetContent>

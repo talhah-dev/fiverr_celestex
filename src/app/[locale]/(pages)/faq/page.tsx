@@ -11,6 +11,7 @@ import {
     AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Plus, Minus } from "lucide-react";
+import { useTranslations } from 'next-intl';
 
 type QA = {
     id: string;
@@ -18,63 +19,16 @@ type QA = {
     a: React.ReactNode;
 };
 
-const faqs: QA[] = [
-    {
-        id: "item-1",
-        q: "What makes CelesteIQ different from other technology providers?",
-        a: (
-            <p>
-                We specialize in connecting Artificial Intelligence with the real needs
-                of your business, creating complete solutions within the Microsoft
-                ecosystem (Azure, Power BI, Copilot, Dynamics, etc.).
-            </p>
-        ),
-    },
-    {
-        id: "item-2",
-        q: "Do I need prior AI experience to implement your solutions?",
-        a: (
-            <p>
-                No—our team guides you through strategy, design, and implementation.
-                We’ll identify the best use cases and deliver value quickly.
-            </p>
-        ),
-    },
-    {
-        id: "item-3",
-        q: "Which sectors do you serve?",
-        a: (
-            <p>
-                Finance, Healthcare, Manufacturing, Real Estate, and more. We tailor
-                solutions to your industry’s compliance and operational needs.
-            </p>
-        ),
-    },
-    {
-        id: "item-4",
-        q: "Do you offer subscription-based or project-based services?",
-        a: (
-            <p>
-                Both. Choose ongoing subscription for continuous optimization or a
-                fixed-scope project for targeted outcomes—whichever fits your goals.
-            </p>
-        ),
-    },
-    {
-        id: "item-5",
-        q: "Where do you operate?",
-        a: (
-            <p>
-                We support clients globally with remote delivery and regional partners
-                when on-site presence is required.
-            </p>
-        ),
-    },
-];
+const faqIds = ["item-1", "item-2", "item-3", "item-4", "item-5"];
+
 
 export default function Faq() {
+    const t = useTranslations("faq");
+    const h = useTranslations("ctaHero");
+
     return (
         <Wrapper>
+
 
 
             <section
@@ -97,7 +51,7 @@ export default function Faq() {
                             data-aos="fade-up"
                             data-aos-delay="220"
                         >
-                            Resources/ FAQ
+                            {t("title")}
                         </h1>
                     </div>
                 </div>
@@ -112,11 +66,13 @@ export default function Faq() {
                         className="h-[90px] w-full sm:h-[110px] md:h-[140px]"
                         preserveAspectRatio="none"
                     >
-                        <path d="M0,45 C300,180 1140,180 1440,45 L1440,180 L0,180 Z" fill="#ffffff" />
+                        <path
+                            d="M0,45 C300,180 1140,180 1440,45 L1440,180 L0,180 Z"
+                            fill="#ffffff"
+                        />
                     </svg>
                 </div>
             </section>
-
 
 
             <section
@@ -134,10 +90,10 @@ export default function Faq() {
                         data-aos-delay="120"
                     >
                         <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-[#ea580c]">
-                            Frequently Asked Questions
+                            {t("title")}
                         </h2>
                         <p className="mx-auto mt-2 md:mt-3 md:text-xl font-medium max-w-2xl text-[#374151]">
-                            Find answers about CelesteIQ&apos;s AI, Microsoft solutions, and global operations.
+                            {t("subtitle")}
                         </p>
                     </div>
 
@@ -153,7 +109,7 @@ export default function Faq() {
                                 defaultValue="item-1"
                                 className="grid gap-4 md:gap-6 md:grid-cols-2"
                             >
-                                {faqs.map(({ id, q, a }, idx) => (
+                                {faqIds.map((id, idx) => (
                                     <AccordionItem
                                         key={id}
                                         value={id}
@@ -170,12 +126,14 @@ export default function Faq() {
                                             </span>
 
                                             <span className="text-[17px] font-semibold leading-6 text-slate-900">
-                                                {q}
+                                                {t(`items.${id}.question`)}
                                             </span>
                                         </AccordionTrigger>
 
                                         <AccordionContent className="px-6 pb-6 pt-0 text-slate-600">
-                                            <div className="flex flex-col gap-3 text-balance">{a}</div>
+                                            <div className="flex flex-col gap-3 text-balance">
+                                                <p>{t(`items.${id}.answer`)}</p>
+                                            </div>
                                         </AccordionContent>
                                     </AccordionItem>
                                 ))}
@@ -210,7 +168,7 @@ export default function Faq() {
                         data-aos-delay="150"
                     >
                         <Sparkles className="h-3.5 w-3.5" />
-                        <span>Limited Time Offer</span>
+                        <span>{h("badge")}</span>
                     </div>
 
                     <h2
@@ -218,9 +176,9 @@ export default function Faq() {
                         data-aos="fade-up"
                         data-aos-delay="200"
                     >
-                        Start Your AI Transformation
+                        {h("titleLine1")}
                         <br />
-                        Today
+                        {h("titleLine2")}
                     </h2>
 
                     <p
@@ -228,7 +186,7 @@ export default function Faq() {
                         data-aos="fade-up"
                         data-aos-delay="240"
                     >
-                        Join hundreds of businesses already leveraging AI to grow faster and work smarter
+                        {h("subtitle")}
                     </p>
 
                     <div
@@ -243,9 +201,10 @@ export default function Faq() {
                                 data-aos="zoom-in"
                                 data-aos-delay="300"
                             >
-                                Schedule Free Consultation <ArrowRight className="ml-2 h-4 w-4" />
+                                {h("primaryButton")} <ArrowRight className="ml-2 h-4 w-4" />
                             </Button>
                         </Link>
+
                         <Link href="/contact">
                             <Button
                                 size={"lg"}
@@ -254,7 +213,7 @@ export default function Faq() {
                                 data-aos="zoom-in"
                                 data-aos-delay="330"
                             >
-                                View Pricing
+                                {h("secondaryButton")}
                             </Button>
                         </Link>
                     </div>
@@ -264,7 +223,7 @@ export default function Faq() {
                         data-aos="fade-up"
                         data-aos-delay="360"
                     >
-                        No credit card required. Get started in minutes.
+                        {h("note")}
                     </p>
                 </div>
             </section>

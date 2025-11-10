@@ -10,12 +10,19 @@ export default getRequestConfig(async ({ requestLocale }) => {
         : routing.defaultLocale;
 
     const messages = {
-        // Navbar messages
         ...(await import(`../messages/navbar/${locale}.json`)).default,
-        // Home page messages
-        // ...(await import(`../messages/home/${locale}.json`)).default,
-        // Footer, etc...
-        ...(await import(`../messages/footer/${locale}.json`)).default
+        ...(await import(`../messages/about/${locale}.json`)).default,
+        ...(await import(`../messages/resources/${locale}.json`)).default,
+        ...(await import(`../messages/smartAudits/${locale}.json`)).default,
+        ...(await import(`../messages/smartpackages/${locale}.json`)).default,
+        ...(await import(`../messages/solutions/${locale}.json`)).default,
+        ...(await import(`../messages/blog/${locale}.json`)).default,
+        ...(await import(`../messages/specialized/${locale}.json`)).default,
+        ...(await import(`../messages/contact/${locale}.json`)).default,
+        ...(await import(`../messages/legal/${locale}.json`)).default,
+        ...(await import(`../messages/faq/${locale}.json`)).default,
+        ...(await import(`../messages/ctaHero/${locale}.json`)).default,
+        ...(await import(`../messages/footer/${locale}.json`)).default,
     };
 
     return {

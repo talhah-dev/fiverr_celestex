@@ -20,13 +20,16 @@ import {
 
 import { Award, Bot, Users, TrendingUp } from "lucide-react";
 import Link from 'next/link'
+import { useTranslations } from 'next-intl'
 
 
 export default function Smartaudits() {
     const orange = "#E65300";
+    const s = useTranslations("smartAudits");
 
     return (
         <Wrapper>
+
 
 
             <section
@@ -49,7 +52,7 @@ export default function Smartaudits() {
                             data-aos="fade-up"
                             data-aos-delay="220"
                         >
-                            Smart Audits for Digital Evolution
+                            {s("heroTitle")}
                         </h1>
                     </div>
                 </div>
@@ -57,7 +60,7 @@ export default function Smartaudits() {
                 <div
                     className="pointer-events-none absolute inset-x-0 bottom-[-1px]"
                     data-aos="fade-up"
-                    data-aos-delay="260"
+                    data-aos-delay="320"
                 >
                     <svg
                         viewBox="0 0 1440 180"
@@ -94,7 +97,7 @@ export default function Smartaudits() {
                             data-aos="fade-up"
                             data-aos-delay="160"
                         >
-                            Intelligent Audit Services
+                            {s("sectionTitle")}
                         </h2>
 
                         <p
@@ -102,7 +105,7 @@ export default function Smartaudits() {
                             data-aos="fade-up"
                             data-aos-delay="190"
                         >
-                            Diagnosis, vision, and strategy for your company&apos;s digital evolution.
+                            {s("sectionSubtitle")}
                         </p>
 
                         <p
@@ -110,11 +113,7 @@ export default function Smartaudits() {
                             data-aos="fade-up"
                             data-aos-delay="220"
                         >
-                            At CelesteIQ, we believe that true digital transformation begins with clarity. Our intelligent audits
-                            combine expert knowledge of the Microsoft ecosystem with advanced AI-powered analysis to
-                            give you a real view of your company&apos;s technological state and help you build a solid strategy for
-                            the future. An audit is not just a technical review — it&apos;s the starting point for a smarter, safer, and
-                            more efficient business.
+                            {s("sectionBody")}
                         </p>
 
                         <div
@@ -127,7 +126,7 @@ export default function Smartaudits() {
                                     className="py-6 bg-[#FF7A00] rounded-full text-white hover:bg-orange-600"
                                     size={"lg"}
                                 >
-                                    Explore Our Audit Services
+                                    {s("sectionCta")}
                                     <ArrowRight className="ml-2 h-4 w-4" />
                                 </Button>
                             </Link>
@@ -157,51 +156,45 @@ export default function Smartaudits() {
                             id="iwa-heading"
                             className="text-3xl font-semibold tracking-tight text-slate-900 md:text-4xl"
                         >
-                            Intelligent Modern Workplace
-                            Audit
+                            {s("iwaTitle")}
                         </h2>
                         <p className="mt-4 max-w-2xl text-lg font-semibold text-[#E65300]">
-                            Evaluate how your team works and discover how they can do it better.
+                            {s("iwaSubtitle")}
                         </p>
                         <p className="mt-4 max-w-2xl font-medium leading-relaxed text-[#374151]">
-                            Microsoft 365 is an incredibly powerful platform, but many companies
-                            only use 20–30% of its capabilities. Our Modern Workplace Audit
-                            analyzes in detail how your team uses tools like Teams, SharePoint,
-                            OneDrive, Outlook, and Copilot, and reveals opportunities for
-                            optimization that can transform your company&apos;s operational
-                            efficiency.
+                            {s("iwaBody")}
                         </p>
 
                         <div className="mt-8 grid grid-cols-1 gap-8">
                             {/* What do we evaluate? */}
                             <div data-aos="fade-up" data-aos-delay="160">
                                 <h3 className="text-base font-semibold text-slate-900">
-                                    What do we evaluate?
+                                    {s("iwaWhatWeEvaluateTitle")}
                                 </h3>
                                 <ul className="mt-3 space-y-3">
                                     <li className="flex gap-2 leading-relaxed text-sm text-slate-700 items-center">
                                         <CircleCheckBig className="h-4 shrink-0 text-[#2563EB] w-4" />
-                                        <span>Adoption and use of Microsoft 365 tools</span>
+                                        <span>{s("iwaEvaluatePoints.1")}</span>
                                     </li>
                                     <li className="flex gap-2 leading-relaxed text-sm text-slate-700 items-center">
                                         <CircleCheckBig className="h-4 shrink-0 text-[#2563EB] w-4" />
-                                        <span>Collaboration, file-sharing, and meeting strategies</span>
+                                        <span>{s("iwaEvaluatePoints.2")}</span>
                                     </li>
                                     <li className="flex gap-2 leading-relaxed text-sm text-slate-700 items-center">
                                         <CircleCheckBig className="h-4 shrink-0 text-[#2563EB] w-4" />
-                                        <span>Integration with Copilot and intelligent automation</span>
+                                        <span>{s("iwaEvaluatePoints.3")}</span>
                                     </li>
                                     <li className="flex gap-2 leading-relaxed text-sm text-slate-700 items-center">
                                         <CircleCheckBig className="h-4 shrink-0 text-[#2563EB] w-4" />
-                                        <span>Team structures, permissions, and governance</span>
+                                        <span>{s("iwaEvaluatePoints.4")}</span>
                                     </li>
                                     <li className="flex gap-2 leading-relaxed text-sm text-slate-700 items-center">
                                         <CircleCheckBig className="h-4 shrink-0 text-[#2563EB] w-4" />
-                                        <span>Unused or poorly leveraged applications</span>
+                                        <span>{s("iwaEvaluatePoints.5")}</span>
                                     </li>
                                     <li className="flex gap-2 leading-relaxed text-sm text-slate-700 items-center">
                                         <CircleCheckBig className="h-4 shrink-0 text-[#2563EB] w-4" />
-                                        <span>User experience and workflow optimization</span>
+                                        <span>{s("iwaEvaluatePoints.6")}</span>
                                     </li>
                                 </ul>
                             </div>
@@ -209,28 +202,28 @@ export default function Smartaudits() {
                             {/* What do you receive? */}
                             <div data-aos="fade-up" data-aos-delay="190">
                                 <h3 className="text-base font-semibold text-slate-900">
-                                    What do you receive?
+                                    {s("iwaWhatYouReceiveTitle")}
                                 </h3>
                                 <ul className="mt-3 space-y-3">
                                     <li className="flex gap-2 leading-relaxed text-sm text-slate-700 items-center">
                                         <CircleCheckBig className="h-4 shrink-0 text-[#2563EB] w-4" />
-                                        <span>Detailed visual report with usage metrics and AI-detected patterns</span>
+                                        <span>{s("iwaReceivePoints.1")}</span>
                                     </li>
                                     <li className="flex gap-2 leading-relaxed text-sm text-slate-700 items-center">
                                         <CircleCheckBig className="h-4 shrink-0 text-[#2563EB] w-4" />
-                                        <span>Specific recommendations to improve collaboration and productivity</span>
+                                        <span>{s("iwaReceivePoints.2")}</span>
                                     </li>
                                     <li className="flex gap-2 leading-relaxed text-sm text-slate-700 items-center">
                                         <CircleCheckBig className="h-4 shrink-0 text-[#2563EB] w-4" />
-                                        <span>Adoption roadmap with prioritized quick wins</span>
+                                        <span>{s("iwaReceivePoints.3")}</span>
                                     </li>
                                     <li className="flex gap-2 leading-relaxed text-sm text-slate-700 items-center">
                                         <CircleCheckBig className="h-4 shrink-0 text-[#2563EB] w-4" />
-                                        <span>Copilot readiness assessment</span>
+                                        <span>{s("iwaReceivePoints.4")}</span>
                                     </li>
                                     <li className="flex gap-2 leading-relaxed text-sm text-slate-700 items-center">
                                         <CircleCheckBig className="h-4 shrink-0 text-[#2563EB] w-4" />
-                                        <span>Support in implementing improvements</span>
+                                        <span>{s("iwaReceivePoints.5")}</span>
                                     </li>
                                 </ul>
                             </div>
@@ -246,7 +239,7 @@ export default function Smartaudits() {
                                     type="button"
                                     className="h-11 rounded-full bg-[#E65300] px-6 text-white hover:bg-[#d14900]"
                                 >
-                                    Request your Intelligent Modern Workplace{" "}
+                                    {s("iwaCta")}{" "}
                                     <span className="md:inline hidden">Audit</span>
                                 </Button>
                             </Link>
@@ -277,7 +270,9 @@ export default function Smartaudits() {
                                     data-aos-delay="250"
                                 >
                                     <div className="text-xl text-[#2563EB]">Teams</div>
-                                    <div className="mt-1 text-xs text-slate-500">Optimized</div>
+                                    <div className="mt-1 text-xs text-slate-500">
+                                        {s("iwaCardOptimized")}
+                                    </div>
                                 </div>
                                 <div
                                     className="rounded-xl border border-sky-100 bg-white px-6 py-4 text-center shadow-[0_6px_20px_rgba(2,84,196,0.08)]"
@@ -285,7 +280,9 @@ export default function Smartaudits() {
                                     data-aos-delay="270"
                                 >
                                     <div className="text-xl text-[#2563EB]">SharePoint</div>
-                                    <div className="mt-1 text-xs text-slate-500">Optimized</div>
+                                    <div className="mt-1 text-xs text-slate-500">
+                                        {s("iwaCardOptimized")}
+                                    </div>
                                 </div>
                                 <div
                                     className="rounded-xl border border-sky-100 bg-white px-6 py-4 text-center shadow-[0_6px_20px_rgba(2,84,196,0.08)]"
@@ -293,7 +290,9 @@ export default function Smartaudits() {
                                     data-aos-delay="290"
                                 >
                                     <div className="text-xl text-[#2563EB]">OneDrive</div>
-                                    <div className="mt-1 text-xs text-slate-500">Optimized</div>
+                                    <div className="mt-1 text-xs text-slate-500">
+                                        {s("iwaCardOptimized")}
+                                    </div>
                                 </div>
                                 <div
                                     className="rounded-xl border border-sky-100 bg-white px-6 py-4 text-center shadow-[0_6px_20px_rgba(2,84,196,0.08)]"
@@ -301,13 +300,16 @@ export default function Smartaudits() {
                                     data-aos-delay="310"
                                 >
                                     <div className="text-xl text-[#2563EB]">Copilot</div>
-                                    <div className="mt-1 text-xs text-slate-500">Optimized</div>
+                                    <div className="mt-1 text-xs text-slate-500">
+                                        {s("iwaCardOptimized")}
+                                    </div>
                                 </div>
                             </div>
                         </CardContent>
                     </Card>
                 </div>
             </section>
+
 
 
             <section
@@ -344,17 +346,13 @@ export default function Smartaudits() {
                             id="isa-heading"
                             className="text-3xl font-bold tracking-tight text-slate-900 md:text-4xl"
                         >
-                            Intelligent Security Audit
+                            {s("isaTitle")}
                         </h2>
                         <p className="mt-3 text-[17px] font-semibold text-[#FDBA74]">
-                            Active protection, informed decisions.
+                            {s("isaSubtitle")}
                         </p>
                         <p className="mt-4 max-w-2xl text-slate-700">
-                            Security is no longer optional — it&apos;s a strategic priority. Our Intelligent Security Audit
-                            evaluates your Microsoft 365 environment, Azure, and Entra ID with an AI-powered lens,
-                            identifying vulnerabilities, detecting anomalies, and simulating real-world attack
-                            scenarios before they happen. We don&apos;t just deliver a report: we help you build a
-                            resilient digital security culture.
+                            {s("isaBody")}
                         </p>
 
                         <div className="mt-8 grid grid-cols-1 gap-8">
@@ -362,35 +360,37 @@ export default function Smartaudits() {
                                 data-aos="fade-up"
                                 data-aos-delay="160"
                             >
-                                <h3 className="text-xl text-black">What do we analyze?</h3>
+                                <h3 className="text-xl text-black">
+                                    {s("isaAnalyzeTitle")}
+                                </h3>
                                 <ul className="mt-3 space-y-3 text-sm leading-relaxed text-slate-700">
                                     <li className="flex gap-3 items-center">
                                         <CircleCheckBig className="h-4 shrink-0 text-[#FB923C] w-4" />
-                                        Conditional Access and identity policies (Entra ID)
+                                        {s("isaAnalyzePoints.1")}
                                     </li>
                                     <li className="flex gap-3 items-center">
                                         <CircleCheckBig className="h-4 shrink-0 text-[#FB923C] w-4" />
-                                        Multi-factor authentication and zero-trust strategy
+                                        {s("isaAnalyzePoints.2")}
                                     </li>
                                     <li className="flex gap-3 items-center">
                                         <CircleCheckBig className="h-4 shrink-0 text-[#FB923C] w-4" />
-                                        Data protection and DLP (Data Loss Prevention)
+                                        {s("isaAnalyzePoints.3")}
                                     </li>
                                     <li className="flex gap-3 items-center">
                                         <CircleCheckBig className="h-4 shrink-0 text-[#FB923C] w-4" />
-                                        User permissions and privileged access control
+                                        {s("isaAnalyzePoints.4")}
                                     </li>
                                     <li className="flex gap-3 items-center">
                                         <CircleCheckBig className="h-4 shrink-0 text-[#FB923C] w-4" />
-                                        Threat detection and anomalous behavior patterns
+                                        {s("isaAnalyzePoints.5")}
                                     </li>
                                     <li className="flex gap-3 items-center">
                                         <CircleCheckBig className="h-4 shrink-0 text-[#FB923C] w-4" />
-                                        Regulatory compliance (GDPR, ISO, etc.)
+                                        {s("isaAnalyzePoints.6")}
                                     </li>
                                     <li className="flex gap-3 items-center">
                                         <CircleCheckBig className="h-4 shrink-0 text-[#FB923C] w-4" />
-                                        Automated response to security incidents
+                                        {s("isaAnalyzePoints.7")}
                                     </li>
                                 </ul>
                             </div>
@@ -399,27 +399,29 @@ export default function Smartaudits() {
                                 data-aos="fade-up"
                                 data-aos-delay="200"
                             >
-                                <h3 className="text-xl text-black">What do you receive?</h3>
+                                <h3 className="text-xl text-black">
+                                    {s("isaReceiveTitle")}
+                                </h3>
                                 <ul className="mt-3 space-y-3 text-sm leading-relaxed text-slate-700">
                                     <li className="flex gap-3 items-center">
                                         <CircleCheckBig className="h-4 shrink-0 text-[#2563EB] w-4" />
-                                        Comprehensive security diagnosis with risk maps
+                                        {s("isaReceivePoints.1")}
                                     </li>
                                     <li className="flex gap-3 items-center">
                                         <CircleCheckBig className="h-4 shrink-0 text-[#2563EB] w-4" />
-                                        AI-powered threat and anomaly detection
+                                        {s("isaReceivePoints.2")}
                                     </li>
                                     <li className="flex gap-3 items-center">
                                         <CircleCheckBig className="h-4 shrink-0 text-[#2563EB] w-4" />
-                                        Prioritized action plan to strengthen your security
+                                        {s("isaReceivePoints.3")}
                                     </li>
                                     <li className="flex gap-3 items-center">
                                         <CircleCheckBig className="h-4 shrink-0 text-[#2563EB] w-4" />
-                                        Support in implementing critical policies
+                                        {s("isaReceivePoints.4")}
                                     </li>
                                     <li className="flex gap-3 items-center">
                                         <CircleCheckBig className="h-4 shrink-0 text-[#2563EB] w-4" />
-                                        Training and awareness for your team
+                                        {s("isaReceivePoints.5")}
                                     </li>
                                 </ul>
                             </div>
@@ -435,13 +437,15 @@ export default function Smartaudits() {
                                     type="button"
                                     className="rounded-full bg-[#E65300] p-6 text-white hover:bg-[#d14900]"
                                 >
-                                    Schedule your Intelligent Security Audit
+                                    {s("isaCta")}
                                 </Button>
                             </Link>
                         </div>
                     </div>
                 </div>
             </section>
+
+
             <section
                 className="relative overflow-hidden mb-16"
                 aria-labelledby="why-audit-heading"
@@ -459,14 +463,14 @@ export default function Smartaudits() {
                         data-aos="fade-up"
                         data-aos-delay="120"
                     >
-                        Why Conduct an Audit with CelesteIQ?
+                        {s("whyTitle")}
                     </h2>
                     <p
                         className="mt-3 text-gray-500 md:text-lg"
                         data-aos="fade-up"
                         data-aos-delay="150"
                     >
-                        Understanding your environment is the first step to mastering it.
+                        {s("whySubtitle")}
                     </p>
 
                     {/* Feature Cards */}
@@ -484,10 +488,11 @@ export default function Smartaudits() {
                             <div className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-md bg-[#ea580c] text-white">
                                 <Eye />
                             </div>
-                            <h3 className="font-medium text-lg text-gray-900">Comprehensive vision</h3>
+                            <h3 className="font-medium text-lg text-gray-900">
+                                {s("whyCards.1.title")}
+                            </h3>
                             <p className="mt-2 text-[#4B5563]">
-                                We evaluate not only what you have, but how you use it, and how you
-                                can improve it.
+                                {s("whyCards.1.description")}
                             </p>
                         </div>
 
@@ -500,10 +505,11 @@ export default function Smartaudits() {
                             <div className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-md bg-[#ea580c] text-white">
                                 <ChartLine />
                             </div>
-                            <h3 className="font-medium text-lg text-gray-900">Predictive approach</h3>
+                            <h3 className="font-medium text-lg text-gray-900">
+                                {s("whyCards.2.title")}
+                            </h3>
                             <p className="mt-2 text-[#4B5563]">
-                                We use AI to identify patterns, anomalies, and opportunities before
-                                they become problems.
+                                {s("whyCards.2.description")}
                             </p>
                         </div>
 
@@ -516,10 +522,11 @@ export default function Smartaudits() {
                             <div className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-md bg-[#ea580c] text-white">
                                 <CheckCircle2 />
                             </div>
-                            <h3 className="font-medium text-lg text-gray-900">Actionable recommendations</h3>
+                            <h3 className="font-medium text-lg text-gray-900">
+                                {s("whyCards.3.title")}
+                            </h3>
                             <p className="mt-2 text-[#4B5563]">
-                                We don’t deliver theory: every audit includes a clear, prioritized
-                                action plan.
+                                {s("whyCards.3.description")}
                             </p>
                         </div>
 
@@ -532,10 +539,11 @@ export default function Smartaudits() {
                             <div className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-md bg-[#ea580c] text-white">
                                 <Headphones />
                             </div>
-                            <h3 className="font-medium text-lg text-gray-900">Expert guidance</h3>
+                            <h3 className="font-medium text-lg text-gray-900">
+                                {s("whyCards.4.title")}
+                            </h3>
                             <p className="mt-2 text-[#4B5563]">
-                                Our team has years of experience in Microsoft solutions and digital
-                                transformation strategies.
+                                {s("whyCards.4.description")}
                             </p>
                         </div>
                     </div>
@@ -551,18 +559,16 @@ export default function Smartaudits() {
                                 className="rounded-full bg-[#EA580C] p-6 text-white font-semibold hover:bg-[#d94f09] shadow-md"
                                 type="button"
                             >
-                                Talk to a CelesteIQ consultant
+                                {s("whyCtaMain")}{" "}
                                 <span className="md:inline hidden">
-                                    and schedule your free AI diagnosis
+                                    {" "}
+                                    {s("whyCtaTail")}
                                 </span>
                             </Button>
                         </Link>
                     </div>
                 </div>
             </section>
-
-
-
 
         </Wrapper>
     )

@@ -8,6 +8,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Mail, Phone, Home, Sparkles, ArrowRight, CheckCircle2 } from "lucide-react";
 import Image from 'next/image';
+import { useTranslations } from 'next-intl';
 
 
 export default function Contact() {
@@ -19,7 +20,8 @@ export default function Contact() {
         message: "",
     });
     const [loading, setLoading] = useState(false);
-
+    const t = useTranslations("contact");
+    const h = useTranslations("ctaHero");
 
     function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
         e.preventDefault();
@@ -30,16 +32,14 @@ export default function Contact() {
         <Wrapper>
 
 
-
-            <section
-                className="relative overflow-hidden bg-[#99d9f1]"
-            >
+            <section className="relative overflow-hidden bg-[#99d9f1]">
                 <div
                     className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16 md:py-20 text-center"
                     data-aos="fade-up"
                     data-aos-delay="100"
                 >
                     <Navbar />
+
                     <div
                         className="relative rounded-b-[56px] px-4 py-12 sm:py-16 md:py-20 max-w-3xl mx-auto"
                         data-aos="fade-up"
@@ -50,14 +50,15 @@ export default function Contact() {
                             data-aos="fade-up"
                             data-aos-delay="220"
                         >
-                            Let's Transform Your Business
+                            {t("heroTitle")}
                         </h1>
+
                         <p
                             className="mx-auto mt-4 max-w-2xl font-semibold text-xl text-white"
                             data-aos="fade-up"
                             data-aos-delay="260"
                         >
-                            Ready to embrace AI and Microsoft technologies? Get in touch with our team of experts and start your digital transformation journey today.
+                            {t("heroSubtitle")}
                         </p>
                     </div>
                 </div>
@@ -72,7 +73,10 @@ export default function Contact() {
                         className="h-[90px] w-full sm:h-[110px] md:h-[140px]"
                         preserveAspectRatio="none"
                     >
-                        <path d="M0,45 C300,180 1140,180 1440,45 L1440,180 L0,180 Z" fill="#ffffff" />
+                        <path
+                            d="M0,45 C300,180 1140,180 1440,45 L1440,180 L0,180 Z"
+                            fill="#ffffff"
+                        />
                     </svg>
                 </div>
             </section>
@@ -88,13 +92,13 @@ export default function Contact() {
                     data-aos-delay="80"
                 >
                     <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
+                        {/* Left side: text + contact details */}
                         <div data-aos="fade-up" data-aos-delay="140">
                             <h2 className="text-4xl md:text-5xl font-semibold tracking-tight text-slate-900">
-                                Contact Us
+                                {t("sectionTitle")}
                             </h2>
                             <p className="mt-3 max-w-md text-[#494949] text-lg">
-                                We are committed to processing the information in order to contact you and talk about your
-                                project.
+                                {t("sectionDescription")}
                             </p>
 
                             <ul className="mt-8 space-y-5 text-slate-700">
@@ -108,7 +112,7 @@ export default function Contact() {
                                         href="mailto:support@celesteiq.com"
                                         className="hover:text-orange-600 transition-colors"
                                     >
-                                        support@celesteiq.com
+                                        {t("emailLabel")}
                                     </a>
                                 </li>
 
@@ -122,11 +126,9 @@ export default function Contact() {
                                         href="https://www.google.com/maps?q=60+Avenue+Victor+Hugo,+75116+Paris,+France"
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="hover:text-orange-600 transition-colors"
+                                        className="hover:text-orange-600 transition-colors whitespace-pre-line"
                                     >
-                                        60 Avenue Victor Hugo
-                                        <br />
-                                        75116, Paris France
+                                        {t("addressLabel")}
                                     </a>
                                 </li>
 
@@ -140,12 +142,13 @@ export default function Contact() {
                                         href="tel:+33142389811"
                                         className="hover:text-orange-600 transition-colors"
                                     >
-                                        +33 1 42 38 98 11
+                                        {t("phoneLabel")}
                                     </a>
                                 </li>
                             </ul>
                         </div>
 
+                        {/* Right side: form */}
                         <form
                             className="space-y-4"
                             onSubmit={(e) => e.preventDefault()}
@@ -154,25 +157,25 @@ export default function Contact() {
                         >
                             <Input
                                 required
-                                placeholder="Name"
+                                placeholder={t("form.namePlaceholder")}
                                 className="border-slate-200 py-6"
                             />
 
                             <Input
                                 required
                                 type="email"
-                                placeholder="Email"
+                                placeholder={t("form.emailPlaceholder")}
                                 className="border-slate-200 py-6"
                             />
 
                             <Input
                                 required
-                                placeholder="Website"
+                                placeholder={t("form.websitePlaceholder")}
                                 className="border-slate-200 py-6"
                             />
 
                             <Textarea
-                                placeholder="Message"
+                                placeholder={t("form.messagePlaceholder")}
                                 rows={6}
                                 className="border-slate-200 py-6"
                             />
@@ -181,7 +184,7 @@ export default function Contact() {
                                 type="submit"
                                 className="w-full bg-orange-600 hover:bg-[#FF7A00] py-6 text-white"
                             >
-                                Submit
+                                {t("form.submit")}
                             </Button>
                         </form>
                     </div>
@@ -199,7 +202,7 @@ export default function Contact() {
                     data-aos-delay="100"
                 >
                     <h3 className="text-xl font-semibold">
-                        Why Choose CelesteIQ?
+                        {t("whyChoose.title")}
                     </h3>
 
                     <ul
@@ -207,25 +210,23 @@ export default function Contact() {
                         data-aos="fade-up"
                         data-aos-delay="150"
                     >
-                        {[
-                            "Microsoft-certified experts with AI specialization",
-                            "Proven track record of successful implementations",
-                            "Ongoing support and optimization",
-                            "ROI-focused approach to technology investments",
-                        ].map((item) => (
+                        {[0, 1, 2, 3].map((index) => (
                             <li
-                                key={item}
+                                key={index}
                                 className="flex items-start gap-2.5"
                                 data-aos="fade-up"
                                 data-aos-delay="180"
                             >
                                 <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-orange-600" />
-                                <span className="text-[15px] leading-6">{item}</span>
+                                <span className="text-[15px] leading-6">
+                                    {t(`whyChoose.items.${index}`)}
+                                </span>
                             </li>
                         ))}
                     </ul>
                 </div>
             </div>
+
 
 
             <section
@@ -252,7 +253,7 @@ export default function Contact() {
                         data-aos-delay="150"
                     >
                         <Sparkles className="h-3.5 w-3.5" />
-                        <span>Limited Time Offer</span>
+                        <span>{h("badge")}</span>
                     </div>
 
                     <h2
@@ -260,9 +261,9 @@ export default function Contact() {
                         data-aos="fade-up"
                         data-aos-delay="200"
                     >
-                        Start Your AI Transformation
+                        {h("titleLine1")}
                         <br />
-                        Today
+                        {h("titleLine2")}
                     </h2>
 
                     <p
@@ -270,7 +271,7 @@ export default function Contact() {
                         data-aos="fade-up"
                         data-aos-delay="240"
                     >
-                        Join hundreds of businesses already leveraging AI to grow faster and work smarter
+                        {h("subtitle")}
                     </p>
 
                     <div
@@ -285,7 +286,7 @@ export default function Contact() {
                                 data-aos="zoom-in"
                                 data-aos-delay="300"
                             >
-                                Schedule Free Consultation <ArrowRight className="ml-2 h-4 w-4" />
+                                {h("primaryButton")} <ArrowRight className="ml-2 h-4 w-4" />
                             </Button>
                         </Link>
 
@@ -297,7 +298,7 @@ export default function Contact() {
                                 data-aos="zoom-in"
                                 data-aos-delay="330"
                             >
-                                View Pricing
+                                {h("secondaryButton")}
                             </Button>
                         </Link>
                     </div>
@@ -307,11 +308,10 @@ export default function Contact() {
                         data-aos="fade-up"
                         data-aos-delay="360"
                     >
-                        No credit card required. Get started in minutes.
+                        {h("note")}
                     </p>
                 </div>
             </section>
-
 
 
 

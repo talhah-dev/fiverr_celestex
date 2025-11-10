@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import Wrapper from '../Wrapper';
 import { ArrowRight, Calendar } from "lucide-react";
 import Image from 'next/image';
+import { useTranslations } from 'next-intl';
 
 type QA = {
     id: string;
@@ -67,9 +68,12 @@ const faqs: QA[] = [
 ];
 
 export default function Blog() {
+
+    const h = useTranslations("blog");
+    const b = useTranslations("blogIntro");
+
     return (
         <Wrapper>
-
 
             <section
                 className="relative overflow-hidden bg-[#99d9f1]"
@@ -91,7 +95,7 @@ export default function Blog() {
                             data-aos="fade-up"
                             data-aos-delay="220"
                         >
-                            Resources/ Blogs
+                            {h("title")}
                         </h1>
                     </div>
                 </div>
@@ -126,15 +130,16 @@ export default function Blog() {
                         data-aos-delay="120"
                     >
                         <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-[#ea580c]">
-                            BLOG
+                            {b("title")}
                         </h2>
                         <p className="mx-auto mt-2 md:mt-3 md:text-xl font-medium max-w-2xl text-[#374151]">
-                            Learn, explore, and get inspired by the latest trends in Artificial Intelligence and Digital Transformation.
+                            {b("subtitle1")}
                         </p>
                         <p className="mx-auto mt-2 md:mt-3 md:text-xl max-w-2xl text-[#374151]">
-                            Our blog is a space where we share real case studies, implementation strategies, updates from the Microsoft ecosystem, and practical tips for leaders looking to embrace intelligent automation.
+                            {b("subtitle2")}
                         </p>
                     </div>
+
 
                     <div
                         className="grid md:mt-16 mt-8 md:grid-cols-2 md:gap-8 gap-4 grid-cols-1"
@@ -303,7 +308,7 @@ export default function Blog() {
                             className="py-6 bg-[#FF7A00] rounded-full text-white hover:bg-orange-600"
                             size={"lg"}
                         >
-                            Explore Articles
+                            {b("ctablog")}
                             <ArrowRight className="ml-2 h-4 w-4" />
                         </Button>
                     </div>

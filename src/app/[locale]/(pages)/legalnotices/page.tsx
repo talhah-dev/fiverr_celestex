@@ -7,10 +7,16 @@ import { Textarea } from "@/components/ui/textarea";
 import { Mail, Phone, Home, Sparkles, ArrowRight, CheckCircle2, Globe } from "lucide-react";
 import Image from 'next/image';
 import { Building2, ShieldCheck, Cookie, FileText } from "lucide-react";
+import { useTranslations } from 'next-intl';
 
 export default function Legalnotices() {
+
+    const t = useTranslations("legal");
+    const h = useTranslations("ctaHero");
+
     return (
         <Wrapper>
+
             <section
                 className="relative overflow-hidden bg-[#99d9f1]"
                 data-aos="fade-up"
@@ -31,7 +37,7 @@ export default function Legalnotices() {
                             data-aos="fade-up"
                             data-aos-delay="220"
                         >
-                            Legal Notes
+                            {t("heroTitle")}
                         </h1>
                     </div>
                 </div>
@@ -53,8 +59,6 @@ export default function Legalnotices() {
 
 
 
-
-
             <section
                 className="py-12 sm:py-16"
                 data-aos="fade-up"
@@ -70,12 +74,12 @@ export default function Legalnotices() {
                         data-aos-delay="120"
                     >
                         <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-[#ea580c]">
-                            Legal Notices
+                            {t("sectionTitle")}
                         </h2>
                         <p className="mx-auto mt-2 md:mt-3 md:text-xl font-medium max-w-2xl text-[#374151]">
-                            Transparency, privacy, and trust in every digital interaction.
+                            {t("sectionSubtitle")}
                             <span className="block">
-                                Official legal reference:&nbsp;
+                                {t("sectionSubtitleLinkLabel")}&nbsp;
                                 <a
                                     href="https://air-cloud.fr/es/notas-legales/"
                                     target="_blank"
@@ -106,19 +110,27 @@ export default function Legalnotices() {
                                             <Globe className="h-6 w-6" />
                                         </span>
                                         <div className="flex-1">
-                                            <h3 className="text-xl font-semibold text-slate-900">Site Owner</h3>
+                                            <h3 className="text-xl font-semibold text-slate-900">
+                                                {t("siteOwner.title")}
+                                            </h3>
                                             <dl className="mt-4 space-y-2 text-[15px] text-slate-700">
                                                 <div className="grid grid-cols-[120px_1fr] gap-2">
-                                                    <dt className="font-semibold text-slate-900">Company:</dt>
-                                                    <dd>CelesteIQ</dd>
+                                                    <dt className="font-semibold text-slate-900">
+                                                        {t("siteOwner.companyLabel")}
+                                                    </dt>
+                                                    <dd>{t("siteOwner.company")}</dd>
                                                 </div>
                                                 <div className="grid grid-cols-[120px_1fr] gap-2">
-                                                    <dt className="font-semibold text-slate-900">Legal Name:</dt>
-                                                    <dd>CelesteIQ Technologies, Inc.</dd>
+                                                    <dt className="font-semibold text-slate-900">
+                                                        {t("siteOwner.legalNameLabel")}
+                                                    </dt>
+                                                    <dd>{t("siteOwner.legalName")}</dd>
                                                 </div>
                                                 <div className="grid grid-cols-[120px_1fr] gap-2">
-                                                    <dt className="font-semibold text-slate-900">Business Type:</dt>
-                                                    <dd>Technology Consulting and Digital Transformation Services</dd>
+                                                    <dt className="font-semibold text-slate-900">
+                                                        {t("siteOwner.businessTypeLabel")}
+                                                    </dt>
+                                                    <dd>{t("siteOwner.businessType")}</dd>
                                                 </div>
                                             </dl>
                                         </div>
@@ -136,16 +148,12 @@ export default function Legalnotices() {
                                             <ShieldCheck className="h-6 w-6" />
                                         </span>
                                         <div className="flex-1">
-                                            <h3 className="text-xl font-semibold text-slate-900">Data Protection</h3>
+                                            <h3 className="text-xl font-semibold text-slate-900">
+                                                {t("dataProtection.title")}
+                                            </h3>
                                             <div className="mt-3 space-y-3 text-[15px] leading-6 text-slate-700">
-                                                <p>
-                                                    CelesteIQ is committed to protecting the privacy of its clients and visitors. Data collected is
-                                                    used solely for contact and service improvement, in compliance with GDPR.
-                                                </p>
-                                                <p>
-                                                    We implement industry-standard security measures to safeguard your information and ensure it is
-                                                    processed lawfully, fairly, and transparently.
-                                                </p>
+                                                <p>{t("dataProtection.p1")}</p>
+                                                <p>{t("dataProtection.p2")}</p>
                                             </div>
                                         </div>
                                     </div>
@@ -162,16 +170,12 @@ export default function Legalnotices() {
                                             <FileText className="h-6 w-6" />
                                         </span>
                                         <div className="flex-1">
-                                            <h3 className="text-xl font-semibold text-slate-900">Intellectual Property</h3>
+                                            <h3 className="text-xl font-semibold text-slate-900">
+                                                {t("intellectualProperty.title")}
+                                            </h3>
                                             <div className="mt-3 space-y-3 text-[15px] leading-6 text-slate-700">
-                                                <p>
-                                                    All content on this website, including but not limited to logos, text, graphics, images, and
-                                                    software, is the property of CelesteIQ and protected by international copyright laws.
-                                                </p>
-                                                <p>
-                                                    Unauthorized reproduction, distribution, or modification of any materials from this website is
-                                                    strictly prohibited without express written permission from CelesteIQ.
-                                                </p>
+                                                <p>{t("intellectualProperty.p1")}</p>
+                                                <p>{t("intellectualProperty.p2")}</p>
                                             </div>
                                         </div>
                                     </div>
@@ -188,16 +192,12 @@ export default function Legalnotices() {
                                             <Cookie className="h-6 w-6" />
                                         </span>
                                         <div className="flex-1">
-                                            <h3 className="text-xl font-semibold text-slate-900">Cookie Policy</h3>
+                                            <h3 className="text-xl font-semibold text-slate-900">
+                                                {t("cookiePolicy.title")}
+                                            </h3>
                                             <div className="mt-3 space-y-3 text-[15px] leading-6 text-slate-700">
-                                                <p>
-                                                    This site uses technical and analytical cookies to enhance your browsing experience. These cookies
-                                                    help us understand how visitors interact with our website and allow us to improve our services.
-                                                </p>
-                                                <p>
-                                                    By continuing to use this site, you consent to our use of cookies in accordance with our privacy
-                                                    policy.
-                                                </p>
+                                                <p>{t("cookiePolicy.p1")}</p>
+                                                <p>{t("cookiePolicy.p2")}</p>
                                             </div>
                                         </div>
                                     </div>
@@ -214,14 +214,16 @@ export default function Legalnotices() {
                                             <Building2 className="h-6 w-6" />
                                         </span>
                                         <div className="flex-1">
-                                            <h3 className="text-xl font-semibold text-slate-900">Contact</h3>
+                                            <h3 className="text-xl font-semibold text-slate-900">
+                                                {t("contactSection.title")}
+                                            </h3>
                                             <p className="mt-3 text-[15px] leading-6 text-slate-700">
-                                                For any legal or privacy-related inquiries, please contact:
+                                                {t("contactSection.body")}
                                                 <a
                                                     href="mailto:legal@celesteiq.com"
                                                     className="ml-1 font-medium text-blue-500 hover:underline"
                                                 >
-                                                    legal@celesteiq.com
+                                                    {t("contactSection.emailLabel")}
                                                 </a>
                                             </p>
                                         </div>
@@ -232,8 +234,6 @@ export default function Legalnotices() {
                     </div>
                 </div>
             </section>
-
-
 
 
             <section
@@ -260,7 +260,7 @@ export default function Legalnotices() {
                         data-aos-delay="150"
                     >
                         <Sparkles className="h-3.5 w-3.5" />
-                        <span>Limited Time Offer</span>
+                        <span>{h("badge")}</span>
                     </div>
 
                     <h2
@@ -268,9 +268,9 @@ export default function Legalnotices() {
                         data-aos="fade-up"
                         data-aos-delay="200"
                     >
-                        Start Your AI Transformation
+                        {h("titleLine1")}
                         <br />
-                        Today
+                        {h("titleLine2")}
                     </h2>
 
                     <p
@@ -278,7 +278,7 @@ export default function Legalnotices() {
                         data-aos="fade-up"
                         data-aos-delay="240"
                     >
-                        Join hundreds of businesses already leveraging AI to grow faster and work smarter
+                        {h("subtitle")}
                     </p>
 
                     <div
@@ -293,9 +293,10 @@ export default function Legalnotices() {
                                 data-aos="zoom-in"
                                 data-aos-delay="300"
                             >
-                                Schedule Free Consultation <ArrowRight className="ml-2 h-4 w-4" />
+                                {h("primaryButton")} <ArrowRight className="ml-2 h-4 w-4" />
                             </Button>
                         </Link>
+
                         <Link href="/contact">
                             <Button
                                 size={"lg"}
@@ -304,7 +305,7 @@ export default function Legalnotices() {
                                 data-aos="zoom-in"
                                 data-aos-delay="330"
                             >
-                                View Pricing
+                                {h("secondaryButton")}
                             </Button>
                         </Link>
                     </div>
@@ -314,7 +315,7 @@ export default function Legalnotices() {
                         data-aos="fade-up"
                         data-aos-delay="360"
                     >
-                        No credit card required. Get started in minutes.
+                        {h("note")}
                     </p>
                 </div>
             </section>

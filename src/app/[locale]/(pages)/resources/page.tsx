@@ -6,13 +6,16 @@ import { Button } from "@/components/ui/button";
 import Wrapper from '../Wrapper';
 import { BookOpen, HelpCircle, FileText } from "lucide-react";
 import { Search, Compass, Workflow, GraduationCap, BarChart3 } from "lucide-react";
+import { useTranslations } from 'next-intl';
 
 export default function Resources() {
+
+    const r = useTranslations("resources");
+    const p = useTranslations("process");
+
     return (
         <>
             <Wrapper>
-
-
 
                 <section
                     className="relative overflow-hidden bg-[#99d9f1]"
@@ -34,14 +37,14 @@ export default function Resources() {
                                 data-aos="fade-up"
                                 data-aos-delay="220"
                             >
-                                CelesteIQ Resources
+                                {r("heroTitle")}
                             </h1>
                             <p
                                 className="mx-auto mt-4 max-w-2xl font-semibold text-xl text-white"
                                 data-aos="fade-up"
                                 data-aos-delay="260"
                             >
-                                Intelligent Transformation Journey. A proven methodology that takes you from where you are to where you want to be.
+                                {r("heroSubtitle")}
                             </p>
                         </div>
                     </div>
@@ -49,7 +52,7 @@ export default function Resources() {
                     <div
                         className="pointer-events-none absolute inset-x-0 bottom-[-1px]"
                         data-aos="fade-up"
-                        data-aos-delay="300"
+                        data-aos-delay="320"
                     >
                         <svg
                             viewBox="0 0 1440 180"
@@ -60,6 +63,9 @@ export default function Resources() {
                         </svg>
                     </div>
                 </section>
+
+
+
 
 
                 <section
@@ -77,10 +83,10 @@ export default function Resources() {
                             data-aos-delay="120"
                         >
                             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-[#ea580c]">
-                                CelesteIQ Resources
+                                {r("sectionTitle")}
                             </h2>
                             <p className="mx-auto mt-2 md:mt-3 md:text-xl font-medium max-w-2xl text-[#2A2D2D]">
-                                Explore our collection of insights, answers, and information about AI-powered digital transformation.
+                                {r("sectionSubtitle")}
                             </p>
                         </div>
 
@@ -104,18 +110,17 @@ export default function Resources() {
                                         <BookOpen className="h-7 w-7" />
                                     </div>
                                     <h3 className="mt-8 text-3xl font-semibold tracking-tight text-slate-900">
-                                        Blog
+                                        {r("cards.blog.title")}
                                     </h3>
                                     <p className="mt-3 text-lg text-slate-600">
-                                        Learn, explore, and get inspired by the latest trends in Artificial Intelligence and Digital
-                                        Transformation.
+                                        {r("cards.blog.description")}
                                     </p>
                                     <div className="mt-6 inline-block w-full">
                                         <div className="relative">
                                             <div className="pointer-events-none blur-md absolute inset-x-0 -bottom-1 h-2 rounded-full bg-sky-300" />
                                             <Link href="/blog">
                                                 <Button className="w-full relative rounded-full bg-[#ea580c] px-6 text-white py-6 hover:bg-[#FF7A00]">
-                                                    Explore Articles
+                                                    {r("cards.blog.button")}
                                                 </Button>
                                             </Link>
                                         </div>
@@ -136,10 +141,10 @@ export default function Resources() {
                                         <HelpCircle className="h-7 w-7" />
                                     </div>
                                     <h3 className="mt-8 text-3xl font-semibold tracking-tight text-slate-900">
-                                        FAQ
+                                        {r("cards.faq.title")}
                                     </h3>
                                     <p className="mt-3 text-lg text-slate-600">
-                                        Find answers about CelesteIQ&apos;s AI, Microsoft solutions, and global operations.
+                                        {r("cards.faq.description")}
                                         <span className="xl:block hideen select-none">&nbsp;</span>
                                     </p>
                                     <div className="mt-6 inline-block w-full">
@@ -147,7 +152,7 @@ export default function Resources() {
                                             <div className="pointer-events-none blur-md absolute inset-x-0 -bottom-1 h-2 rounded-full bg-sky-300" />
                                             <Link href="/faq">
                                                 <Button className="relative w-full rounded-full bg-[#ea580c] px-6 text-white py-6 hover:bg-[#FF7A00]">
-                                                    Get Answer
+                                                    {r("cards.faq.button")}
                                                 </Button>
                                             </Link>
                                         </div>
@@ -168,10 +173,10 @@ export default function Resources() {
                                         <FileText className="h-7 w-7" />
                                     </div>
                                     <h3 className="mt-8 text-3xl font-semibold tracking-tight text-slate-900">
-                                        Legal Notices
+                                        {r("cards.legal.title")}
                                     </h3>
                                     <p className="mt-3 text-lg text-slate-600">
-                                        Transparency, privacy, and trust in every digital interaction.
+                                        {r("cards.legal.description")}
                                         <span className="xl:block hideen select-none">&nbsp;</span>
                                         <span className="xl:block hideen select-none">&nbsp;</span>
                                     </p>
@@ -180,7 +185,7 @@ export default function Resources() {
                                             <div className="pointer-events-none blur-md absolute inset-x-0 -bottom-1 h-2 rounded-full bg-sky-300" />
                                             <Link href="/legalnotices">
                                                 <Button className="relative w-full rounded-full bg-[#ea580c] px-6 text-white py-6 hover:bg-[#FF7A00]">
-                                                    View Details
+                                                    {r("cards.legal.button")}
                                                 </Button>
                                             </Link>
                                         </div>
@@ -190,6 +195,8 @@ export default function Resources() {
                         </div>
                     </div>
                 </section>
+
+
                 <section
                     className="py-12 sm:py-16"
                     data-aos="fade-up"
@@ -205,10 +212,10 @@ export default function Resources() {
                             data-aos-delay="120"
                         >
                             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-[#ea580c]">
-                                Our Process
+                                {p("title")}
                             </h2>
                             <p className="mx-auto mt-2 md:mt-3 md:text-xl font-medium max-w-2xl text-[#2A2D2D]">
-                                Intelligent Transformation Journey. A proven methodology that takes you from where you are to where you want to be.
+                                {p("subtitle")}
                             </p>
                         </div>
 
@@ -217,7 +224,6 @@ export default function Resources() {
                             data-aos="fade-up"
                             data-aos-delay="160"
                         >
-                            {/* fixed left rail for md+ */}
                             <div className="pointer-events-none absolute inset-y-0 hidden w-1 bg-slate-200 md:left-16 -z-10 md:block" />
 
                             {/* STEP 1 */}
@@ -243,13 +249,11 @@ export default function Resources() {
                                         <div className="flex-1">
                                             <div className="flex items-center gap-2">
                                                 <p className="text-xl font-semibold text-slate-900">
-                                                    Evaluation &amp; Diagnosis
+                                                    {p("steps.1.title")}
                                                 </p>
                                             </div>
                                             <p className="mt-2 leading-6 text-[#2A2D2D]">
-                                                We assess your infrastructure, workflows, and culture to identify gaps
-                                                and opportunities for AI value. Our comprehensive analysis provides a
-                                                clear picture of where you are and where you can go.
+                                                {p("steps.1.description")}
                                             </p>
                                         </div>
                                     </div>
@@ -279,13 +283,11 @@ export default function Resources() {
                                         <div className="flex-1">
                                             <div className="flex items-center gap-2">
                                                 <p className="text-xl font-semibold text-slate-900">
-                                                    Digital Strategy Design
+                                                    {p("steps.2.title")}
                                                 </p>
                                             </div>
                                             <p className="mt-2 leading-6 text-[#2A2D2D]">
-                                                Create a customized roadmap for Microsoft 365, Power Platform, and
-                                                Azure AI aligned with your business goals. We design a strategy that
-                                                balances quick wins with long-term transformation.
+                                                {p("steps.2.description")}
                                             </p>
                                         </div>
                                     </div>
@@ -315,13 +317,11 @@ export default function Resources() {
                                         <div className="flex-1">
                                             <div className="flex items-center gap-2">
                                                 <p className="text-xl font-semibold text-slate-900">
-                                                    Implementation &amp; Automation
+                                                    {p("steps.3.title")}
                                                 </p>
                                             </div>
                                             <p className="mt-2 leading-6 text-[#2A2D2D]">
-                                                Integrate tools, optimize performance, and ensure security and
-                                                compliance. Our expert team handles the technical complexity while
-                                                keeping your business running smoothly.
+                                                {p("steps.3.description")}
                                             </p>
                                         </div>
                                     </div>
@@ -351,13 +351,11 @@ export default function Resources() {
                                         <div className="flex-1">
                                             <div className="flex items-center gap-2">
                                                 <p className="text-xl font-semibold text-slate-900">
-                                                    Training &amp; Adoption
+                                                    {p("steps.4.title")}
                                                 </p>
                                             </div>
                                             <p className="mt-2 leading-6 text-[#2A2D2D]">
-                                                Support your teams with comprehensive training and ensure seamless
-                                                technology integration. We create champions within your organization
-                                                who drive adoption and excellence.
+                                                {p("steps.4.description")}
                                             </p>
                                         </div>
                                     </div>
@@ -387,13 +385,11 @@ export default function Resources() {
                                         <div className="flex-1">
                                             <div className="flex items-center gap-2">
                                                 <p className="text-xl font-semibold text-slate-900">
-                                                    Monitoring &amp; Evolution
+                                                    {p("steps.5.title")}
                                                 </p>
                                             </div>
                                             <p className="mt-2 leading-6 text-[#2A2D2D]">
-                                                Track performance, adapt strategies, and continuously innovate. We
-                                                provide ongoing support and optimization to ensure your technology
-                                                investment delivers lasting value.
+                                                {p("steps.5.description")}
                                             </p>
                                         </div>
                                     </div>
@@ -402,6 +398,8 @@ export default function Resources() {
                         </div>
                     </div>
                 </section>
+
+
 
 
             </Wrapper>

@@ -10,10 +10,16 @@ import { ShieldCheck, Activity, AlertTriangle, Database } from "lucide-react";
 import { Sparkles } from "lucide-react";
 import { Zap, TrendingUp, Box, Users2 } from "lucide-react";
 import Footer from '@/components/Footer';
+import { useTranslations } from 'next-intl';
+import Wrapper from '../Wrapper';
 
 export default function SmartPackages() {
+
+    const s = useTranslations("smartpackages");
+
+
     return (
-        <>
+        <Wrapper>
 
 
             <section
@@ -36,19 +42,16 @@ export default function SmartPackages() {
                             data-aos="fade-up"
                             data-aos-delay="220"
                         >
-                            <span className="block">Intelligent Solutions to</span>
-                            <span className="block text-[#FF7A00]">Boost Your Business</span>
-                            <span className="block">with AI and Microsoft</span>
+                            <span className="block">{s("hero.line1")}</span>
+                            <span className="block text-[#FF7A00]">{s("hero.line2")}</span>
+                            <span className="block">{s("hero.line3")}</span>
                         </h1>
                         <p
                             className="mx-auto mt-4 max-w-2xl font-semibold text-xl text-white"
                             data-aos="fade-up"
                             data-aos-delay="260"
                         >
-                            At CelesteIQ, we combine the strength of the Microsoft
-                            ecosystem with the power of
-                            Artificial Intelligence to deliver services that truly make an
-                            impact.
+                            {s("hero.subtitle")}
                         </p>
                     </div>
                 </div>
@@ -69,6 +72,7 @@ export default function SmartPackages() {
             </section>
 
 
+
             <section
                 className=""
                 data-aos="fade-up"
@@ -83,8 +87,7 @@ export default function SmartPackages() {
                         data-aos="fade-up"
                         data-aos-delay="120"
                     >
-                        Our packages, audits, and specialized solutions accompany you from strategy to implementation—helping you build a more efficient,
-                        connected, and future-ready company.
+                        {s("cta.text")}
                     </p>
 
                     <div
@@ -97,7 +100,7 @@ export default function SmartPackages() {
                             size={"lg"}
                             className="py-6 bg-[#FF7A00] md:w-auto w-full px-5 text-white hover:bg-[#ea580c]"
                         >
-                            <Link href="/contact">Explore Packages</Link>
+                            <Link href="/contact">{s("cta.primary")}</Link>
                         </Button>
                         <Button
                             variant="outline"
@@ -107,7 +110,7 @@ export default function SmartPackages() {
                         >
                             <Link href="/contact" className="inline-flex items-center gap-2">
                                 <MessageSquare className="h-4 w-4" />
-                                <span>Contact an Expert</span>
+                                <span>{s("cta.secondary")}</span>
                             </Link>
                         </Button>
                     </div>
@@ -126,13 +129,15 @@ export default function SmartPackages() {
                                 <div className="grid h-12 w-12 place-items-center overflow-hidden rounded-md bg-orange-100">
                                     <Image
                                         src="/pkg-ai.png"
-                                        alt="AI Assistant"
+                                        alt={s("cta.stack.ai")}
                                         width={48}
                                         height={48}
                                         className="h-12 w-12 object-cover"
                                     />
                                 </div>
-                                <span className="text-sm font-medium text-slate-700">AI Assistant</span>
+                                <span className="text-sm font-medium text-slate-700">
+                                    {s("cta.stack.ai")}
+                                </span>
                             </div>
 
                             <div
@@ -143,13 +148,15 @@ export default function SmartPackages() {
                                 <div className="grid h-12 w-12 place-items-center overflow-hidden rounded-md bg-orange-100">
                                     <Image
                                         src="/pkg-m365.png"
-                                        alt="Microsoft 365"
+                                        alt={s("cta.stack.m365")}
                                         width={48}
                                         height={48}
                                         className="h-12 w-12 object-cover"
                                     />
                                 </div>
-                                <span className="text-sm font-medium text-slate-700">Microsoft 365</span>
+                                <span className="text-sm font-medium text-slate-700">
+                                    {s("cta.stack.m365")}
+                                </span>
                             </div>
 
                             <div
@@ -160,13 +167,15 @@ export default function SmartPackages() {
                                 <div className="grid h-12 w-12 place-items-center overflow-hidden rounded-md bg-orange-100">
                                     <Image
                                         src="/pkg-azure.png"
-                                        alt="Azure"
+                                        alt={s("cta.stack.azure")}
                                         width={48}
                                         height={48}
                                         className="h-12 w-12 object-cover"
                                     />
                                 </div>
-                                <span className="text-sm font-medium text-slate-700">Azure</span>
+                                <span className="text-sm font-medium text-slate-700">
+                                    {s("cta.stack.azure")}
+                                </span>
                             </div>
 
                             <div
@@ -177,18 +186,21 @@ export default function SmartPackages() {
                                 <div className="grid h-12 w-12 place-items-center overflow-hidden rounded-md bg-orange-100">
                                     <Image
                                         src="/pkg-power.png"
-                                        alt="Power Platform"
+                                        alt={s("cta.stack.power")}
                                         width={48}
                                         height={48}
                                         className="h-12 w-12 object-cover"
                                     />
                                 </div>
-                                <span className="text-sm font-medium text-slate-700">Power Platform</span>
+                                <span className="text-sm font-medium text-slate-700">
+                                    {s("cta.stack.power")}
+                                </span>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
+
 
 
             <section
@@ -208,15 +220,15 @@ export default function SmartPackages() {
                             data-aos-delay="120"
                         >
                             <h2 className="text-3xl sm:text-5xl font-medium leading-[1.05] tracking-tight text-slate-900">
-                                <span className="block">Implement. Automate.</span>
-                                <span className="block">Evolve.</span>
-                                <span className="block text-[#FF7A00]">with Microsoft + AI</span>
+                                <span className="block">{s("intro.titleLine1")}</span>
+                                <span className="block">{s("intro.titleLine2")}</span>
+                                <span className="block text-[#FF7A00]">{s("intro.titleLine3")}</span>
                             </h2>
                             <p className="mt-4 text-slate-600">
-                                At CelesteIQ, we understand that every company has a different starting point in its digital transformation journey. That&apos;s why we&apos;ve designed intelligent packages that integrate the tools of the Microsoft ecosystem with applied Artificial Intelligence capabilities — helping you move forward with speed, security, and clarity.
+                                {s("intro.body1")}
                             </p>
                             <p className="mt-5 font-medium text-lg text-slate-900">
-                                Our goal: to make technology work for you — not the other way around.
+                                {s("intro.body2")}
                             </p>
 
                             <div className="mt-6 space-y-4">
@@ -229,8 +241,12 @@ export default function SmartPackages() {
                                         <Zap className="h-5 w-5" />
                                     </span>
                                     <div>
-                                        <p className="font-medium text-slate-900">Speed &amp; Agility</p>
-                                        <p className="text-sm text-slate-500">Rapid implementation with measurable results</p>
+                                        <p className="font-medium text-slate-900">
+                                            {s("intro.bullets.speedTitle")}
+                                        </p>
+                                        <p className="text-sm text-slate-500">
+                                            {s("intro.bullets.speedDesc")}
+                                        </p>
                                     </div>
                                 </div>
 
@@ -243,8 +259,12 @@ export default function SmartPackages() {
                                         <Brain className="h-5 w-5" />
                                     </span>
                                     <div>
-                                        <p className="font-medium text-slate-900">AI-Powered Intelligence</p>
-                                        <p className="text-sm text-slate-500">Smart automation and predictive insights</p>
+                                        <p className="font-medium text-slate-900">
+                                            {s("intro.bullets.aiTitle")}
+                                        </p>
+                                        <p className="text-sm text-slate-500">
+                                            {s("intro.bullets.aiDesc")}
+                                        </p>
                                     </div>
                                 </div>
 
@@ -257,8 +277,12 @@ export default function SmartPackages() {
                                         <Layers className="h-5 w-5" />
                                     </span>
                                     <div>
-                                        <p className="font-medium text-slate-900">Continuous Evolution</p>
-                                        <p className="text-sm text-slate-500">Scalable solutions that grow with you</p>
+                                        <p className="font-medium text-slate-900">
+                                            {s("intro.bullets.evolutionTitle")}
+                                        </p>
+                                        <p className="text-sm text-slate-500">
+                                            {s("intro.bullets.evolutionDesc")}
+                                        </p>
                                     </div>
                                 </div>
                             </div>
@@ -281,8 +305,10 @@ export default function SmartPackages() {
                                             Az
                                         </span>
                                         <div>
-                                            <p className="text-slate-900">Azure</p>
-                                            <p className="text-xs text-slate-500">Cloud Infrastructure</p>
+                                            <p className="text-slate-900">{s("intro.cards.azureTitle")}</p>
+                                            <p className="text-xs text-slate-500">
+                                                {s("intro.cards.azureSubtitle")}
+                                            </p>
                                         </div>
                                     </div>
                                 </div>
@@ -297,8 +323,10 @@ export default function SmartPackages() {
                                             M
                                         </span>
                                         <div>
-                                            <p className="text-slate-900">Microsoft 365</p>
-                                            <p className="text-xs text-slate-500">Productivity Suite</p>
+                                            <p className="text-slate-900">{s("intro.cards.m365Title")}</p>
+                                            <p className="text-xs text-slate-500">
+                                                {s("intro.cards.m365Subtitle")}
+                                            </p>
                                         </div>
                                     </div>
                                 </div>
@@ -313,8 +341,10 @@ export default function SmartPackages() {
                                             P
                                         </span>
                                         <div>
-                                            <p className="text-slate-900">Power Platform</p>
-                                            <p className="text-xs text-slate-500">Low-Code Tools</p>
+                                            <p className="text-slate-900">{s("intro.cards.powerTitle")}</p>
+                                            <p className="text-xs text-slate-500">
+                                                {s("intro.cards.powerSubtitle")}
+                                            </p>
                                         </div>
                                     </div>
                                 </div>
@@ -329,8 +359,12 @@ export default function SmartPackages() {
                                             <Brain className="h-4 w-4" />
                                         </span>
                                         <div>
-                                            <p className="text-slate-900">Copilot</p>
-                                            <p className="text-xs text-slate-500">AI Assistant</p>
+                                            <p className="text-slate-900">
+                                                {s("intro.cards.copilotTitle")}
+                                            </p>
+                                            <p className="text-xs text-slate-500">
+                                                {s("intro.cards.copilotSubtitle")}
+                                            </p>
                                         </div>
                                     </div>
                                 </div>
@@ -356,7 +390,9 @@ export default function SmartPackages() {
                                             4
                                         </span>
                                     </span>
-                                    <span className="text-sm text-slate-700">Integrated Ecosystem</span>
+                                    <span className="text-sm text-slate-700">
+                                        {s("intro.cards.ecosystem")}
+                                    </span>
                                 </div>
                             </div>
                         </div>
@@ -388,7 +424,7 @@ export default function SmartPackages() {
                             >
                                 <Image
                                     src="/it-pack-dashboard.png"
-                                    alt="IT Pack dashboard"
+                                    alt={s("pack1.title")}
                                     width={760}
                                     height={520}
                                     className="h-auto w-full object-cover"
@@ -402,20 +438,20 @@ export default function SmartPackages() {
                                 data-aos-delay="200"
                             >
                                 <div className="inline-flex items-center rounded-full bg-orange-100 px-3 py-1 text-[11px] font-semibold text-[#ea580c]">
-                                    PACK 1
+                                    {s("pack1.badge")}
                                 </div>
 
                                 <h2 className="mt-3 text-3xl sm:text-4xl font-semibold tracking-tight text-slate-900">
-                                    IT Administrator Pack
+                                    {s("pack1.title")}
                                 </h2>
 
                                 <p className="text-3xl sm:text-4xl font-semibold leading-snug text-[#FF7A00]">
-                                    Comprehensive Management
-                                    <br className="hidden sm:block" /> with Predictive Vision
+                                    {s("pack1.highlightLine1")}
+                                    <br className="hidden sm:block" /> {s("pack1.highlightLine2")}
                                 </p>
 
                                 <p className="mt-3 max-w-xl text-slate-600">
-                                    Keep your Microsoft 365 environment always optimized, secure, and under control. With the Intelligent IT Administrator Pack, we combine human supervision and AI-powered automation to detect issues before they affect productivity.
+                                    {s("pack1.description")}
                                 </p>
 
                                 <ul className="mt-5 space-y-3 text-slate-700">
@@ -427,7 +463,7 @@ export default function SmartPackages() {
                                         <div className="p-1 rounded-full bg-[#ffedd5]">
                                             <CheckCircle2 className="h-4 w-4 text-[#ff7a00]" />
                                         </div>
-                                        Continuous monitoring of Microsoft 365, Azure, and Teams
+                                        {s("pack1.bullets.1")}
                                     </li>
                                     <li
                                         className="flex items-start gap-3"
@@ -437,7 +473,7 @@ export default function SmartPackages() {
                                         <div className="p-1 rounded-full bg-[#ffedd5]">
                                             <CheckCircle2 className="h-4 w-4 text-[#ff7a00]" />
                                         </div>
-                                        Early alerts generated by predictive AI
+                                        {s("pack1.bullets.2")}
                                     </li>
                                     <li
                                         className="flex items-start gap-3"
@@ -447,7 +483,7 @@ export default function SmartPackages() {
                                         <div className="p-1 rounded-full bg-[#ffedd5]">
                                             <CheckCircle2 className="h-4 w-4 text-[#ff7a00]" />
                                         </div>
-                                        Automated performance and availability reports
+                                        {s("pack1.bullets.3")}
                                     </li>
                                     <li
                                         className="flex items-start gap-3"
@@ -457,7 +493,7 @@ export default function SmartPackages() {
                                         <div className="p-1 rounded-full bg-[#ffedd5]">
                                             <CheckCircle2 className="h-4 w-4 text-[#ff7a00]" />
                                         </div>
-                                        Remote technical support and advanced administration
+                                        {s("pack1.bullets.4")}
                                     </li>
                                 </ul>
 
@@ -467,8 +503,13 @@ export default function SmartPackages() {
                                     data-aos-delay="310"
                                 >
                                     <Button className="h-11 w-full rounded-lg bg-[#FF7A00] text-white sm:px-6">
-                                        Request your free IT environment{" "}
-                                        <span className="md:inline hidden">evaluation</span>
+                                        {s("pack1.ctaMain")}{" "}
+                                        {s("pack1.ctaTail") && (
+                                            <span className="md:inline hidden">
+                                                {" "}
+                                                {s("pack1.ctaTail")}
+                                            </span>
+                                        )}
                                     </Button>
                                 </div>
 
@@ -479,7 +520,7 @@ export default function SmartPackages() {
                                 >
                                     <div className="flex items-start gap-3">
                                         <p className="text-sm">
-                                            Ideal for companies seeking operational stability and technological efficiency without expanding their IT team.
+                                            {s("pack1.note")}
                                         </p>
                                     </div>
                                 </div>
@@ -488,6 +529,7 @@ export default function SmartPackages() {
                     </div>
                 </div>
             </section>
+
 
             <section
                 className="relative overflow-hidden"
@@ -516,7 +558,7 @@ export default function SmartPackages() {
                         >
                             <Image
                                 src="/power-pack-dashboard.png"
-                                alt="Power Platform dashboard"
+                                alt={s("pack2.title")}
                                 width={920}
                                 height={600}
                                 className="h-auto w-full object-cover"
@@ -530,16 +572,16 @@ export default function SmartPackages() {
                             data-aos-delay="150"
                         >
                             <div className="inline-flex items-center rounded-full bg-orange-100 px-3 py-1 text-[11px] font-semibold text-[#ea580c]">
-                                PACK 2
+                                {s("pack2.badge")}
                             </div>
                             <h2 className="mt-3 text-3xl sm:text-4xl font-semibold tracking-tight text-slate-900">
-                                Power Platform Pack
+                                {s("pack2.title")}
                             </h2>
                             <p className="mt-1 text-2xl sm:text-4xl font-semibold leading-snug text-[#FF7A00]">
-                                Automate. Analyze. Improve.
+                                {s("pack2.highlight")}
                             </p>
                             <p className="mt-3 max-w-xl text-slate-600">
-                                Eliminate repetitive tasks and accelerate your processes with Power Automate, Power Apps, and Power BI — enhanced with AI. We help you connect your applications, visualize key data, and make faster, data-driven decisions.
+                                {s("pack2.description")}
                             </p>
 
                             <ul className="mt-5 space-y-3 text-slate-700">
@@ -551,7 +593,7 @@ export default function SmartPackages() {
                                     <div className="p-1 rounded-full bg-[#ffedd5]">
                                         <CheckCircle2 className="h-4 w-4 text-[#ff7a00]" />
                                     </div>
-                                    <span>Intelligent workflows with integrated AI</span>
+                                    <span>{s("pack2.bullets.1")}</span>
                                 </li>
                                 <li
                                     className="flex items-start gap-3"
@@ -561,7 +603,7 @@ export default function SmartPackages() {
                                     <div className="p-1 rounded-full bg-[#ffedd5]">
                                         <CheckCircle2 className="h-4 w-4 text-[#ff7a00]" />
                                     </div>
-                                    <span>Real-time dashboards with Power BI</span>
+                                    <span>{s("pack2.bullets.2")}</span>
                                 </li>
                                 <li
                                     className="flex items-start gap-3"
@@ -571,7 +613,7 @@ export default function SmartPackages() {
                                     <div className="p-1 rounded-full bg-[#ffedd5]">
                                         <CheckCircle2 className="h-4 w-4 text-[#ff7a00]" />
                                     </div>
-                                    <span>Custom applications with Power Apps</span>
+                                    <span>{s("pack2.bullets.3")}</span>
                                 </li>
                                 <li
                                     className="flex items-start gap-3"
@@ -581,7 +623,7 @@ export default function SmartPackages() {
                                     <div className="p-1 rounded-full bg-[#ffedd5]">
                                         <CheckCircle2 className="h-4 w-4 text-[#ff7a00]" />
                                     </div>
-                                    <span>Full integration with Microsoft Teams and Dynamics 365</span>
+                                    <span>{s("pack2.bullets.4")}</span>
                                 </li>
                             </ul>
 
@@ -591,7 +633,7 @@ export default function SmartPackages() {
                                 data-aos-delay="280"
                             >
                                 <p className="text-center text-lg text-slate-800">
-                                    Turn your data into actions and your processes into opportunities.
+                                    {s("pack2.note")}
                                 </p>
                             </div>
 
@@ -605,7 +647,7 @@ export default function SmartPackages() {
                                         size={"lg"}
                                         className="py-6 md:w-auto w-full rounded-lg bg-[#FF7A00] px-6 text-white hover:bg-[#ea580c]"
                                     >
-                                        Schedule a personalized demonstration
+                                        {s("pack2.cta")}
                                     </Button>
                                 </Link>
                             </div>
@@ -613,6 +655,8 @@ export default function SmartPackages() {
                     </div>
                 </div>
             </section>
+
+
 
 
             <section
@@ -637,17 +681,17 @@ export default function SmartPackages() {
                                 data-aos-delay="140"
                             >
                                 <span className="inline-flex items-center rounded-full bg-orange-100 px-3 py-1 text-[11px] font-semibold text-[#ea580c]">
-                                    PACK 3
+                                    {s("pack3.badge")}
                                 </span>
                                 <h2 className="mt-3 text-3xl sm:text-4xl font-semibold tracking-tight text-slate-900">
-                                    Modern Workplace Pack
+                                    {s("pack3.title")}
                                 </h2>
                                 <p className="mt-1 text-2xl sm:text-4xl font-semibold leading-snug text-[#FF7A00]">
-                                    Enhanced Productivity with
-                                    <br className="hidden sm:block" /> Copilot
+                                    {s("pack3.highlightLine1")}
+                                    <br className="hidden sm:block" /> {s("pack3.highlightLine2")}
                                 </p>
                                 <p className="mt-3 max-w-xl text-slate-600">
-                                    Reinvent collaboration in your company with Microsoft 365, Teams, SharePoint, and Copilot. We create digital environments where your teams can communicate, create, and make better decisions thanks to integrated AI support.
+                                    {s("pack3.description")}
                                 </p>
 
                                 <ul className="mt-6 space-y-3 text-slate-700">
@@ -659,7 +703,7 @@ export default function SmartPackages() {
                                         <div className="p-1 rounded-full bg-[#ffedd5]">
                                             <CheckCircle2 className="h-4 w-4 text-[#ff7a00]" />
                                         </div>
-                                        <span>Complete implementation of Microsoft 365</span>
+                                        <span>{s("pack3.bullets.1")}</span>
                                     </li>
                                     <li
                                         className="flex items-start gap-3"
@@ -669,7 +713,7 @@ export default function SmartPackages() {
                                         <div className="p-1 rounded-full bg-[#ffedd5]">
                                             <CheckCircle2 className="h-4 w-4 text-[#ff7a00]" />
                                         </div>
-                                        <span>Integration of Copilot and customized virtual assistants</span>
+                                        <span>{s("pack3.bullets.2")}</span>
                                     </li>
                                     <li
                                         className="flex items-start gap-3"
@@ -679,7 +723,7 @@ export default function SmartPackages() {
                                         <div className="p-1 rounded-full bg-[#ffedd5]">
                                             <CheckCircle2 className="h-4 w-4 text-[#ff7a00]" />
                                         </div>
-                                        <span>Automation of communication workflows</span>
+                                        <span>{s("pack3.bullets.3")}</span>
                                     </li>
                                     <li
                                         className="flex items-start gap-3"
@@ -689,7 +733,7 @@ export default function SmartPackages() {
                                         <div className="p-1 rounded-full bg-[#ffedd5]">
                                             <CheckCircle2 className="h-4 w-4 text-[#ff7a00]" />
                                         </div>
-                                        <span>Advanced data security</span>
+                                        <span>{s("pack3.bullets.4")}</span>
                                     </li>
                                 </ul>
 
@@ -702,7 +746,7 @@ export default function SmartPackages() {
                                         <span className="mt-0.5 text-[#FF7A00]">
                                             <Sparkles className="h-5 w-5" />
                                         </span>
-                                        <p className="text-sm">“Artificial intelligence that enhances human creativity.”</p>
+                                        <p className="text-sm">{s("pack3.quote")}</p>
                                     </div>
                                 </div>
 
@@ -715,7 +759,7 @@ export default function SmartPackages() {
                                         size={"lg"}
                                         className="py-6 w-full rounded-lg bg-[#FF7A00] text-white hover:bg-[#ea580c] sm:px-6"
                                     >
-                                        Speak with a Modern Workplace specialist
+                                        {s("pack3.cta")}
                                     </Button>
                                 </div>
                             </div>
@@ -739,12 +783,16 @@ export default function SmartPackages() {
                                                     <MessageSquare className="h-4 w-4" />
                                                 </span>
                                                 <div>
-                                                    <p className="text-slate-900">Team Collaboration</p>
-                                                    <p className="text-xs text-slate-500">Microsoft Teams</p>
+                                                    <p className="text-slate-900">
+                                                        {s("pack3.cards.teamsTitle")}
+                                                    </p>
+                                                    <p className="text-xs text-slate-500">
+                                                        {s("pack3.cards.teamsSubtitle")}
+                                                    </p>
                                                 </div>
                                             </div>
                                             <div className="mt-3 rounded-lg bg-[#f0f9ff] p-3 text-sm">
-                                                Meeting scheduled with AI summary
+                                                {s("pack3.cards.teamsBody")}
                                                 <div className="mt-2 flex items-center gap-2 text-xs text-slate-500">
                                                     <span className="inline-flex -space-x-2 overflow-hidden rounded-full">
                                                         <Image
@@ -769,12 +817,13 @@ export default function SmartPackages() {
                                                             className="h-6 w-6"
                                                         />
                                                     </span>
-                                                    +5 participants
+                                                    {/* "+5 participants" stays partially dynamic */}
+                                                    +5 {s("pack3.cards.teamsParticipantsSuffix")}
                                                 </div>
                                             </div>
                                             <div className="mt-3 flex items-center gap-1 text-xs text-slate-600">
                                                 <Users size={14} />
-                                                Active collaboration space
+                                                {s("pack3.cards.teamsFooter")}
                                             </div>
                                         </div>
                                     </div>
@@ -790,30 +839,36 @@ export default function SmartPackages() {
                                                 <Brain className="h-6 w-6" />
                                             </span>
                                             <div>
-                                                <p className="font-medium">Copilot Assistant</p>
-                                                <p className="text-xs text-[#FF7A00]">AI-Powered Productivity</p>
+                                                <p className="font-medium">
+                                                    {s("pack3.cards.copilotTitle")}
+                                                </p>
+                                                <p className="text-xs text-[#FF7A00]">
+                                                    {s("pack3.cards.copilotSubtitle")}
+                                                </p>
                                             </div>
                                         </div>
                                         <div className="mt-3 rounded-lg border border-white/20 bg-white/5 p-3 text-sm">
-                                            <p className="text-white/90">How can I help you today?</p>
+                                            <p className="text-white/90">
+                                                {s("pack3.cards.copilotPrompt")}
+                                            </p>
                                             <ul className="mt-2 space-y-2 text-white/80">
                                                 <li className="flex items-center gap-2">
                                                     <span className="h-1.5 w-1.5 rounded-full bg-[#ea580c]" />
-                                                    Summarize this document
+                                                    {s("pack3.cards.copilotActions.1")}
                                                 </li>
                                                 <li className="flex items-center gap-2">
                                                     <span className="h-1.5 w-1.5 rounded-full bg-[#ea580c]" />
-                                                    Draft email response
+                                                    {s("pack3.cards.copilotActions.2")}
                                                 </li>
                                                 <li className="flex items-center gap-2">
                                                     <span className="h-1.5 w-1.5 rounded-full bg-[#ea580c]" />
-                                                    Create presentation
+                                                    {s("pack3.cards.copilotActions.3")}
                                                 </li>
                                             </ul>
                                         </div>
                                         <div className="mt-3 flex items-center gap-2 text-xs text-white/80">
                                             <span className="h-2 w-2 rounded-full bg-emerald-400" />
-                                            AI Assistant Active
+                                            {s("pack3.cards.copilotStatus")}
                                         </div>
                                     </div>
 
@@ -825,15 +880,21 @@ export default function SmartPackages() {
                                     >
                                         <div className="rounded-xl bg-white p-4 text-center shadow-sm ring-1 ring-black/5">
                                             <p className="text-2xl text-slate-900">95%</p>
-                                            <p className="text-xs text-slate-500">Efficiency</p>
+                                            <p className="text-xs text-slate-500">
+                                                {s("pack3.cards.statEfficiencyLabel")}
+                                            </p>
                                         </div>
                                         <div className="rounded-xl bg-white p-4 text-center shadow-sm ring-1 ring-black/5">
                                             <p className="text-2xl text-slate-900">3.2h</p>
-                                            <p className="text-xs text-slate-500">Saved/Day</p>
+                                            <p className="text-xs text-slate-500">
+                                                {s("pack3.cards.statSavedLabel")}
+                                            </p>
                                         </div>
                                         <div className="rounded-xl bg-white p-4 text-center shadow-sm ring-1 ring-black/5">
                                             <p className="text-2xl text-slate-900">100%</p>
-                                            <p className="text-xs text-slate-500">Adoption</p>
+                                            <p className="text-xs text-slate-500">
+                                                {s("pack3.cards.statAdoptionLabel")}
+                                            </p>
                                         </div>
                                     </div>
                                 </div>
@@ -842,6 +903,9 @@ export default function SmartPackages() {
                     </div>
                 </div>
             </section>
+
+
+
 
 
             <section
@@ -871,17 +935,17 @@ export default function SmartPackages() {
                             data-aos-delay="140"
                         >
                             <span className="inline-flex items-center rounded-full bg-[#ffedd5] px-3 py-1 text-[11px] font-semibold text-[#ea580c] ring-1 ring-orange-300/30">
-                                PACK 4
+                                {s("pack4.badge")}
                             </span>
                             <h2 className="mt-4 text-3xl sm:text-4xl leading-tight">
-                                Intelligent Security Pack
+                                {s("pack4.title")}
                             </h2>
                             <p className="mt-1 text-2xl sm:text-4xl leading-snug text-orange-400">
-                                Prevention, Protection, and
-                                <br className="hidden sm:block" /> Automated Response
+                                {s("pack4.highlightLine1")}
+                                <br className="hidden sm:block" /> {s("pack4.highlightLine2")}
                             </p>
                             <p className="mt-3 max-w-xl text-white/85">
-                                Your security should never depend on luck. With this package, we combine the most powerful tools of the Microsoft ecosystem — Defender, Entra ID, Azure Sentinel — with AI algorithms capable of detecting threats in real time.
+                                {s("pack4.description")}
                             </p>
 
                             <ul className="mt-6 space-y-3 text-white/90">
@@ -893,7 +957,7 @@ export default function SmartPackages() {
                                     <div className="p-1 rounded-full bg-[#ffedd5]">
                                         <CheckCircle2 className="h-4 w-4 text-[#ff7a00]" />
                                     </div>
-                                    <span>Vulnerability analysis with AI</span>
+                                    <span>{s("pack4.bullets.1")}</span>
                                 </li>
                                 <li
                                     className="flex items-start gap-3"
@@ -903,7 +967,7 @@ export default function SmartPackages() {
                                     <div className="p-1 rounded-full bg-[#ffedd5]">
                                         <CheckCircle2 className="h-4 w-4 text-[#ff7a00]" />
                                     </div>
-                                    <span>24/7 incident monitoring</span>
+                                    <span>{s("pack4.bullets.2")}</span>
                                 </li>
                                 <li
                                     className="flex items-start gap-3"
@@ -913,7 +977,7 @@ export default function SmartPackages() {
                                     <div className="p-1 rounded-full bg-[#ffedd5]">
                                         <CheckCircle2 className="h-4 w-4 text-[#ff7a00]" />
                                     </div>
-                                    <span>Predictive alerts and continuous learning</span>
+                                    <span>{s("pack4.bullets.3")}</span>
                                 </li>
                                 <li
                                     className="flex items-start gap-3"
@@ -923,7 +987,7 @@ export default function SmartPackages() {
                                     <div className="p-1 rounded-full bg-[#ffedd5]">
                                         <CheckCircle2 className="h-4 w-4 text-[#ff7a00]" />
                                     </div>
-                                    <span>Configuration of adaptive security policies</span>
+                                    <span>{s("pack4.bullets.4")}</span>
                                 </li>
                             </ul>
 
@@ -933,7 +997,7 @@ export default function SmartPackages() {
                                 data-aos-delay="250"
                             >
                                 <p className="text-sm sm:text-base text-white/90">
-                                    Protect your data with intelligence, not reaction.
+                                    {s("pack4.note")}
                                 </p>
                             </div>
 
@@ -944,7 +1008,7 @@ export default function SmartPackages() {
                             >
                                 <Link href="/contact">
                                     <Button className="h-11 w-full md:w-auto rounded-lg bg-[#FF7A00] px-6 py-6 text-white hover:bg-[#ea580c]">
-                                        Request your AI security diagnosis
+                                        {s("pack4.cta")}
                                     </Button>
                                 </Link>
                             </div>
@@ -974,62 +1038,78 @@ export default function SmartPackages() {
                                 data-aos="fade-up"
                                 data-aos-delay="230"
                             >
+                                {/* Threat Detection */}
                                 <div className="rounded-xl bg-[#1E293B80] p-4 ring-1 ring-white/10 backdrop-blur-sm">
                                     <div className="flex items-center gap-2 text-white/90">
                                         <Eye className="h-4 w-4 text-emerald-400" />
-                                        <span>Threat Detection</span>
-                                        <span className="ml-auto text-emerald-400">Active</span>
+                                        <span>{s("pack4.cards.threatDetectionTitle")}</span>
+                                        <span className="ml-auto text-emerald-400">
+                                            {s("pack4.cards.threatDetectionStatus")}
+                                        </span>
                                     </div>
                                     <div className="mt-3 h-2 w-full rounded-full bg-white/10">
                                         <div className="h-full w-[92%] rounded-full bg-gradient-to-r from-emerald-400 to-emerald-300" />
                                     </div>
-                                    <div className="mt-1 text-right text-[11px] text-white/60">100%</div>
+                                    <div className="mt-1 text-right text-[11px] text-white/60">
+                                        {s("pack4.cards.threatDetectionPercent")}
+                                    </div>
                                 </div>
 
+                                {/* AI Threat Analysis */}
                                 <div className="rounded-xl bg-[#1E293B80] p-4 ring-1 ring-amber-300/30 backdrop-blur-sm">
                                     <div className="flex items-center gap-2 text-white/90">
                                         <AlertTriangle className="h-4 w-4 text-amber-300" />
-                                        <span>AI Threat Analysis</span>
-                                        <span className="ml-auto text-amber-300">Medium</span>
+                                        <span>{s("pack4.cards.aiThreatTitle")}</span>
+                                        <span className="ml-auto text-amber-300">
+                                            {s("pack4.cards.aiThreatLevel")}
+                                        </span>
                                     </div>
                                     <p className="mt-2 text-xs text-white/75">
-                                        Suspicious login attempt detected
+                                        {s("pack4.cards.aiThreatDescription")}
                                     </p>
                                     <p className="text-[11px] text-white/60">
-                                        Location: Unknown IP • Blocked automatically
+                                        {s("pack4.cards.aiThreatMeta")}
                                     </p>
                                 </div>
 
+                                {/* Security Policies */}
                                 <div className="rounded-xl bg-[#1E293B80] p-4 ring-1 ring-white/10 backdrop-blur-sm">
                                     <div className="flex items-center gap-2 text-white/90">
                                         <Lock className="h-4 w-4 text-sky-300" />
-                                        <span>Security Policies</span>
+                                        <span>{s("pack4.cards.policiesTitle")}</span>
                                     </div>
                                     <div className="mt-3 grid grid-cols-3 gap-3 text-center">
-                                        <div className="rounded-lg bg-white/5 p-3">
+                                        <div className="rounded-lg bg.white/5 bg-white/5 p-3">
                                             <p className="text-lg font-semibold">247</p>
-                                            <p className="text-[11px] text-white/70">Rules</p>
+                                            <p className="text-[11px] text-white/70">
+                                                {s("pack4.cards.policiesRules")}
+                                            </p>
                                         </div>
                                         <div className="rounded-lg bg-white/5 p-3">
                                             <p className="text-lg font-semibold">0</p>
-                                            <p className="text-[11px] text-white/70">Breaches</p>
+                                            <p className="text-[11px] text-white/70">
+                                                {s("pack4.cards.policiesBreaches")}
+                                            </p>
                                         </div>
                                         <div className="rounded-lg bg-white/5 p-3">
                                             <p className="text-lg font-semibold">24/7</p>
-                                            <p className="text-[11px] text-white/70">Monitor</p>
+                                            <p className="text-[11px] text.white/70 text-white/70">
+                                                {s("pack4.cards.policiesMonitor")}
+                                            </p>
                                         </div>
                                     </div>
                                 </div>
 
+                                {/* Automated Response */}
                                 <div className="rounded-xl bg-gradient-to-r from-[#2563EB] to-[#0891B2] p-4 ring-1 ring-white/20">
                                     <div className="flex items-center gap-4 text-white">
                                         <span className="grid h-12 w-12 place-items-center rounded-md bg-white/20">
                                             <Zap className="h-6 w-6" />
                                         </span>
                                         <div>
-                                            <span>Automated Response</span>
+                                            <span>{s("pack4.cards.autoResponseTitle")}</span>
                                             <span className="text-white/90 block">
-                                                AI-powered threat mitigation active
+                                                {s("pack4.cards.autoResponseSubtitle")}
                                             </span>
                                         </div>
                                     </div>
@@ -1039,6 +1119,7 @@ export default function SmartPackages() {
                     </div>
                 </div>
             </section>
+
             <section
                 className="bg-white py-12 sm:py-16"
                 data-aos="fade-up"
@@ -1054,14 +1135,14 @@ export default function SmartPackages() {
                         data-aos-delay="120"
                     >
                         <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight text-slate-900">
-                            Why Choose
+                            {s("whyPackages.titleLine1")}
                             <br className="block sm:hidden" />
                             <span className="ml-2 text-[#FF7A00] block mt-2 md:mt-3">
-                                CelesteIQ Packages
+                                {s("whyPackages.titleHighlight")}
                             </span>
                         </h2>
                         <p className="mt-3 font-semibold text-slate-600">
-                            We deliver intelligent solutions that transform how you work
+                            {s("whyPackages.subtitle")}
                         </p>
                     </div>
 
@@ -1080,8 +1161,12 @@ export default function SmartPackages() {
                                     <Zap className="h-5 w-5" />
                                 </span>
                                 <div>
-                                    <p className="font-semibold text-slate-900">Intelligent Automation</p>
-                                    <p className="text-sm text-slate-500">Fewer manual tasks, more results</p>
+                                    <p className="font-semibold text-slate-900">
+                                        {s("whyPackages.cards.1.title")}
+                                    </p>
+                                    <p className="text-sm text-slate-500">
+                                        {s("whyPackages.cards.1.desc")}
+                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -1096,8 +1181,12 @@ export default function SmartPackages() {
                                     <TrendingUp className="h-5 w-5" />
                                 </span>
                                 <div>
-                                    <p className="font-semibold text-slate-900">Continuous AI Analysis</p>
-                                    <p className="text-sm text-slate-500">Data-driven decisions, not assumptions</p>
+                                    <p className="font-semibold text-slate-900">
+                                        {s("whyPackages.cards.2.title")}
+                                    </p>
+                                    <p className="text-sm text-slate-500">
+                                        {s("whyPackages.cards.2.desc")}
+                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -1112,9 +1201,11 @@ export default function SmartPackages() {
                                     <Box className="h-5 w-5" />
                                 </span>
                                 <div>
-                                    <p className="font-semibold text-slate-900">Full Microsoft Integration</p>
+                                    <p className="font-semibold text-slate-900">
+                                        {s("whyPackages.cards.3.title")}
+                                    </p>
                                     <p className="text-sm text-slate-500">
-                                        Unified productivity, security, and collaboration
+                                        {s("whyPackages.cards.3.desc")}
                                     </p>
                                 </div>
                             </div>
@@ -1130,8 +1221,12 @@ export default function SmartPackages() {
                                     <Users2 className="h-5 w-5" />
                                 </span>
                                 <div>
-                                    <p className="font-semibold text-slate-900">Expert Guidance</p>
-                                    <p className="text-sm text-slate-500">From implementation to daily support</p>
+                                    <p className="font-semibold text-slate-900">
+                                        {s("whyPackages.cards.4.title")}
+                                    </p>
+                                    <p className="text-sm text-slate-500">
+                                        {s("whyPackages.cards.4.desc")}
+                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -1142,8 +1237,12 @@ export default function SmartPackages() {
                         data-aos="fade-up"
                         data-aos-delay="300"
                     >
-                        <p className="text-xl font-medium text-slate-900">Innovation is not improvised.</p>
-                        <p className="mt-1 text-[#ea580c]">It is designed, trained, and measured.</p>
+                        <p className="text-xl font-medium text-slate-900">
+                            {s("whyPackages.noteTitle")}
+                        </p>
+                        <p className="mt-1 text-[#ea580c]">
+                            {s("whyPackages.noteSubtitle")}
+                        </p>
                     </div>
 
                     <div
@@ -1155,9 +1254,10 @@ export default function SmartPackages() {
                             size={"lg"}
                             className="py-6 rounded-lg bg-gradient-to-r from-[#FF7A00] to-[#ea580c] px-6 text-white hover:from-[#FF7A00] hover:to-[#FF7A00] text-wrap"
                         >
-                            Talk to us{" "}
+                            {s("whyPackages.ctaMain")}{" "}
                             <span className="md:inline hidden">
-                                and discover which package best fits your company
+                                {" "}
+                                {s("whyPackages.ctaExtra")}
                             </span>
                             <ArrowRight />
                         </Button>
@@ -1165,8 +1265,6 @@ export default function SmartPackages() {
                 </div>
             </section>
 
-
-            <Footer />
-        </>
+        </Wrapper>
     )
 }

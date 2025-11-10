@@ -20,34 +20,40 @@ import {
 
 import { Award, Bot, Users, TrendingUp } from "lucide-react";
 import Link from 'next/link'
+import { useTranslations } from 'next-intl'
 
-const features = [
-    {
-        icon: Award,
-        title: "Microsoft-Certified Experts",
-        desc: "Industry-recognized professionals with deep Microsoft ecosystem knowledge",
-    },
-    {
-        icon: Bot,
-        title: "AI-Powered Monitoring",
-        desc: "Intelligent automation and predictive optimization for peak performance",
-    },
-    {
-        icon: Users,
-        title: "Human Support",
-        desc: "Dedicated experts who understand your unique business needs",
-    },
-    {
-        icon: TrendingUp,
-        title: "Flexible & Scalable",
-        desc: "Solutions designed to grow with your SMB, no limits",
-    },
-] as const;
+
 
 export default function Specialized() {
+
+    const s = useTranslations("specialized");
+    const w = useTranslations("whyCelesteIQ");
+
+    const features = [
+        {
+            icon: Award,
+            title: w("features.microsoftExperts.title"),
+            desc: w("features.microsoftExperts.desc"),
+        },
+        {
+            icon: Bot,
+            title: w("features.aiMonitoring.title"),
+            desc: w("features.aiMonitoring.desc"),
+        },
+        {
+            icon: Users,
+            title: w("features.humanSupport.title"),
+            desc: w("features.humanSupport.desc"),
+        },
+        {
+            icon: TrendingUp,
+            title: w("features.flexibleScalable.title"),
+            desc: w("features.flexibleScalable.desc"),
+        },
+    ] as const;
+
     return (
         <Wrapper>
-
 
             <section
                 className="relative overflow-hidden bg-[#99d9f1]"
@@ -69,7 +75,7 @@ export default function Specialized() {
                             data-aos="fade-up"
                             data-aos-delay="200"
                         >
-                            Specialized Intelligent Services
+                            {s("specializedHero.title")}
                         </h1>
                     </div>
                 </div>
@@ -94,7 +100,6 @@ export default function Specialized() {
 
 
 
-
             <section
                 className="py-12 sm:py-16"
                 data-aos="fade-up"
@@ -110,10 +115,10 @@ export default function Specialized() {
                         data-aos-delay="120"
                     >
                         <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-[#ea580c]">
-                            SPECIALIZED SERVICES
+                            {s("specializedIntro.title")}
                         </h2>
                         <p className="mx-auto mt-2 md:mt-3 md:text-xl font-medium max-w-2xl text-[#374151]">
-                            Empower your business with secure, intelligent, and scalable Microsoft solutions — designed, deployed, and managed by CelesteIQ experts
+                            {s("specializedIntro.subtitle")}
                         </p>
                         <div
                             className="flex items-center justify-center mt-10"
@@ -125,7 +130,7 @@ export default function Specialized() {
                                     className="py-6 bg-[#FF7A00] rounded-full text-white hover:bg-orange-600"
                                     size={"lg"}
                                 >
-                                    Explore Our Audit Services
+                                    {s("specializedIntro.cta")}
                                     <ArrowRight className="ml-2 h-4 w-4" />
                                 </Button>
                             </Link>
@@ -147,44 +152,45 @@ export default function Specialized() {
                                 <div className="border inline-flex p-2.5 rounded-lg text-[#2563EB] border-[#2563EB]/20">
                                     <GraduationCap className="h-7 w-7" />
                                 </div>
-                                <h2 className="text-xl font-bold mt-6">1. TRAINING PROGRAMS</h2>
+                                <h2 className="text-xl font-bold mt-6">
+                                    {s("specializedCards.training.badge")}
+                                </h2>
                                 <h3 className="mt-1 text-lg text-[#2563EB] font-semibold">
-                                    Empower Your Team. Master Microsoft 365.
+                                    {s("specializedCards.training.title")}
                                 </h3>
                             </div>
                             <CardContent className="p-6">
                                 <p className="mt-4 text-sm text-muted-foreground">
-                                    At CelesteIQ, we help your team become Microsoft experts. Our training programs teach how to configure, automate, and manage Microsoft 365 tools to boost productivity and collaboration.
+                                    {s("specializedCards.training.body")}
                                 </p>
 
                                 <ul className="mt-4 space-y-3 text-sm">
                                     <li className="flex gap-3 leading-relaxed">
                                         <Check className="mt-1 h-4 w-4 shrink-0 text-[#1E63E9]" />
-                                        <span>Duration: 4 days (28 hours) — 1 day per week over 4 weeks</span>
+                                        <span>{s("specializedCards.training.item1")}</span>
                                     </li>
-
                                     <li className="flex gap-3 leading-relaxed">
                                         <Check className="mt-1 h-4 w-4 shrink-0 text-[#1E63E9]" />
-                                        <span>Format: 100% remote via Microsoft Teams (max. 6 participants)</span>
+                                        <span>{s("specializedCards.training.item2")}</span>
                                     </li>
-
                                     <li className="flex gap-3 leading-relaxed">
                                         <Check className="mt-1 h-4 w-4 shrink-0 text-[#1E63E9]" />
-                                        <span>Outcome: Hands-on mastery + Certificate of Participation</span>
+                                        <span>{s("specializedCards.training.item3")}</span>
                                     </li>
-
                                     <li className="flex gap-3 leading-relaxed">
                                         <Check className="mt-1 h-4 w-4 shrink-0 text-[#1E63E9]" />
-                                        <span>Access: Open to all Microsoft 365 users</span>
+                                        <span>{s("specializedCards.training.item4")}</span>
                                     </li>
                                 </ul>
 
                                 <Separator className="my-5" />
 
                                 <div>
-                                    <p className="text-sm font-semibold">Why It Matters:</p>
+                                    <p className="text-sm font-semibold">
+                                        {s("specializedCards.training.whyTitle")}
+                                    </p>
                                     <p className="mt-1 text-sm text-muted-foreground">
-                                        Train your employees to get the most out of Microsoft tools — from Teams to Power Automate — and drive digital transformation within your organization.
+                                        {s("specializedCards.training.whyBody")}
                                     </p>
                                 </div>
 
@@ -197,12 +203,12 @@ export default function Specialized() {
                                         className="px-6 md:w-auto w-full"
                                         style={{ backgroundColor: "#1E63E9", color: "#fff" }}
                                     >
-                                        <span className="inline md:hidden">Learn &amp; Transform</span>
-
-                                        <span className="hidden md:inline">
-                                            Learn. Apply. Transform the way your team works.
+                                        <span className="inline md:hidden">
+                                            {s("specializedCards.training.btnShort")}
                                         </span>
-
+                                        <span className="hidden md:inline">
+                                            {s("specializedCards.training.btnLong")}
+                                        </span>
                                         <ArrowRight className="ml-2 h-4 w-4" />
                                     </Button>
                                 </div>
@@ -223,51 +229,48 @@ export default function Specialized() {
                                     <FolderCog className="h-7 w-7" />
                                 </div>
                                 <h2 className="text-xl font-bold mt-6">
-                                    2. DOCUMENT MIGRATION TO MICROSOFT 365
+                                    {s("specializedCards.docsMigration.badge")}
                                 </h2>
                                 <h3
                                     className="mt-1 text-lg font-semibold"
                                     style={{ color: "#0EA873" }}
                                 >
-                                    Secure. Centralized. Future-Ready.
+                                    {s("specializedCards.docsMigration.title")}
                                 </h3>
                             </div>
 
                             <CardContent className="p-6">
                                 <p className="mt-4 text-sm text-muted-foreground">
-                                    We make moving your documents to SharePoint, OneDrive, and Teams simple and secure. No data loss,
-                                    no downtime — just a smooth transition to a smarter cloud environment.
+                                    {s("specializedCards.docsMigration.body")}
                                 </p>
 
                                 <ul className="mt-4 space-y-3 text-sm">
                                     <li className="flex gap-3 leading-relaxed">
                                         <Check className="mt-1 h-4 w-4 shrink-0 text-[#0EA873]" />
-                                        <span>Secure data transfer with full compliance</span>
+                                        <span>{s("specializedCards.docsMigration.item1")}</span>
                                     </li>
-
                                     <li className="flex gap-3 leading-relaxed">
                                         <Check className="mt-1 h-4 w-4 shrink-0 text-[#0EA873]" />
-                                        <span>Migration of files, folders, and permissions</span>
+                                        <span>{s("specializedCards.docsMigration.item2")}</span>
                                     </li>
-
                                     <li className="flex gap-3 leading-relaxed">
                                         <Check className="mt-1 h-4 w-4 shrink-0 text-[#0EA873]" />
-                                        <span>Continuous post-migration support</span>
+                                        <span>{s("specializedCards.docsMigration.item3")}</span>
                                     </li>
-
                                     <li className="flex gap-3 leading-relaxed">
                                         <Check className="mt-1 h-4 w-4 shrink-0 text-[#0EA873]" />
-                                        <span>Improved collaboration and data accessibility</span>
+                                        <span>{s("specializedCards.docsMigration.item4")}</span>
                                     </li>
                                 </ul>
 
                                 <Separator className="my-5" />
 
                                 <div>
-                                    <p className="text-sm font-semibold">Why It Matters:</p>
+                                    <p className="text-sm font-semibold">
+                                        {s("specializedCards.docsMigration.whyTitle")}
+                                    </p>
                                     <p className="mt-1 text-sm text-muted-foreground">
-                                        Modern businesses run on seamless collaboration. We make your move to Microsoft 365 effortless —
-                                        so your teams can focus on what really matters.
+                                        {s("specializedCards.docsMigration.whyBody")}
                                     </p>
                                 </div>
 
@@ -280,9 +283,11 @@ export default function Specialized() {
                                         className="px-6 md:w-auto w-full"
                                         style={{ backgroundColor: "#0EA873", color: "#fff" }}
                                     >
-                                        <span className="inline md:hidden">Migrate with Confidence</span>
+                                        <span className="inline md:hidden">
+                                            {s("specializedCards.docsMigration.btnShort")}
+                                        </span>
                                         <span className="hidden md:inline">
-                                            Migrate with confidence. Work smarter in the cloud.
+                                            {s("specializedCards.docsMigration.btnLong")}
                                         </span>
                                         <ArrowRight className="ml-2 h-4 w-4" />
                                     </Button>
@@ -303,53 +308,53 @@ export default function Specialized() {
                                 <div className="border inline-flex p-2.5 rounded-lg text-[#0891B2] border-[#0891B2]/20">
                                     <Mail className="h-7 w-7" />
                                 </div>
-                                <h2 className="text-xl font-bold mt-6">3. EMAIL MIGRATION SERVICES</h2>
+                                <h2 className="text-xl font-bold mt-6">
+                                    {s("specializedCards.emailMigration.badge")}
+                                </h2>
                                 <h3
                                     className="mt-1 text-lg font-semibold"
                                     style={{ color: "#0891B2" }}
                                 >
-                                    Stay Connected. Stay Protected.
+                                    {s("specializedCards.emailMigration.title")}
                                 </h3>
                             </div>
 
                             <CardContent className="p-6">
                                 <p className="mt-4 text-sm text-muted-foreground">
-                                    Upgrade your email system to Microsoft Exchange Online with zero disruption. We handle everything — setup, migration, DNS, and user training — so your communication never stops.
+                                    {s("specializedCards.emailMigration.body")}
                                 </p>
 
                                 <ul className="mt-4 space-y-3 text-sm">
                                     <li className="flex gap-3 leading-relaxed">
                                         <Check className="mt-1 h-4 w-4 shrink-0 text-[#0891B2]" />
-                                        <span>Configure users, licenses &amp; shared mailboxes</span>
+                                        <span>{s("specializedCards.emailMigration.item1")}</span>
                                     </li>
-
                                     <li className="flex gap-3 leading-relaxed">
                                         <Check className="mt-1 h-4 w-4 shrink-0 text-[#0891B2]" />
-                                        <span>Migrate emails, contacts, calendars</span>
+                                        <span>{s("specializedCards.emailMigration.item2")}</span>
                                     </li>
-
                                     <li className="flex gap-3 leading-relaxed">
                                         <Check className="mt-1 h-4 w-4 shrink-0 text-[#0891B2]" />
-                                        <span>Set up DNS, DKIM, DMARC, SPF &amp; AutoDiscover</span>
+                                        <span>{s("specializedCards.emailMigration.item3")}</span>
                                     </li>
-
                                     <li className="flex gap-3 leading-relaxed">
                                         <Check className="mt-1 h-4 w-4 shrink-0 text-[#0891B2]" />
-                                        <span>Enable Multi-Factor Authentication for security</span>
+                                        <span>{s("specializedCards.emailMigration.item4")}</span>
                                     </li>
-
                                     <li className="flex gap-3 leading-relaxed">
                                         <Check className="mt-1 h-4 w-4 shrink-0 text-[#0891B2]" />
-                                        <span>Train your team on Outlook &amp; best practices</span>
+                                        <span>{s("specializedCards.emailMigration.item5")}</span>
                                     </li>
                                 </ul>
 
                                 <Separator className="my-5" />
 
                                 <div>
-                                    <p className="text-sm font-semibold">Why It Matters:</p>
+                                    <p className="text-sm font-semibold">
+                                        {s("specializedCards.emailMigration.whyTitle")}
+                                    </p>
                                     <p className="mt-1 text-sm text-muted-foreground">
-                                        Email is the core of your business communication. We ensure it’s secure, reliable, and easy to manage.
+                                        {s("specializedCards.emailMigration.whyBody")}
                                     </p>
                                 </div>
 
@@ -362,9 +367,11 @@ export default function Specialized() {
                                         className="px-6 md:w-auto w-full"
                                         style={{ backgroundColor: "#0891B2", color: "#fff" }}
                                     >
-                                        <span className="inline md:hidden">Simplify Email</span>
+                                        <span className="inline md:hidden">
+                                            {s("specializedCards.emailMigration.btnShort")}
+                                        </span>
                                         <span className="hidden md:inline">
-                                            Simplify your email systems with CelesteIQ
+                                            {s("specializedCards.emailMigration.btnLong")}
                                         </span>
                                         <ArrowRight className="ml-2 h-4 w-4" />
                                     </Button>
@@ -386,56 +393,52 @@ export default function Specialized() {
                                     <Settings className="h-7 w-7" />
                                 </div>
                                 <h2 className="text-xl font-bold mt-6">
-                                    4. MANAGED IT &amp; CLOUD SERVICES
+                                    {s("specializedCards.managedIt.badge")}
                                 </h2>
                                 <h3
                                     className="mt-1 text-lg font-semibold"
                                     style={{ color: "#EA580C" }}
                                 >
-                                    Your Trusted Microsoft Ecosystem Partner.
+                                    {s("specializedCards.managedIt.title")}
                                 </h3>
                             </div>
 
                             <CardContent className="p-6">
                                 <p className="mt-4 text-sm text-muted-foreground">
-                                    From Microsoft 365 and Azure to Dynamics 365 and Power BI, we manage your IT ecosystem end-to-end.
-                                    Our team ensures everything stays secure, optimized, and scalable — so you can grow without limits.
+                                    {s("specializedCards.managedIt.body")}
                                 </p>
 
                                 <ul className="mt-4 space-y-3 text-sm">
                                     <li className="flex gap-3 leading-relaxed">
                                         <Check className="mt-1 h-4 w-4 shrink-0 text-[#EA580C]" />
-                                        <span>Full infrastructure assessment &amp; optimization</span>
+                                        <span>{s("specializedCards.managedIt.item1")}</span>
                                     </li>
-
                                     <li className="flex gap-3 leading-relaxed">
                                         <Check className="mt-1 h-4 w-4 shrink-0 text-[#EA580C]" />
-                                        <span>Microsoft 365, Azure, Dynamics 365 &amp; Power BI management</span>
+                                        <span>{s("specializedCards.managedIt.item2")}</span>
                                     </li>
-
                                     <li className="flex gap-3 leading-relaxed">
                                         <Check className="mt-1 h-4 w-4 shrink-0 text-[#EA580C]" />
-                                        <span>Real-time monitoring &amp; predictive maintenance</span>
+                                        <span>{s("specializedCards.managedIt.item3")}</span>
                                     </li>
-
                                     <li className="flex gap-3 leading-relaxed">
                                         <Check className="mt-1 h-4 w-4 shrink-0 text-[#EA580C]" />
-                                        <span>Tailored support and training for your team</span>
+                                        <span>{s("specializedCards.managedIt.item4")}</span>
                                     </li>
-
                                     <li className="flex gap-3 leading-relaxed">
                                         <Check className="mt-1 h-4 w-4 shrink-0 text-[#EA580C]" />
-                                        <span>Continuous consulting and technical guidance</span>
+                                        <span>{s("specializedCards.managedIt.item5")}</span>
                                     </li>
                                 </ul>
 
                                 <Separator className="my-5" />
 
                                 <div>
-                                    <p className="text-sm font-semibold">Why It Matters:</p>
+                                    <p className="text-sm font-semibold">
+                                        {s("specializedCards.managedIt.whyTitle")}
+                                    </p>
                                     <p className="mt-1 text-sm text-muted-foreground">
-                                        Managed IT means peace of mind. With CelesteIQ, your systems run smoothly, securely, and
-                                        strategically aligned with your business goals.
+                                        {s("specializedCards.managedIt.whyBody")}
                                     </p>
                                 </div>
 
@@ -448,9 +451,11 @@ export default function Specialized() {
                                         className="px-6 md:w-auto w-full"
                                         style={{ backgroundColor: "#EA580C", color: "#fff" }}
                                     >
-                                        <span className="inline md:hidden">Manage with CelesteIQ</span>
+                                        <span className="inline md:hidden">
+                                            {s("specializedCards.managedIt.btnShort")}
+                                        </span>
                                         <span className="hidden md:inline">
-                                            Let us manage your cloud — so you can manage your growth.
+                                            {s("specializedCards.managedIt.btnLong")}
                                         </span>
                                         <ArrowRight className="ml-2 h-4 w-4" />
                                     </Button>
@@ -460,6 +465,7 @@ export default function Specialized() {
                     </div>
                 </div>
             </section>
+
 
             <section
                 className="relative overflow-hidden mb-5"
@@ -490,14 +496,14 @@ export default function Specialized() {
                         data-aos="fade-up"
                         data-aos-delay="180"
                     >
-                        Why CelesteIQ
+                        {w("title")}
                     </h2>
                     <p
                         className="mt-2 text-center md:text-lg md:mt-3 font-medium"
                         data-aos="fade-up"
                         data-aos-delay="210"
                     >
-                        The Human + AI Advantage
+                        {w("subtitle")}
                     </p>
 
                     {/* Feature cards */}
@@ -532,7 +538,7 @@ export default function Specialized() {
                         data-aos="fade-up"
                         data-aos-delay="320"
                     >
-                        "Simplifying digital transformation, one intelligent solution at a time."
+                        {w("quote")}
                     </p>
 
                     {/* CTA */}
@@ -546,12 +552,13 @@ export default function Specialized() {
                                 className="p-6 rounded-lg bg-white px-5 text-black font-semibold hover:bg-white/90"
                                 type="button"
                             >
-                                Start Your Transformation
+                                {w("cta")}
                             </Button>
                         </Link>
                     </div>
                 </div>
             </section>
+
 
 
         </Wrapper>

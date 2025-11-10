@@ -5,10 +5,15 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, ChartBar, Cloud, Bot, Landmark, HeartPulse, Sparkles, Brain } from "lucide-react";
 import Wrapper from '../Wrapper';
+import { useTranslations } from 'next-intl';
 
 
 
 export default function SmartPackages() {
+
+    const s = useTranslations("solutions");
+    const h = useTranslations("ctaHero");
+
     return (
         <>
             <Wrapper>
@@ -32,7 +37,7 @@ export default function SmartPackages() {
                                 data-aos="fade-up"
                                 data-aos-delay="250"
                             >
-                                Microsoft Solutions Powered by Artificial Intelligence
+                                {s("heroSolutions.title")}
                             </h1>
 
                             <p
@@ -40,8 +45,7 @@ export default function SmartPackages() {
                                 data-aos="fade-up"
                                 data-aos-delay="300"
                             >
-                                CelesteIQ helps businesses become more productive, automated, and profitable through seamless integration of
-                                Microsoft's ecosystem and AI-driven innovation.
+                                {s("heroSolutions.subtitle")}
                             </p>
 
                             <Link href="/contact">
@@ -51,7 +55,7 @@ export default function SmartPackages() {
                                     data-aos="zoom-in"
                                     data-aos-delay="350"
                                 >
-                                    Schedule a Free Consult
+                                    {s("heroSolutions.cta")}
                                     <ArrowRight />
                                 </Button>
                             </Link>
@@ -75,6 +79,7 @@ export default function SmartPackages() {
 
 
 
+
                 <section
                     className="py-12 sm:py-16"
                     data-aos="fade-up"
@@ -90,11 +95,10 @@ export default function SmartPackages() {
                             data-aos-delay="150"
                         >
                             <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight text-slate-900">
-                                Our Areas of Solution
+                                {s("areas.title")}
                             </h2>
                             <p className="mx-auto mt-2 md:mt-3 md:text-xl font-medium max-w-2xl text-[#2A2D2D]">
-                                Explore the solutions we offer to digitize, automate, and make every
-                                part of your company smarter.
+                                {s("areas.subtitle")}
                             </p>
                         </div>
 
@@ -114,12 +118,10 @@ export default function SmartPackages() {
                                     </span>
                                     <div>
                                         <h3 className="text-xl md:text-2xl font-semibold text-[#0F0F0F]">
-                                            Intelligent Digital Transformation
+                                            {s("areas.cards.1.title")}
                                         </h3>
                                         <p className="mt-1 md:text-lg text-slate-600">
-                                            Microsoft 365, Teams, and Copilot integration to modernize
-                                            your workplace and empower your teams with AI-driven
-                                            collaboration.
+                                            {s("areas.cards.1.desc")}
                                         </p>
                                     </div>
                                 </div>
@@ -146,11 +148,10 @@ export default function SmartPackages() {
                                     </span>
                                     <div>
                                         <h3 className="md:text-2xl text-xl font-semibold text-[#0F0F0F]">
-                                            Data Analytics & Automation
+                                            {s("areas.cards.2.title")}
                                         </h3>
                                         <p className="mt-1 md:text-lg text-slate-600">
-                                            Power BI, Power Automate, and Azure AI to turn data into
-                                            actionable insights and automate repetitive processes.
+                                            {s("areas.cards.2.desc")}
                                         </p>
                                     </div>
                                 </div>
@@ -177,11 +178,10 @@ export default function SmartPackages() {
                                     </span>
                                     <div>
                                         <h3 className="md:text-2xl text-xl font-semibold text-[#0F0F0F]">
-                                            Cloud Infrastructure & Virtualization
+                                            {s("areas.cards.3.title")}
                                         </h3>
                                         <p className="mt-1 md:text-lg text-slate-600">
-                                            Azure Cloud solutions for scalable, secure, and
-                                            high-performance infrastructure that grows with your business.
+                                            {s("areas.cards.3.desc")}
                                         </p>
                                     </div>
                                 </div>
@@ -208,11 +208,10 @@ export default function SmartPackages() {
                                     </span>
                                     <div>
                                         <h3 className="md:text-2xl text-xl font-semibold text-[#0F0F0F]">
-                                            Intelligent Business Applications
+                                            {s("areas.cards.4.title")}
                                         </h3>
                                         <p className="mt-1 md:text-lg text-slate-600">
-                                            Dynamics 365 and Power Apps to build custom business
-                                            applications that adapt to your unique workflows.
+                                            {s("areas.cards.4.desc")}
                                         </p>
                                     </div>
                                 </div>
@@ -220,6 +219,7 @@ export default function SmartPackages() {
                         </div>
                     </div>
                 </section>
+
 
 
 
@@ -239,10 +239,10 @@ export default function SmartPackages() {
                             data-aos-delay="150"
                         >
                             <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight text-slate-900">
-                                Specialized and Advanced Solutions
+                                {s("advanced.title")}
                             </h2>
                             <p className="mx-auto mt-2 md:mt-4 md:text-xl font-medium max-w-2xl text-[#2A2D2D]">
-                                We combine the power of Microsoft AI with our integration capabilities to develop tailor-made solutions:
+                                {s("advanced.subtitle")}
                             </p>
                         </div>
 
@@ -259,7 +259,9 @@ export default function SmartPackages() {
                                 >
                                     <Brain className="h-7 w-7" />
                                 </span>
-                                <p className="mt-4 font-semibold text-slate-800">Custom Virtual Assistants</p>
+                                <p className="mt-4 font-semibold text-slate-800">
+                                    {s("advanced.cards.1")}
+                                </p>
                             </div>
 
                             <div
@@ -274,7 +276,9 @@ export default function SmartPackages() {
                                 >
                                     <ChartBar className="h-7 w-7" />
                                 </span>
-                                <p className="mt-4 font-semibold text-slate-800">Predictive Analytics</p>
+                                <p className="mt-4 font-semibold text-slate-800">
+                                    {s("advanced.cards.2")}
+                                </p>
                             </div>
 
                             <div
@@ -295,7 +299,9 @@ export default function SmartPackages() {
                                         alt="Icon"
                                     />
                                 </span>
-                                <p className="mt-4 font-semibold text-slate-800">Process Automation</p>
+                                <p className="mt-4 font-semibold text-slate-800">
+                                    {s("advanced.cards.3")}
+                                </p>
                             </div>
 
                             <div
@@ -310,11 +316,14 @@ export default function SmartPackages() {
                                 >
                                     <Bot className="h-7 w-7" />
                                 </span>
-                                <p className="mt-4 font-semibold text-slate-800">Enterprise Copilots</p>
+                                <p className="mt-4 font-semibold text-slate-800">
+                                    {s("advanced.cards.4")}
+                                </p>
                             </div>
                         </div>
                     </div>
                 </section>
+
 
                 <section
                     className="py-12 sm:py-16"
@@ -331,12 +340,12 @@ export default function SmartPackages() {
                             data-aos-delay="150"
                         >
                             <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight text-slate-900">
-                                Industry-Specific Solutions
+                                {s("industry.title")}
                             </h2>
                             <p className="mx-auto mt-2 md:mt-5 md:text-xl font-medium max-w-2xl text-[#2A2D2D]">
-                                Every sector has its challenges.
+                                {s("industry.subtitleLine1")}
                                 <br className="hidden sm:block" />
-                                At CelesteIQ, we apply AI and Microsoft technology to solve them with precision.
+                                {s("industry.subtitleLine2")}
                             </p>
                         </div>
 
@@ -355,9 +364,11 @@ export default function SmartPackages() {
                                         <Landmark className="h-7 w-7" />
                                     </span>
                                     <div>
-                                        <p className="font-semibold text-slate-900 text-lg">Finance &amp; Insurance</p>
+                                        <p className="font-semibold text-slate-900 text-lg">
+                                            {s("industry.cards.financeTitle")}
+                                        </p>
                                         <p className="mt-1 text-slate-600">
-                                            Secure, compliant, and intelligent solutions for financial services.
+                                            {s("industry.cards.financeText")}
                                         </p>
                                     </div>
                                 </div>
@@ -377,9 +388,11 @@ export default function SmartPackages() {
                                         <HeartPulse className="h-7 w-7" />
                                     </span>
                                     <div>
-                                        <p className="font-semibold text-slate-900 text-lg">Healthcare &amp; Wellness</p>
+                                        <p className="font-semibold text-slate-900 text-lg">
+                                            {s("industry.cards.healthTitle")}
+                                        </p>
                                         <p className="mt-1 text-slate-600">
-                                            HIPAA-compliant systems with AI-powered patient care.
+                                            {s("industry.cards.healthText")}
                                         </p>
                                     </div>
                                 </div>
@@ -405,9 +418,11 @@ export default function SmartPackages() {
                                         />
                                     </span>
                                     <div>
-                                        <p className="font-semibold text-slate-900 text-lg">Manufacturing &amp; Real Estate</p>
+                                        <p className="font-semibold text-slate-900 text-lg">
+                                            {s("industry.cards.manufacturingTitle")}
+                                        </p>
                                         <p className="mt-1 text-slate-600">
-                                            Optimize operations and enhance productivity with smart automation.
+                                            {s("industry.cards.manufacturingText")}
                                         </p>
                                     </div>
                                 </div>
@@ -415,6 +430,7 @@ export default function SmartPackages() {
                         </div>
                     </div>
                 </section>
+
 
 
                 <section
@@ -441,7 +457,7 @@ export default function SmartPackages() {
                             data-aos-delay="150"
                         >
                             <Sparkles className="h-3.5 w-3.5" />
-                            <span>Limited Time Offer</span>
+                            <span>{h("badge")}</span>
                         </div>
 
                         <h2
@@ -449,33 +465,32 @@ export default function SmartPackages() {
                             data-aos="fade-up"
                             data-aos-delay="200"
                         >
-                            Start Your AI Transformation
+                            {h("titleLine1")}
                             <br />
-                            Today
+                            {h("titleLine2")}
                         </h2>
 
                         <p
                             className="mx-auto mt-3 max-w-3xl text-sm sm:text-base text-white/90"
                             data-aos="fade-up"
-                            data-aos-delay="250"
+                            data-aos-delay="240"
                         >
-                            Join hundreds of businesses already leveraging AI to grow faster and work smarter
+                            {h("subtitle")}
                         </p>
 
                         <div
                             className="mt-7 flex flex-wrap items-center justify-center gap-3"
                             data-aos="fade-up"
-                            data-aos-delay="300"
+                            data-aos-delay="280"
                         >
                             <Link href="/contact">
                                 <Button
                                     size={"lg"}
                                     className="rounded-lg md:w-auto w-full bg-white px-5 py-6 text-[#FF7A00] hover:bg-orange-50"
                                     data-aos="zoom-in"
-                                    data-aos-delay="320"
+                                    data-aos-delay="300"
                                 >
-                                    Schedule Free Consultation
-                                    <ArrowRight className="ml-2 h-4 w-4" />
+                                    {h("primaryButton")} <ArrowRight className="ml-2 h-4 w-4" />
                                 </Button>
                             </Link>
 
@@ -485,9 +500,9 @@ export default function SmartPackages() {
                                     variant="outline"
                                     className="rounded-lg md:w-auto w-full py-6 bg-transparent hover:bg-white border-white text-white hover:text-[#FF7A00]"
                                     data-aos="zoom-in"
-                                    data-aos-delay="360"
+                                    data-aos-delay="330"
                                 >
-                                    View Pricing
+                                    {h("secondaryButton")}
                                 </Button>
                             </Link>
                         </div>
@@ -495,9 +510,9 @@ export default function SmartPackages() {
                         <p
                             className="mt-5 text-xs text-white/80"
                             data-aos="fade-up"
-                            data-aos-delay="400"
+                            data-aos-delay="360"
                         >
-                            No credit card required. Get started in minutes.
+                            {h("note")}
                         </p>
                     </div>
                 </section>
