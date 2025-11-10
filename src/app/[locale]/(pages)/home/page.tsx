@@ -118,7 +118,7 @@ export default function HomePage() {
                     width={1000}
                     height={700}
                     alt="lady"
-                    className='w-full select-none max-w-[40rem] -z-40 md:absolute'
+                    className='w-full select-none md:max-w-[42vw] -z-40 md:absolute'
                 />
             </section>
 
