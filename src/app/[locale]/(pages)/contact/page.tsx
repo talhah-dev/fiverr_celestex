@@ -1,5 +1,5 @@
 "use client"
-import React, { useState } from 'react'
+import React, { FormEvent, useState } from 'react'
 import Navbar from '@/components/Navbar'
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
@@ -9,9 +9,12 @@ import { Textarea } from "@/components/ui/textarea";
 import { Mail, Phone, Home, Sparkles, ArrowRight, CheckCircle2 } from "lucide-react";
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
+import { toast } from 'sonner';
+import { Spinner } from '@/components/ui/spinner';
 
 
 export default function Contact() {
+
 
     const [values, setValues] = useState({
         name: "",
@@ -23,10 +26,47 @@ export default function Contact() {
     const t = useTranslations("contact");
     const h = useTranslations("ctaHero");
 
-    function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
-        e.preventDefault();
-        setLoading(true);
+    const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+        e.preventDefault()
+        setLoading(true)
+
+        const form = e.currentTarget
+        const formData = new FormData(form)
+
+        // Add Web3Forms access key
+        formData.append(
+            "access_key",
+            process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY as string
+        )
+
+        // Optional: subject / from_name, etc.
+        formData.append("subject", "New message from website contact form")
+        formData.append("from_name", "Website Contact Form")
+
+        try {
+            const res = await fetch("https://api.web3forms.com/submit", {
+                method: "POST",
+                body: formData,
+            })
+
+            const data = await res.json()
+
+            if (data.success) {
+                toast.success("Message sent successfully!")
+                form.reset()
+                setLoading(false)
+            } else {
+                console.error("Web3Forms error:", data)
+                toast.error("Failed to send message. Please try again.")
+                setLoading(false)
+            }
+        } catch (error) {
+            setLoading(false)
+            console.error("Web3Forms request error:", error)
+            toast.error("Something went wrong. Please try again later.")
+        }
     }
+
 
     return (
         <Wrapper>
@@ -151,17 +191,19 @@ export default function Contact() {
                         {/* Right side: form */}
                         <form
                             className="space-y-4"
-                            onSubmit={(e) => e.preventDefault()}
+                            onSubmit={handleSubmit}
                             data-aos="fade-up"
                             data-aos-delay="200"
                         >
                             <Input
+                                name="name"
                                 required
                                 placeholder={t("form.namePlaceholder")}
                                 className="border-slate-200 py-6"
                             />
 
                             <Input
+                                name="email"
                                 required
                                 type="email"
                                 placeholder={t("form.emailPlaceholder")}
@@ -169,22 +211,23 @@ export default function Contact() {
                             />
 
                             <Input
+                                name="website"
                                 required
                                 placeholder={t("form.websitePlaceholder")}
                                 className="border-slate-200 py-6"
                             />
 
                             <Textarea
+                                name="message"
                                 placeholder={t("form.messagePlaceholder")}
                                 rows={6}
                                 className="border-slate-200 py-6"
                             />
-
                             <Button
                                 type="submit"
                                 className="w-full bg-orange-600 hover:bg-[#FF7A00] py-6 text-white"
                             >
-                                {t("form.submit")}
+                                {loading ? <Spinner /> : t("form.submit")}
                             </Button>
                         </form>
                     </div>

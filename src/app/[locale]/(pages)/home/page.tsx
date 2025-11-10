@@ -1,5 +1,5 @@
 "use client"
-import React, { useState } from 'react'
+import React, { FormEvent, useEffect, useState } from 'react'
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
@@ -20,6 +20,8 @@ import { Cog } from "lucide-react";
 import InfiniteScroll from '@/components/InfiniteScroll';
 import Wrapper from '../Wrapper';
 import { useTranslations } from 'next-intl';
+import { toast } from 'sonner';
+import { Spinner } from '@/components/ui/spinner';
 
 type NodeItem = { key: string; color: string };
 
@@ -44,6 +46,17 @@ const sources = [
     "/focus3.png",
 ];
 
+type BlogApi = {
+    _id: string
+    category: string
+    title: string
+    summary: string
+    image: string
+    buttonText: string
+    createdAt: string
+    slug?: string
+}
+
 export default function HomePage() {
 
     const [play, setPlay] = useState(false)
@@ -54,7 +67,97 @@ export default function HomePage() {
     const step = 360 / sources.length;
 
     const h = useTranslations("home");
+    const [blogs, setBlogs] = useState<BlogApi[]>([])
+    const [isLoadingBlogs, setIsLoadingBlogs] = useState(false)
 
+    useEffect(() => {
+        const fetchBlogs = async () => {
+            try {
+                setIsLoadingBlogs(true)
+                const res = await fetch("/api/blog")
+                const data = await res.json()
+
+                if (data.success) {
+                    setBlogs(data.data as BlogApi[])
+                } else {
+                    console.error("Failed to load blogs:", data.message)
+                }
+            } catch (err) {
+                console.error("Error loading blogs:", err)
+            } finally {
+                setIsLoadingBlogs(false)
+            }
+        }
+
+        fetchBlogs()
+    }, [])
+
+    const formatDate = (value: string) => {
+        if (!value) return ""
+        const date = new Date(value)
+        return date.toLocaleDateString("en-US", {
+            month: "short",
+            day: "2-digit",
+            year: "numeric",
+        })
+    }
+
+    const [isSubmitting, setIsSubmitting] = useState(false)
+
+    const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+        e.preventDefault()
+
+        const form = e.currentTarget
+        const formData = new FormData(form)
+
+        formData.append(
+            "access_key",
+            process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY as string
+        )
+
+        formData.append("subject", "New AI Assistant inquiry from website")
+        formData.append("from_name", "AI Assistant Contact Form")
+
+        try {
+            setIsSubmitting(true)
+
+            const res = await fetch("https://api.web3forms.com/submit", {
+                method: "POST",
+                body: formData,
+            })
+
+            const data = await res.json()
+
+            if (!data.success) {
+                console.error("Web3Forms error:", data)
+
+                if (
+                    typeof data.message === "string" &&
+                    data.message.toLowerCase().includes("spam")
+                ) {
+                    toast.error(
+                        "Your message was flagged as spam. Please try again with more natural content or contact us directly."
+                    )
+                } else {
+                    toast.error("Failed to send message. Please try again.")
+                }
+
+                return
+            }
+
+            toast.success("Message sent successfully!")
+            form.reset()
+        } catch (error) {
+            console.error("Web3Forms request error:", error)
+            toast.error("Something went wrong. Please try again later.")
+        } finally {
+            setIsSubmitting(false)
+        }
+    }
+
+    // pick featured + list
+    const featured = blogs[0]
+    const sideList = blogs.slice(1, 4)
     return (
         <Wrapper>
 
@@ -75,7 +178,7 @@ export default function HomePage() {
                         <div className="flex items-center md:flex-row md:mb-0 mb-3 flex-col justify-center md:gap-10 gap-4">
                             <h1
                                 data-aos="fade-up"
-                                className='font-extrabold mt-20 md:mt-0 md:text-8xl text-[2.6rem] leading-tight md:leading-none md:text-nowrap text-image1'
+                                className='font-bold mt-20 md:mt-0 md:text-[6.5rem] text-[2.6rem] leading-tight md:leading-none md:text-nowrap text-image1'
                             >
                                 {h("titleLine1")}
                                 <span className='md:hidden'>
@@ -108,7 +211,7 @@ export default function HomePage() {
                             <h1
                                 data-aos="fade-up"
                                 data-aos-delay="100"
-                                className='font-extrabold md:text-8xl md:block hidden text-4xl md:text-nowrap text-image1'
+                                className='font-bold md:text-[6.5rem] md:block hidden text-4xl md:text-nowrap text-image1'
                             >
                                 {h("titleLine2Desktop1")}
                             </h1>
@@ -117,7 +220,7 @@ export default function HomePage() {
                         <h1
                             data-aos="fade-up"
                             data-aos-delay="100"
-                            className='font-extrabold flex items-end justify-end text-end md:text-8xl md:block hidden text-4xl md:text-nowrap text-image1'
+                            className='font-bold flex items-end justify-end text-end md:text-[6.5rem] md:block hidden text-4xl md:text-nowrap text-image1'
                         >
                             {h("titleLine2Desktop2")}
                         </h1>
@@ -1571,34 +1674,36 @@ export default function HomePage() {
                         >
                             <div className="relative h-64 w-full sm:h-96">
                                 <Image
-                                    src="/blog1.png"
-                                    alt="Featured post"
+                                    src={featured?.image || "/blog1.png"}
+                                    alt={featured?.title || "Featured post"}
                                     fill
                                     className="object-cover transition-transform duration-700 ease-in-out hover:scale-105"
                                 />
                                 <span className="absolute left-4 top-4 rounded-full bg-[#FF7A00] px-3 py-1 text-xs font-semibold text-white animate-pulse">
-                                    {h("blogSection.featured.badge")}
+                                    {featured?.category || h("blogSection.featured.badge")}
                                 </span>
                             </div>
 
                             <div className="p-6 sm:p-8">
                                 <div className="flex items-center gap-2 text-slate-500 text-sm">
                                     <Calendar className="h-4 w-4" />
-                                    <span>{h("blogSection.featured.date")}</span>
+                                    <span>
+                                        {featured ? formatDate(featured.createdAt) : h("blogSection.featured.date")}
+                                    </span>
                                 </div>
                                 <h3 className="mt-2 text-xl sm:text-2xl font-semibold text-slate-900">
-                                    {h("blogSection.featured.title")}
+                                    {featured?.title || h("blogSection.featured.title")}
                                 </h3>
                                 <p className="mt-3 text-slate-600">
-                                    {h("blogSection.featured.body")}
+                                    {featured?.summary || h("blogSection.featured.body")}
                                 </p>
                                 <div className="mt-5">
                                     <Button
                                         asChild
                                         className="bg-[#FF7A00] px-5 text-white hover:bg-[#FF7A00]"
                                     >
-                                        <Link href="/blog">
-                                            {h("blogSection.featured.cta")}
+                                        <Link href={featured?.slug ? `/blog/${featured.slug}` : "/blog"}>
+                                            {featured?.buttonText || h("blogSection.featured.cta")}
                                             <ArrowRight className="ml-2 h-4 w-4" />
                                         </Link>
                                     </Button>
@@ -1608,79 +1713,117 @@ export default function HomePage() {
 
                         {/* Side list */}
                         <div className="flex flex-col gap-4">
-                            {/* Strategy */}
-                            <div
-                                className="rounded-2xl p-5 bg-[#f9fafb] ring-1 ring-black/5"
-                                data-aos="fade-up"
-                                data-aos-delay="150"
-                                data-aos-duration="700"
-                            >
-                                <div className="flex items-start justify-between">
-                                    <span className="rounded-full bg-orange-100 px-2.5 py-1 text-[11px] font-semibold text-[#FF7A00]">
-                                        {h("blogSection.list.strategy.badge")}
-                                    </span>
+                            {/* If we have blogs from API → show them; otherwise fallback to static translations */}
+                            {isLoadingBlogs && (
+                                <div className="rounded-2xl p-5 bg-[#f9fafb] ring-1 ring-black/5 text-sm text-slate-500">
+                                    Loading articles…
                                 </div>
-                                <Link
-                                    href="/blog"
-                                    className="mt-3 block text-base font-medium text-slate-900 hover:underline"
-                                >
-                                    {h("blogSection.list.strategy.title")}
-                                </Link>
-                                <div className="mt-3 flex items-center gap-2 text-sm text-slate-500">
-                                    <Calendar className="h-4 w-4" />
-                                    {h("blogSection.list.strategy.date")}
-                                </div>
-                            </div>
+                            )}
 
-                            {/* Technology */}
-                            <div
-                                className="rounded-2xl p-5 bg-[#f9fafb] ring-1 ring-black/5"
-                                data-aos="fade-up"
-                                data-aos-delay="250"
-                                data-aos-duration="700"
-                            >
-                                <div className="flex items-start justify-between">
-                                    <span className="rounded-full bg-orange-100 px-2.5 py-1 text-[11px] font-semibold text-[#FF7A00]">
-                                        {h("blogSection.list.technology.badge")}
-                                    </span>
-                                </div>
-                                <Link
-                                    href="/blog"
-                                    className="mt-3 block text-base font-medium text-slate-900 hover:underline"
-                                >
-                                    {h("blogSection.list.technology.title")}
-                                </Link>
-                                <div className="mt-3 flex items-center gap-2 text-sm text-slate-500">
-                                    <Calendar className="h-4 w-4" />
-                                    {h("blogSection.list.technology.date")}
-                                </div>
-                            </div>
+                            {!isLoadingBlogs && sideList.length > 0 ? (
+                                sideList.map((blog, idx) => (
+                                    <div
+                                        key={blog._id}
+                                        className="rounded-2xl p-5 bg-[#f9fafb] ring-1 ring-black/5"
+                                        data-aos="fade-up"
+                                        data-aos-delay={150 + idx * 100}
+                                        data-aos-duration="700"
+                                    >
+                                        <div className="flex items-start justify-between">
+                                            <span className="rounded-full bg-orange-100 px-2.5 py-1 text-[11px] font-semibold text-[#FF7A00]">
+                                                {blog.category}
+                                            </span>
+                                        </div>
+                                        <Link
+                                            href={blog.slug ? `/blog/${blog.slug}` : "/blog"}
+                                            className="mt-3 block text-base font-medium text-slate-900 hover:underline"
+                                        >
+                                            {blog.title}
+                                        </Link>
+                                        <div className="mt-3 flex items-center gap-2 text-sm text-slate-500">
+                                            <Calendar className="h-4 w-4" />
+                                            {formatDate(blog.createdAt)}
+                                        </div>
+                                    </div>
+                                ))
+                            ) : (
+                                <>
+                                    {/* Strategy fallback */}
+                                    <div
+                                        className="rounded-2xl p-5 bg-[#f9fafb] ring-1 ring-black/5"
+                                        data-aos="fade-up"
+                                        data-aos-delay="150"
+                                        data-aos-duration="700"
+                                    >
+                                        <div className="flex items-start justify-between">
+                                            <span className="rounded-full bg-orange-100 px-2.5 py-1 text-[11px] font-semibold text-[#FF7A00]">
+                                                {h("blogSection.list.strategy.badge")}
+                                            </span>
+                                        </div>
+                                        <Link
+                                            href="/blog"
+                                            className="mt-3 block text-base font-medium text-slate-900 hover:underline"
+                                        >
+                                            {h("blogSection.list.strategy.title")}
+                                        </Link>
+                                        <div className="mt-3 flex items-center gap-2 text-sm text-slate-500">
+                                            <Calendar className="h-4 w-4" />
+                                            {h("blogSection.list.strategy.date")}
+                                        </div>
+                                    </div>
 
-                            {/* Case Studies */}
-                            <div
-                                className="rounded-2xl p-5 bg-[#f9fafb] ring-1 ring-black/5"
-                                data-aos="fade-up"
-                                data-aos-delay="350"
-                                data-aos-duration="700"
-                            >
-                                <div className="flex items-start justify-between">
-                                    <span className="rounded-full bg-orange-100 px-2.5 py-1 text-[11px] font-semibold text-[#FF7A00]">
-                                        {h("blogSection.list.caseStudies.badge")}
-                                    </span>
-                                </div>
-                                <Link
-                                    href="/blog"
-                                    className="mt-3 block text-base font-medium text-slate-900 hover:underline"
-                                >
-                                    {h("blogSection.list.caseStudies.title")}
-                                </Link>
-                                <div className="mt-3 flex items-center gap-2 text-sm text-slate-500">
-                                    <Calendar className="h-4 w-4" />
-                                    {h("blogSection.list.caseStudies.date")}
-                                </div>
-                            </div>
+                                    {/* Technology fallback */}
+                                    <div
+                                        className="rounded-2xl p-5 bg-[#f9fafb] ring-1 ring-black/5"
+                                        data-aos="fade-up"
+                                        data-aos-delay="250"
+                                        data-aos-duration="700"
+                                    >
+                                        <div className="flex items-start justify-between">
+                                            <span className="rounded-full bg-orange-100 px-2.5 py-1 text-[11px] font-semibold text-[#FF7A00]">
+                                                {h("blogSection.list.technology.badge")}
+                                            </span>
+                                        </div>
+                                        <Link
+                                            href="/blog"
+                                            className="mt-3 block text-base font-medium text-slate-900 hover:underline"
+                                        >
+                                            {h("blogSection.list.technology.title")}
+                                        </Link>
+                                        <div className="mt-3 flex items-center gap-2 text-sm text-slate-500">
+                                            <Calendar className="h-4 w-4" />
+                                            {h("blogSection.list.technology.date")}
+                                        </div>
+                                    </div>
+
+                                    {/* Case Studies fallback */}
+                                    <div
+                                        className="rounded-2xl p-5 bg-[#f9fafb] ring-1 ring-black/5"
+                                        data-aos="fade-up"
+                                        data-aos-delay="350"
+                                        data-aos-duration="700"
+                                    >
+                                        <div className="flex items-start justify-between">
+                                            <span className="rounded-full bg-orange-100 px-2.5 py-1 text-[11px] font-semibold text-[#FF7A00]">
+                                                {h("blogSection.list.caseStudies.badge")}
+                                            </span>
+                                        </div>
+                                        <Link
+                                            href="/blog"
+                                            className="mt-3 block text-base font-medium text-slate-900 hover:underline"
+                                        >
+                                            {h("blogSection.list.caseStudies.title")}
+                                        </Link>
+                                        <div className="mt-3 flex items-center gap-2 text-sm text-slate-500">
+                                            <Calendar className="h-4 w-4" />
+                                            {h("blogSection.list.caseStudies.date")}
+                                        </div>
+                                    </div>
+                                </>
+                            )}
                         </div>
                     </div>
+
                 </div>
             </section>
 
@@ -1832,41 +1975,76 @@ export default function HomePage() {
                             data-aos-duration="1000"
                             data-aos-delay="200"
                         >
-                            <div className="space-y-5">
+                            <form
+                                className="space-y-5"
+                                onSubmit={handleSubmit}
+                                data-aos="fade-up"
+                                data-aos-delay="200"
+                            >
+                                {/* Honeypot for spam protection */}
+                                <input
+                                    type="checkbox"
+                                    name="botcheck"
+                                    className="hidden"
+                                    tabIndex={-1}
+                                    autoComplete="off"
+                                />
+
                                 <div className="space-y-2">
                                     <Label htmlFor="name">{h("aiAssistantContact.form.nameLabel")}</Label>
                                     <Input
                                         id="name"
+                                        name="name"
+                                        required
                                         placeholder={h("aiAssistantContact.form.namePlaceholder")}
+                                        className="border-slate-200 py-6"
                                     />
                                 </div>
+
                                 <div className="space-y-2">
                                     <Label htmlFor="email">{h("aiAssistantContact.form.emailLabel")}</Label>
                                     <Input
                                         id="email"
+                                        name="email"
                                         type="email"
+                                        required
                                         placeholder={h("aiAssistantContact.form.emailPlaceholder")}
+                                        className="border-slate-200 py-6"
                                     />
                                 </div>
+
                                 <div className="space-y-2">
                                     <Label htmlFor="company">{h("aiAssistantContact.form.companyLabel")}</Label>
                                     <Input
                                         id="company"
+                                        name="company"
+                                        required
                                         placeholder={h("aiAssistantContact.form.companyPlaceholder")}
+                                        className="border-slate-200 py-6"
                                     />
                                 </div>
+
                                 <div className="space-y-2">
                                     <Label htmlFor="needs">{h("aiAssistantContact.form.needsLabel")}</Label>
                                     <Textarea
                                         id="needs"
+                                        name="needs"
+                                        required
                                         placeholder={h("aiAssistantContact.form.needsPlaceholder")}
-                                        className="min-h-[120px]"
+                                        className="min-h-[120px] border-slate-200 py-6"
+                                        rows={6}
                                     />
                                 </div>
-                                <Button className="w-full rounded-lg bg-[#FF7A00] text-white hover:bg-[#FF7A00] py-6 transition-transform duration-300 hover:scale-105">
-                                    {h("aiAssistantContact.form.button")} <Send className="ml-2 h-4 w-4" />
+
+                                <Button
+                                    type="submit"
+                                    disabled={isSubmitting}
+                                    className="w-full rounded-lg bg-[#FF7A00] text-white hover:bg-[#FF7A00] py-6 transition-transform duration-300 hover:scale-105"
+                                >
+                                    {isSubmitting ? <Spinner /> : h("aiAssistantContact.form.button")}
+                                    <Send className="ml-2 h-4 w-4" />
                                 </Button>
-                            </div>
+                            </form>
                         </div>
                     </div>
                 </div>
