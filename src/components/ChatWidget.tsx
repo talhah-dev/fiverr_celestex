@@ -14,8 +14,15 @@ import {
   Bot,
   User,
   Minus,
+  Loader2,
 } from "lucide-react";
 import Image from "next/image";
+
+// Markdown + highlighting (same style as your previous component)
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
+import rehypeHighlight from "rehype-highlight";
+import "highlight.js/styles/github.css";
 
 type Message = {
   id: string;
@@ -24,7 +31,7 @@ type Message = {
   time?: string;
 };
 
-const seedMessages: Message[] = [
+const initialMessages: Message[] = [
   {
     id: "m1",
     role: "bot",
@@ -32,25 +39,65 @@ const seedMessages: Message[] = [
       "Hi! I’m the CelesteIQ assistant. Ask me anything about our packages, audits, or Microsoft + AI solutions.",
     time: "Now",
   },
-  {
-    id: "m2",
-    role: "user",
-    content: "What’s included in the Modern Workplace Pack?",
-    time: "Now",
-  },
-  {
-    id: "m3",
-    role: "bot",
-    content:
-      "It includes Microsoft 365 implementation, Copilot integration, workflow automation, and security best practices.",
-    time: "Now",
-  },
 ];
 
 export default function ChatWidget() {
   const [open, setOpen] = React.useState(false);
   const [minimized, setMinimized] = React.useState(false);
-  const [messages] = React.useState<Message[]>(seedMessages);
+
+  const [messages, setMessages] = React.useState<Message[]>(initialMessages);
+  const [input, setInput] = React.useState("");
+  const [loading, setLoading] = React.useState(false);
+
+  async function handleAsk() {
+    if (!input.trim() || loading) return;
+
+    const question = input.trim();
+    setInput("");
+
+    const userMessage: Message = {
+      id: `u-${Date.now()}`,
+      role: "user",
+      content: question,
+      time: "Now",
+    };
+
+    setMessages((prev) => [...prev, userMessage]);
+    setLoading(true);
+
+    try {
+      const res = await fetch("/api/answer", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ question }),
+      });
+
+      const data = await res.json();
+
+      const botText =
+        data?.text || "I couldn’t get a response right now. Please try again.";
+
+      const botMessage: Message = {
+        id: `b-${Date.now()}`,
+        role: "bot",
+        content: botText,
+        time: "Now",
+      };
+
+      setMessages((prev) => [...prev, botMessage]);
+    } catch (error) {
+      console.error("Error:", error);
+      const botMessage: Message = {
+        id: `b-error-${Date.now()}`,
+        role: "bot",
+        content: "Something went wrong while answering. Please try again.",
+        time: "Now",
+      };
+      setMessages((prev) => [...prev, botMessage]);
+    } finally {
+      setLoading(false);
+    }
+  }
 
   return (
     <div className="fixed bottom-4 right-4 z-50">
@@ -69,7 +116,7 @@ export default function ChatWidget() {
                       CelesteIQ Assistant
                     </CardTitle>
                     <p className="text-xs text-slate-600">
-                      Online • UI preview
+                      {loading ? "Typing…" : "Online • Ask anything"}
                     </p>
                   </div>
                 </div>
@@ -99,30 +146,60 @@ export default function ChatWidget() {
 
             <CardContent className="p-0">
               {/* Messages */}
-              <ScrollArea className="h-[360px] px-4">
+              <ScrollArea className="h-[360px] px-4 pt-3 pb-4">
                 <div className="space-y-4">
                   {messages.map((m) => (
                     <MessageBubble key={m.id} message={m} />
                   ))}
+
+                  {loading && (
+                    <div className="flex items-center gap-2 text-xs text-slate-500">
+                      <Loader2 className="h-3 w-3 animate-spin" />
+                      <span>Thinking…</span>
+                    </div>
+                  )}
+
+                  {messages.length === 0 && !loading && (
+                    <p className="text-sm text-muted-foreground">
+                      Hi, how are you?
+                    </p>
+                  )}
                 </div>
               </ScrollArea>
 
               <Separator />
 
-              {/* Composer (UI only) */}
+              {/* Composer */}
               <form
                 className="flex items-end gap-2 p-3"
-                onSubmit={(e) => e.preventDefault()}
+                onSubmit={(e) => {
+                  e.preventDefault();
+                  handleAsk();
+                }}
               >
                 <Textarea
-                  placeholder="Type your message…"
+                  placeholder="Ask about packages, audits, pricing..."
                   className="min-h-[44px] max-h-[120px] resize-none"
+                  value={input}
+                  disabled={loading}
+                  onChange={(e) => setInput(e.target.value)}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter" && !e.shiftKey) {
+                      e.preventDefault();
+                      handleAsk();
+                    }
+                  }}
                 />
                 <Button
                   type="submit"
+                  disabled={loading || !input.trim()}
                   className="bg-[#FF7A00] hover:bg-[#ea580c]"
                 >
-                  <Send className="h-4 w-4" />
+                  {loading ? (
+                    <Loader2 className="h-4 w-4 animate-spin" />
+                  ) : (
+                    <Send className="h-4 w-4" />
+                  )}
                   <span className="sr-only">Send</span>
                 </Button>
               </form>
@@ -177,10 +254,13 @@ export default function ChatWidget() {
             transition hover:scale-105 
           "
         >
-          {/* <Bot className="h-6 w-6" /> */}
-          <Image src={"/bot.png"} width={100} height={100} alt="bot" className="z-10" />
-          {/* animate-ping */}
-          {/* <span className="pointer-events-none absolute -z-10 h-full w-full  rounded-full bg-[#FF7A00]/40" /> */}
+          <Image
+            src={"/bot.png"}
+            width={100}
+            height={100}
+            alt="bot"
+            className="z-10"
+          />
         </button>
       )}
     </div>
@@ -213,7 +293,21 @@ function MessageBubble({ message }: { message: Message }) {
             : "bg-white text-slate-900 ring-1 ring-slate-200"
           }`}
       >
-        <p className="text-[13.5px]">{message.content}</p>
+        {isBot ? (
+          <div className="prose prose-xs sm:prose-sm max-w-none dark:prose-invert">
+            <ReactMarkdown
+              remarkPlugins={[remarkGfm]}
+              rehypePlugins={[rehypeHighlight]}
+            >
+              {message.content}
+            </ReactMarkdown>
+          </div>
+        ) : (
+          <p className="text-[13.5px] whitespace-pre-wrap">
+            {message.content}
+          </p>
+        )}
+
         {message.time && (
           <div className="mt-1.5 text-[11px] text-slate-500">
             {message.time}

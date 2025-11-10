@@ -1,83 +1,76 @@
 "use client"
-import Navbar from '@/components/Navbar'
-import Link from "next/link";
-import { Button } from "@/components/ui/button";
-import Wrapper from '../Wrapper';
-import { ArrowRight, Calendar } from "lucide-react";
-import Image from 'next/image';
-import { useTranslations } from 'next-intl';
+
+import React, { useEffect, useState } from "react"
+import Navbar from "@/components/Navbar"
+import Link from "next/link"
+import { Button } from "@/components/ui/button"
+import Wrapper from "../Wrapper"
+import { ArrowRight, Calendar } from "lucide-react"
+import Image from "next/image"
+import { useTranslations } from "next-intl"
 
 type QA = {
-    id: string;
-    q: string;
-    a: React.ReactNode;
-};
+    id: string
+    q: string
+    a: React.ReactNode
+}
 
-const faqs: QA[] = [
-    {
-        id: "item-1",
-        q: "What makes CelesteIQ different from other technology providers?",
-        a: (
-            <p>
-                We specialize in connecting Artificial Intelligence with the real needs
-                of your business, creating complete solutions within the Microsoft
-                ecosystem (Azure, Power BI, Copilot, Dynamics, etc.).
-            </p>
-        ),
-    },
-    {
-        id: "item-2",
-        q: "Do I need prior AI experience to implement your solutions?",
-        a: (
-            <p>
-                No—our team guides you through strategy, design, and implementation.
-                We’ll identify the best use cases and deliver value quickly.
-            </p>
-        ),
-    },
-    {
-        id: "item-3",
-        q: "Which sectors do you serve?",
-        a: (
-            <p>
-                Finance, Healthcare, Manufacturing, Real Estate, and more. We tailor
-                solutions to your industry’s compliance and operational needs.
-            </p>
-        ),
-    },
-    {
-        id: "item-4",
-        q: "Do you offer subscription-based or project-based services?",
-        a: (
-            <p>
-                Both. Choose ongoing subscription for continuous optimization or a
-                fixed-scope project for targeted outcomes—whichever fits your goals.
-            </p>
-        ),
-    },
-    {
-        id: "item-5",
-        q: "Where do you operate?",
-        a: (
-            <p>
-                We support clients globally with remote delivery and regional partners
-                when on-site presence is required.
-            </p>
-        ),
-    },
-];
+
+// blog type coming from your /api/blog response
+type BlogType = {
+    _id: string
+    category: string
+    title: string
+    summary: string
+    image: string
+    buttonText: string
+    createdAt: string
+    slug?: string
+}
 
 export default function Blog() {
+    const h = useTranslations("blog")
+    const b = useTranslations("blogIntro")
 
-    const h = useTranslations("blog");
-    const b = useTranslations("blogIntro");
+    const [blogs, setBlogs] = useState<BlogType[]>([])
+    const [isLoading, setIsLoading] = useState(false)
+
+    useEffect(() => {
+        const fetchBlogs = async () => {
+            try {
+                setIsLoading(true)
+                const res = await fetch("/api/blog")
+                const data = await res.json()
+
+                if (data.success) {
+                    setBlogs(data.data as BlogType[])
+                } else {
+                    console.error("Failed to load blogs:", data.message)
+                }
+            } catch (error) {
+                console.error("Error loading blogs:", error)
+            } finally {
+                setIsLoading(false)
+            }
+        }
+
+        fetchBlogs()
+    }, [])
+
+    const formatDate = (value: string) => {
+        if (!value) return ""
+        const date = new Date(value)
+        return date.toLocaleDateString("en-US", {
+            month: "short",
+            day: "2-digit",
+            year: "numeric",
+        })
+    }
 
     return (
         <Wrapper>
-
-            <section
-                className="relative overflow-hidden bg-[#99d9f1]"
-            >
+            {/* Hero */}
+            <section className="relative overflow-hidden bg-[#99d9f1]">
                 <div
                     className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16 md:py-20 text-center"
                     data-aos="fade-up"
@@ -110,15 +103,16 @@ export default function Blog() {
                         className="h-[90px] w-full sm:h-[110px] md:h-[140px]"
                         preserveAspectRatio="none"
                     >
-                        <path d="M0,45 C300,180 1140,180 1440,45 L1440,180 L0,180 Z" fill="#ffffff" />
+                        <path
+                            d="M0,45 C300,180 1140,180 1440,45 L1440,180 L0,180 Z"
+                            fill="#ffffff"
+                        />
                     </svg>
                 </div>
             </section>
 
-            <section
-                className="py-12 sm:py-16"
-                data-aos="fade-up"
-            >
+            {/* Blog list */}
+            <section className="py-12 sm:py-16" data-aos="fade-up">
                 <div
                     className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8"
                     data-aos="fade-up"
@@ -140,163 +134,71 @@ export default function Blog() {
                         </p>
                     </div>
 
-
+                    {/* Grid of blog cards */}
                     <div
                         className="grid md:mt-16 mt-8 md:grid-cols-2 md:gap-8 gap-4 grid-cols-1"
                         data-aos="fade-up"
                         data-aos-delay="160"
                     >
-                        <div
-                            className="overflow-hidden rounded-3xl bg-white shadow-[0_24px_60px_rgba(2,6,23,0.08)] ring-1 ring-black/5"
-                            data-aos="fade-up"
-                            data-aos-delay="200"
-                        >
-                            <div className="relative w-full sm:h-96">
-                                <Image
-                                    src="/blog1.png"
-                                    alt="Featured post"
-                                    width={500}
-                                    height={300}
-                                    className="object-cover w-full sm:h-96"
-                                />
-                                <span className="absolute left-4 top-4 rounded-full bg-[#FF7A00] px-3 py-1 text-xs font-semibold text-white">
-                                    AI Insights
-                                </span>
+                        {isLoading && (
+                            <div className="col-span-full text-center text-slate-500">
+                                Loading articles...
                             </div>
-                            <div className="p-4 sm:p-6">
-                                <div className="flex items-center gap-2 text-slate-500 text-sm">
-                                    <Calendar className="h-4 w-4" />
-                                    <span>Oct 25, 2025</span>
-                                </div>
-                                <h3 className="mt-2 text-xl font-medium text-slate-900">
-                                    The Future of AI in Business: 5 Trends to Watch in 2025
-                                </h3>
-                                <p className="mt-3 text-slate-600">
-                                    Discover how artificial intelligence is reshaping the business landscape and what it means for your organization.
-                                </p>
-                                <div className="mt-5">
-                                    <Button asChild className="bg-[#FF7A00] px-5 text-white hover:bg-[#FF7A00]">
-                                        <Link href="/blog">
-                                            Read More <ArrowRight className="ml-2 h-4 w-4" />
-                                        </Link>
-                                    </Button>
-                                </div>
-                            </div>
-                        </div>
+                        )}
 
-                        <div
-                            className="overflow-hidden rounded-3xl bg-white shadow-[0_24px_60px_rgba(2,6,23,0.08)] ring-1 ring-black/5"
-                            data-aos="fade-up"
-                            data-aos-delay="230"
-                        >
-                            <div className="relative w-full sm:h-96">
-                                <Image
-                                    src="/blog1.png"
-                                    alt="Featured post"
-                                    width={500}
-                                    height={300}
-                                    className="object-cover w-full sm:h-96"
-                                />
-                                <span className="absolute left-4 top-4 rounded-full bg-[#FF7A00] px-3 py-1 text-xs font-semibold text-white">
-                                    AI Insights
-                                </span>
+                        {!isLoading && blogs.length === 0 && (
+                            <div className="col-span-full text-center text-slate-500">
+                                No articles available yet. New content will appear here soon.
                             </div>
-                            <div className="p-4 sm:p-6">
-                                <div className="flex items-center gap-2 text-slate-500 text-sm">
-                                    <Calendar className="h-4 w-4" />
-                                    <span>Oct 25, 2025</span>
-                                </div>
-                                <h3 className="mt-2 text-xl font-medium text-slate-900">
-                                    The Future of AI in Business: 5 Trends to Watch in 2025
-                                </h3>
-                                <p className="mt-3 text-slate-600">
-                                    Discover how artificial intelligence is reshaping the business landscape and what it means for your organization.
-                                </p>
-                                <div className="mt-5">
-                                    <Button asChild className="bg-[#FF7A00] px-5 text-white hover:bg-[#FF7A00]">
-                                        <Link href="/blog">
-                                            Read More <ArrowRight className="ml-2 h-4 w-4" />
-                                        </Link>
-                                    </Button>
-                                </div>
-                            </div>
-                        </div>
+                        )}
 
-                        <div
-                            className="overflow-hidden rounded-3xl bg-white shadow-[0_24px_60px_rgba(2,6,23,0.08)] ring-1 ring-black/5"
-                            data-aos="fade-up"
-                            data-aos-delay="260"
-                        >
-                            <div className="relative w-full sm:h-96">
-                                <Image
-                                    src="/blog1.png"
-                                    alt="Featured post"
-                                    width={500}
-                                    height={300}
-                                    className="object-cover w-full sm:h-96"
-                                />
-                                <span className="absolute left-4 top-4 rounded-full bg-[#FF7A00] px-3 py-1 text-xs font-semibold text-white">
-                                    AI Insights
-                                </span>
-                            </div>
-                            <div className="p-4 sm:p-6">
-                                <div className="flex items-center gap-2 text-slate-500 text-sm">
-                                    <Calendar className="h-4 w-4" />
-                                    <span>Oct 25, 2025</span>
+                        {blogs.map((blog, index) => (
+                            <div
+                                key={blog._id}
+                                className="overflow-hidden rounded-3xl bg-white shadow-[0_24px_60px_rgba(2,6,23,0.08)] ring-1 ring-black/5"
+                                data-aos="fade-up"
+                                data-aos-delay={200 + index * 30}
+                            >
+                                <div className="relative w-full sm:h-96">
+                                    <Image
+                                        src={blog.image || "/blog1.png"}
+                                        alt={blog.title}
+                                        width={500}
+                                        height={300}
+                                        className="object-cover w-full sm:h-96"
+                                    />
+                                    {blog.category && (
+                                        <span className="absolute left-4 top-4 rounded-full bg-[#FF7A00] px-3 py-1 text-xs font-semibold text-white">
+                                            {blog.category}
+                                        </span>
+                                    )}
                                 </div>
-                                <h3 className="mt-2 text-xl font-medium text-slate-900">
-                                    The Future of AI in Business: 5 Trends to Watch in 2025
-                                </h3>
-                                <p className="mt-3 text-slate-600">
-                                    Discover how artificial intelligence is reshaping the business landscape and what it means for your organization.
-                                </p>
-                                <div className="mt-5">
-                                    <Button asChild className="bg-[#FF7A00] px-5 text-white hover:bg-[#FF7A00]">
-                                        <Link href="/blog">
-                                            Read More <ArrowRight className="ml-2 h-4 w-4" />
-                                        </Link>
-                                    </Button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div
-                            className="overflow-hidden rounded-3xl bg-white shadow-[0_24px_60px_rgba(2,6,23,0.08)] ring-1 ring-black/5"
-                            data-aos="fade-up"
-                            data-aos-delay="290"
-                        >
-                            <div className="relative w-full sm:h-96">
-                                <Image
-                                    src="/blog1.png"
-                                    alt="Featured post"
-                                    width={500}
-                                    height={300}
-                                    className="object-cover w-full sm:h-96"
-                                />
-                                <span className="absolute left-4 top-4 rounded-full bg-[#FF7A00] px-3 py-1 text-xs font-semibold text-white">
-                                    AI Insights
-                                </span>
-                            </div>
-                            <div className="p-4 sm:p-6">
-                                <div className="flex items-center gap-2 text-slate-500 text-sm">
-                                    <Calendar className="h-4 w-4" />
-                                    <span>Oct 25, 2025</span>
-                                </div>
-                                <h3 className="mt-2 text-xl font-medium text-slate-900">
-                                    The Future of AI in Business: 5 Trends to Watch in 2025
-                                </h3>
-                                <p className="mt-3 text-slate-600">
-                                    Discover how artificial intelligence is reshaping the business landscape and what it means for your organization.
-                                </p>
-                                <div className="mt-5">
-                                    <Button asChild className="bg-[#FF7A00] px-5 text-white hover:bg-[#FF7A00]">
-                                        <Link href="/blog">
-                                            Read More <ArrowRight className="ml-2 h-4 w-4" />
-                                        </Link>
-                                    </Button>
+                                <div className="p-4 sm:p-6">
+                                    <div className="flex items-center gap-2 text-slate-500 text-sm">
+                                        <Calendar className="h-4 w-4" />
+                                        <span>{formatDate(blog.createdAt)}</span>
+                                    </div>
+                                    <h3 className="mt-2 text-xl font-medium text-slate-900 line-clamp-2">
+                                        {blog.title}
+                                    </h3>
+                                    <p className="mt-3 text-slate-600 line-clamp-3">
+                                        {blog.summary}
+                                    </p>
+                                    <div className="mt-5">
+                                        <Button
+                                            asChild
+                                            className="bg-[#FF7A00] px-5 text-white hover:bg-[#FF7A00]"
+                                        >
+                                            {/* later you can switch this to `/blog/${blog.slug}` */}
+                                            <Link href="/blog">
+                                                {blog.buttonText || "Read More"}
+                                                <ArrowRight className="ml-2 h-4 w-4" />
+                                            </Link>
+                                        </Button>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+                        ))}
                     </div>
 
                     <div
@@ -314,7 +216,6 @@ export default function Blog() {
                     </div>
                 </div>
             </section>
-
         </Wrapper>
     )
 }
