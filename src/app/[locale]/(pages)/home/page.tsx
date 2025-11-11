@@ -176,8 +176,8 @@ export default function HomePage() {
 
                 <div className="">
                 <div className="w-full lg:h-[30vw]"></div>
-                    <div className="w-full max-w-7xl lg:text-start text-center p-5">
-                        <div className="flex lg:-mb-5 items-center lg:flex-row mb-3 flex-col justify-center lg:gap-10 gap-4">
+                    <div className="w-full max-w-[87rem] lg:text-start text-center p-5">
+                        <div className="flex lg:-mb-5 items-end lg:flex-row mb-3 flex-col justify-center lg:gap-10 gap-4">
                             <h1
                                 data-aos="fade-up"
                                 className='font-bold mt-20 lg:mt-0 lg:text-[6.5rem] text-[2.6rem] leading-tight lg:leading-none lg:text-nowrap text-image1'
@@ -189,7 +189,7 @@ export default function HomePage() {
                             </h1>
 
                             <div data-aos-delay="200" className="relative" data-aos="fade">
-                                <p className='font-semibold lg:max-w-[12rem] w-full'>
+                                <p className='font-semibold z-10 relative lg:max-w-[12rem] w-full'>
                                     {h("taglineTop")}
                                 </p>
                                 <Image
@@ -202,7 +202,7 @@ export default function HomePage() {
                             </div>
                         </div>
 
-                        <div className="flex items-center lg:flex-row flex-col-reverse justify-center lg:gap-10 gap-4 lg:-mb-7">
+                        <div className="flex items-end lg:flex-row flex-col-reverse justify-center lg:gap-10 gap-4 lg:-mb-7">
                             <p
                                 data-aos-delay="200"
                                 data-aos="fade"

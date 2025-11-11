@@ -122,7 +122,7 @@ export default function Navbar() {
                 size="lg"
                 className="bg-[#FF7A00] hover:bg-orange-500 text-white font-semibold px-5 h-9 rounded-md"
               >
-                {ctaNavbar("consultant")}
+                {tNav("cta")}
               </Button>
             </div>
           </nav>
@@ -220,7 +220,7 @@ export default function Navbar() {
                     className="mt-2 bg-[#FF7A00] hover:bg-orange-500 text-white font-semibold h-10"
                     onClick={() => setOpen(false)}
                   >
-                    {ctaNavbar("consultant")}
+                    {tNav("cta")}
                   </Button>
                 </div>
               </SheetContent>

@@ -4,7 +4,8 @@
         "services": "Servicios",
         "resources": "Recursos",
         "contact": "Contacto",
-        "portal": "Portal de clientes"
+        "portal": "Portal de clientes",
+        "cta": "Hablar con un consultor"
     },
     "cta": {
         "consultant": "Hablar con un consultor"

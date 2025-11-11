@@ -4,7 +4,8 @@
         "services": "Services",
         "resources": "Resources",
         "contact": "Contact",
-        "portal": "Client Portal"
+        "portal": "Client Portal",
+        "cta": "Talk to a Consultant"
     },
     "cta": {
         "consultant": "Talk to a Consultant"
