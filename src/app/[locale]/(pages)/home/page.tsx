@@ -161,7 +161,7 @@ export default function HomePage() {
     return (
         <Wrapper>
 
-            <section className='relative w-full flex md:flex-row flex-col md:justify-center justify-end md:items-end items-center min-h-screen'>
+            <section className='relative w-full flex lg:flex-row flex-col lg:justify-center justify-end lg:items-end items-center min-h-screen'>
                 <Navbar />
                 <div className="absolute inset-0 -z-50">
                     <Image
@@ -173,21 +173,23 @@ export default function HomePage() {
                     />
                 </div>
 
+
                 <div className="">
-                    <div className="w-full max-w-6xl md:text-start text-center p-5 md:py-10">
-                        <div className="flex items-center md:flex-row md:mb-0 mb-3 flex-col justify-center md:gap-10 gap-4">
+                <div className="w-full lg:h-[30vw]"></div>
+                    <div className="w-full max-w-7xl lg:text-start text-center p-5">
+                        <div className="flex lg:-mb-5 items-center lg:flex-row mb-3 flex-col justify-center lg:gap-10 gap-4">
                             <h1
                                 data-aos="fade-up"
-                                className='font-bold mt-20 md:mt-0 md:text-[6.5rem] text-[2.6rem] leading-tight md:leading-none md:text-nowrap text-image1'
+                                className='font-bold mt-20 lg:mt-0 lg:text-[6.5rem] text-[2.6rem] leading-tight lg:leading-none lg:text-nowrap text-image1'
                             >
                                 {h("titleLine1")}
-                                <span className='md:hidden'>
+                                <span className='lg:hidden'>
                                     {" "}{h("titleLine2Mobile")}
                                 </span>
                             </h1>
 
                             <div data-aos-delay="200" className="relative" data-aos="fade">
-                                <p className='font-semibold md:max-w-[12rem] w-full'>
+                                <p className='font-semibold lg:max-w-[12rem] w-full'>
                                     {h("taglineTop")}
                                 </p>
                                 <Image
@@ -195,23 +197,23 @@ export default function HomePage() {
                                     width={100}
                                     height={100}
                                     alt="logo"
-                                    className='absolute w-10 md:-top-4 right-0'
+                                    className='absolute w-10 lg:-top-4 right-0'
                                 />
                             </div>
                         </div>
 
-                        <div className="flex items-center md:flex-row flex-col-reverse justify-center md:gap-10 gap-4 md:-mt-2">
+                        <div className="flex items-center lg:flex-row flex-col-reverse justify-center lg:gap-10 gap-4 lg:-mb-7">
                             <p
                                 data-aos-delay="200"
                                 data-aos="fade"
-                                className='font-semibold md:block hidden md:max-w-[14rem] w-full'
+                                className='font-semibold lg:block hidden lg:max-w-[14rem]  w-full'
                             >
                                 {h("taglineBottom")}
                             </p>
                             <h1
                                 data-aos="fade-up"
                                 data-aos-delay="100"
-                                className='font-bold md:text-[6.5rem] md:block hidden text-4xl md:text-nowrap text-image1'
+                                className='font-bold lg:text-[6.5rem]  lg:block hidden text-4xl lg:text-nowrap text-image1'
                             >
                                 {h("titleLine2Desktop1")}
                             </h1>
@@ -220,7 +222,7 @@ export default function HomePage() {
                         <h1
                             data-aos="fade-up"
                             data-aos-delay="100"
-                            className='font-bold flex items-end justify-end text-end md:text-[6.5rem] md:block hidden text-4xl md:text-nowrap text-image1'
+                            className='font-bold flex items-end justify-end text-end lg:text-[6.5rem] lg:block hidden text-4xl lg:text-nowrap text-image1'
                         >
                             {h("titleLine2Desktop2")}
                         </h1>
@@ -248,7 +250,7 @@ export default function HomePage() {
                     width={1000}
                     height={700}
                     alt="lady"
-                    className='w-full select-none md:max-w-[42vw] -z-40 md:absolute'
+                    className='w-full select-none lg:max-w-[50vw] -z-40 lg:absolute'
                 />
             </section>
 
