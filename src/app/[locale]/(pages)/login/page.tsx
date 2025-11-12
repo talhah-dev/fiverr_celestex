@@ -17,17 +17,17 @@ const Page = () => {
     const [password, setPassword] = useState("");
     const [loading, setLoading] = useState(false);
 
-    // const call = async () => {
-    //     await authClient.signUp.email({
-    //         name: "admin",
-    //         email: "admin@gmail.com",
-    //         password: "12345678",
-    //     });
-    // }
+        // const call = async () => {
+        //     await authClient.signUp.email({
+        //         name: "admin",
+        //         email: "admin@gmail.com",
+        //         password: "12345678",
+        //     });
+        // }
 
-    // useEffect(() => {
-    //     call();
-    // }, []);
+        // useEffect(() => {
+        //     call();
+        // }, []);
 
     const {
         data: session,

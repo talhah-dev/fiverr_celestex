@@ -1,4 +1,3 @@
-// src/app/[locale]/layout.tsx
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
@@ -21,7 +20,7 @@ export const metadata: Metadata = {
 
 type Props = {
   children: React.ReactNode;
-  // 👇 params is a Promise in Next 16
+  // Next 16: params is a Promise
   params: Promise<{ locale: string }>;
 };
 
@@ -30,20 +29,20 @@ export function generateStaticParams() {
 }
 
 export default async function RootLayout({ children, params }: Props) {
-  // 👇 unwrap the Promise
   const { locale } = await params;
 
   if (!hasLocale(routing.locales, locale)) {
     notFound();
   }
 
+  // Tell next-intl which locale is active for this request
   setRequestLocale(locale);
 
   return (
     <html lang={locale}>
       <body className={`${inter.variable} antialiased`}>
-        {/* messages are wired up via src/i18n/request.ts */}
-        <NextIntlClientProvider>
+        {/* messages come from src/i18n/request.ts */}
+        <NextIntlClientProvider locale={locale}>
           {children}
         </NextIntlClientProvider>
         <Toaster />
